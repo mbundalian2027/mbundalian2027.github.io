@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nexus Hub</title>
+        <link rel="icon" href="pics/index/titlelogo.png" type="image/icon">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+
+        <script>
+            document.body.classList.add('pagefadein');
+        </script>
+        
+        <style>
+            .fade-in {
+                opacity: 0;
+                transform: translateX(-60px);
+                transition: opacity 2s ease-in-out, transform 3s ease-in-out;
+            }
+
+            .visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        </style>
+
+        <link href="stylesheets.css" rel="stylesheet">
+    </head>
+
+    <body class="container-flex pagefadein">
+        <header class="container-flex align-items-center row">
+            <div class="col">
+                <a href="index.html"><img src="pics/index/logo.png" alt="logo"></a>
+            </div>
+            <div class="col navigation d-flex justify-content-center">
+                <span class="navitems"><a href="index.html"> Home </a></span>&nbsp;|&nbsp;
+                <span class="navitems"><a href="aboutus.html"> About us </a></span>&nbsp;|&nbsp;
+                <span class="navitems"><a href="academics.html"> Academics </a></span>&nbsp;|&nbsp;
+                <span class="navitems"><a href="events.html"> Events </a></span>&nbsp;|&nbsp;
+                <span class="navitems"><a href="contacts.html"> Contact us </a></span>&nbsp;|&nbsp;
+                <div class="navitems"> 
+                    <div class="dropdown container-flex">
+                        <span class="dropdown-button">Menu</span>
+                      
+                        <div class="dropdown-content">
+                          <a href="settings.html">
+                            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                            <span class="text ms-2">Settings</span>
+                          </a>
+                          <a href="loginpage.html">
+                            <span class="icon"><ion-icon name="exit-outline"></ion-icon></span>
+                            <span class="text ms-2">Logout</span>
+                          </a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </header>
+
+        <!---->
+
+        <div class="pagecontents container-flex" style="height: auto">
+            <img src="pics/index/indexbanner.jpg" alt="banner" class="img-fluid">
+            <br><br>
+            
+            <div class="greetingswithvid row fade-in container-fluid">
+                <div class="col-lg-5 col-md-12 col-sm-12 container-flex greetings fade-in d-flex justify-content-center">
+                    <div class="container-flex-fluid fade-in">
+                        <b>Hello everyone,</b><br><br>
+                        <span class="itemheader">Welcome to Nexus Academy</span><br>
+                        <blockquote class="container">
+                            At Nexus, we are dedicated to fostering an enriching educational environment that goes beyond traditional boundaries. Our commitment to excellence empowers students to explore their potential, embrace creativity, and embark on a transformative learning journey.
+
+                            <br><br>Join us as we embark on a quest for knowledge, where every day is an opportunity to learn, discover, and connect. At Nexus Academy, we believe in shaping future leaders who are not only academically proficient but also compassionate, curious, and ready to make a positive impact on the world. Welcome to a place where education transcends boundaries.
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 col-md-12 col-sm-12 favid container-flex fade-in d-flex justify-content-center">
+                        <div class="container-flex">
+                            <div class="itemheader videoheader fade-in">What are you waiting for?</div>
+                            <div class="vidc text-center fade-in">
+                                <video id="vid" muted autoplay controls loop>
+                                    <source src="pics/index/schoolvid.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            
+                            <script>
+                                var video = document.getElementById("myVideo");
+                            
+                                video.addEventListener("click", function() {
+                                    if (video.muted) {
+                                        video.muted = false;
+                                    } else {
+                                        video.muted = true;
+                                    }
+                                });
+                            </script>
+                        </div>
+                    <br>
+                </div>
+            </div>
+
+            <div class="thecalendar container-flex">
+                <div class="container-fluid">
+                    <div class="calendarcontainer row fade-in">
+                        <div class="col-12 col-md-5 col-lg-4">
+                            <span style="color: whitesmoke; font-family: 'Jost', sans-serif; font-size: 20pt;">UPCOMING EVENTS</span> events <br>
+                            <span class="itemheader calendarheader fade-in">What's up in Nexus Academy?</span><br>
+                            <a href="pics/index/eventcalendar.pdf" download="calendar.pdf">OUR CALENDAR</a><br><br>
+                        </div>
+
+                        <div class="col-12 col-md-7 col-lg-8 calendar fade-in">
+                            <div class="calendarcontent">
+                                <img src="pics/index/1.jpg" alt="calendar">
+                            </div>
+                            <div class="calendarcontent">
+                                <img src="pics/index/2.jpg" alt="calendar">
+                            </div>
+                            <div class="calendarcontent">
+                                <img src="pics/index/3.jpg" alt="calendar">
+                            </div>
+                            <div class="calendarcontent">
+                                <img src="pics/index/4.jpg" alt="calendar">
+                            </div>
+                            <div class="calendarcontent">
+                                <img src="pics/index/5.jpg" alt="calendar">
+                            </div>
+                            <div class="calendarcontent">
+                                <img src="pics/index/6.jpg" alt="calendar">
+                            </div>
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="news container-flex fade-in"><br><br>
+                <span class="itemheader newsheader d-flex justify-content-center fade-in">LATEST NEWS</span>
+
+                <div class="container-fluid fade-in">
+                    <div class="row thenews d-flex align-items-center justify-content-center fade-in">
+                        <div class="col-lg-4 col-md-6 col-sm-12 newscontent d-flex justify-content-center fade-in">
+                            <img src="pics/index/cslab1.jpg" alt="cslab" onclick="togglePopup1()" class="pressableimage">
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-sm-12 newscontent d-flex justify-content-center fade-in">
+                            <img src="pics/index/chemcompe2.jpg" alt="chem" onclick="togglePopup2()" class="pressableimage">
+                        </div>
+
+                        <div class="col-lg-4 col-md-12 col-sm-12 newscontent d-flex justify-content-center fade-in">
+                            <img src="pics/index/leadership3.jpg" alt="leadership" onclick="togglePopup3()" class="pressableimage">
+                        </div>
+                    </div>
+                    <!---->
+                    <div class="popup" id="popup1">
+                        <span class="overlay" onclick="togglePopup1()"></span>
+
+                        <div class="content">
+                            <ion-icon name="close-outline" class="closebtn" onclick="togglePopup1()"></ion-icon>
+                            <div class="thenews">
+                                <span class="indivnewsheader">Academy Launches Innovative Coding Program for Students: </span><br>
+                                Date: Dec 16, 2023 <br><br>
+                                
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-12 col-sm-12">
+                                        <div class="newsimage">
+                                            <img src="pics/index/cslab.jpg" alt="cslab"><br>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                        Nexus Academy is excited to announce the launch of a cutting-edge coding program aimed at 
+                                        empowering students with essential tech skills. The program, developed in collaboration with 
+                                        industry experts, offers hands-on coding experiences, project-based learning, and opportunities 
+                                        to work on real-world applications. Students will delve into programming languages, web development, 
+                                        and software engineering, preparing them for the rapidly evolving digital landscape. 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---->
+                    <div class="popup" id="popup2">
+                        <span class="overlay" onclick="togglePopup2()"></span>
+                        
+                        <div class="content">
+                            <ion-icon name="close-outline" class="closebtn" onclick="togglePopup2()"></ion-icon>
+                            <div class="thenews">
+                                <span class="indivnewsheader">Nexus Academy Celebrates Science Fair Success:</span><br>
+                                Date: Dec 20, 2023 <br><br>
+                                    
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-12 col-sm-12">
+                                        <div class="newsimage">
+                                            <img src="pics/index/chemcompe.jpg" alt="chem"><br>
+                                        </div> 
+                                    </div>
+                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                        Nexus Academy students showcased their scientific prowess at the annual Science Fair, leaving a 
+                                        trail of innovation and creativity. The event featured a diverse range of projects, from eco-friendly 
+                                        solutions to breakthroughs in healthcare technology. Judges praised the students for their dedication 
+                                        and originality, and several projects have been selected to represent the school at regional science 
+                                        competitions. Congratulations to all the young scientists at Nexus Academy!. 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---->
+                    <div class="popup" id="popup3">
+                        <span class="overlay" onclick="togglePopup3()"></span>
+
+                        <div class="content">
+                            <ion-icon name="close-outline" class="closebtn" onclick="togglePopup3()"></ion-icon>
+                            <div class="thenews">
+                                <span class="indivnewsheader">Nexus Academy's Model United Nations Team Wins Top Honors:</span><br>
+                                Date: Dec 30, 2023 <br><br>
+                                
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-12 col-sm-12">
+                                        <div class="newsimage">
+                                            <img src="pics/index/leadership.jpg" alt="leadership"><br>
+                                        </div> 
+                                    </div>
+                                    <div class="col-lg-8 col-md-12 col-sm-12">
+                                        Nexus Academy's Model United Nations (MUN) team achieved remarkable success at the recent 
+                                        international conference. Representing various countries, our students engaged in diplomacy, 
+                                        negotiations, and debate on global issues. The team received multiple awards for their outstanding 
+                                        performance, demonstrating their prowess in public speaking, research, and international affairs. 
+                                        Nexus Academy continues to foster global citizenship through enriching experiences like MUN.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---->
+                </div>  
+
+                <script>
+                    function togglePopup1() {
+                        closeOtherPopups(1);
+                        document.getElementById("popup1").classList.toggle("active");
+                    }
+
+                    function togglePopup2() {
+                        closeOtherPopups(2);
+                        document.getElementById("popup2").classList.toggle("active");
+                    }
+
+                    function togglePopup3() {
+                        closeOtherPopups(3);
+                        document.getElementById("popup3").classList.toggle("active");
+                    }
+
+                    function closeOtherPopups(excludeIndex) {
+                        const popupIds = ["popup1", "popup2", "popup3"];
+                        
+                        popupIds.forEach((popupId, index) => {
+                            if (index + 1 !== excludeIndex) {
+                                document.getElementById(popupId).classList.remove("active");
+                            }
+                        });
+                    }
+                </script>
+            </div>
+            
+            
+        </div>
+        <!---->
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const fadeElements = document.querySelectorAll('.fade-in');
+        
+                function fadeInOnScroll() {
+                    fadeElements.forEach(element => {
+                        const distanceFromTop = element.getBoundingClientRect().top;
+                        const windowHeight = window.innerHeight;
+        
+                        if (distanceFromTop < windowHeight) {
+                            element.classList.add('visible');
+                        }
+                    });
+                }
+        
+                window.addEventListener('scroll', fadeInOnScroll);
+                fadeInOnScroll();
+            });
+        </script>
+
+        <!---->
+
+        <footer class="container-fluid">
+            <div class="footerinfo row align-items-start">
+                <div class="col">
+                    <br>
+                        Nexus Academy<br><br>
+                        123 Enigma Lane<br>
+                        Mysticville, Fantasyland 98765<br>
+                        United Realms<br><br>
+                        <a href="contacts.html">Need Help? Contact Us</a><br>
+                        <ion-icon name="logo-facebook"></ion-icon> 
+                        <ion-icon name="logo-instagram"></ion-icon> 
+                        <ion-icon name="logo-youtube"></ion-icon> 
+                        <ion-icon name="logo-twitter"></ion-icon> <br>
+                    <br>
+                </div>
+                <div class="col">
+                    <br>
+                    <a href="#">Privacy policy and Terms of Agreement</a><br><br>
+                    &#169; 2023 Nexus Academy. All rights reserved. <br>
+                    Nexus Academy and the Nexus Academy logo  <br>
+                    are trademarks of Aetheria Education, Inc.
+                    <br>
+                </div>
+            
+            </div>
+        </footer>
+    </body>
+</html>
