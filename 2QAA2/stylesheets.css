@@ -12,8 +12,13 @@ body {
     overflow-x: hidden;
 }
 header{
-    background-color:rgba(7, 22, 66, 0.921);
+    background-color:rgb(7, 22, 66);
     z-index: 5;
+    position: sticky;
+    top:0;
+}
+.pagecontent{
+    margin-top: 20px;
 }
 header img{
     width: 50%;
@@ -70,6 +75,8 @@ header img{
         margin-bottom: 15px;
     }
 }
+
+
 .dropdown {
     position: relative;
     display: inline-block;
