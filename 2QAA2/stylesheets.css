@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
 }
 header{
-    background-color:rgba(7, 22, 66, 0.921);
+    background-color:rgba(7, 22, 66, 0.921); 
     z-index: 5;
     position: sticky;
     top:0;
