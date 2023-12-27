@@ -33,8 +33,6 @@ header img{
     width: 50%;
     margin-top: 2%;
     margin-bottom: 3%;
-    margin-right: auto;
-    margin-left: auto;
 }
 .navigation{
     font-size:130%;
@@ -78,6 +76,8 @@ header img{
     }
     header img{
         width: 320px;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
 @media (max-width:400px) {
