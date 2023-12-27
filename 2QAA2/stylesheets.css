@@ -10,28 +10,38 @@ body {
     animation: pagefadein 0.5s ease-in-out;
     font-family: 'Jost', sans-serif;
     overflow-x: hidden;
+    margin-right: auto;
+    margin-left: auto;
 }
 header{
     background-color:rgba(7, 22, 66, 0.921); 
     z-index: 5;
     position: sticky;
+    margin-right: auto;
+    margin-left: auto;
     top:0;
-    text-align: center;
 }
-.pagecontent{
-    margin-top: 20px;
+header .row{
+    margin-right: auto;
+    margin-left: auto;
+}
+header .row .col{
+    margin-right: auto;
+    margin-left: auto;
 }
 header img{
     width: 50%;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    margin-right: auto;
+    margin-left: auto;
 }
 .navigation{
-    margin-right: 5%;
     font-size:130%;
     z-index: inherit;
     color:whitesmoke;
+    margin-right: auto;
+    margin-left: auto;
 }
 .navigation .navitems{
     transition: transform 0.4s ease;
@@ -53,15 +63,15 @@ header img{
         font-size:85%;
     }
     header img{
-        margin-left: 5%;
         width: 65%;
     }
 
 }
 @media (max-width:700px) {
     .navigation{
-        margin-right: 5%;
         font-size:90%;
+        margin-top:10px;
+        margin-bottom: 15px;
     }
     header .col{
         text-align: center;
@@ -69,11 +79,10 @@ header img{
     header img{
         width: 320px;
     }
+}
+@media (max-width:400px) {
     .navigation{
-        margin-top:10px;
-        margin-left:5px;
-        margin-right:5px;
-        margin-bottom: 15px;
+        font-size:80%;
     }
 }
 
