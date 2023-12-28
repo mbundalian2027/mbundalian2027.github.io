@@ -82,7 +82,7 @@ header img{
 }
 @media (max-width:500px) {
     .navigation{
-        font-size:70%;
+        font-size:70%; 
     }
 }
 
