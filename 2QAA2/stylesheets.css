@@ -634,6 +634,15 @@ footer{
 
 /*----------------------------------------------------------*/
 
+.ror{
+    color: rgba(0, 30, 79);
+}
+.piggy{
+    margin-left:auto;
+    margin-right: auto;
+}
+/*----------------------------------------------------------*/
+
 .thearticles .row{
     margin-left: auto;
     margin-right: auto;
