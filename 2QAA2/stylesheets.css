@@ -640,11 +640,16 @@ footer{
 .heartc{
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 70%;
     margin-bottom: 5%;
 }
 .pig{
     width: 100%;
+}
+@media (max-width:1250px) {
+    .heartc{
+        width: 90%;
+    }
 }
 /*----------------------------------------------------------*/
 
