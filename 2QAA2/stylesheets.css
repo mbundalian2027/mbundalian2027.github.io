@@ -637,9 +637,14 @@ footer{
 .ror{
     color: rgba(0, 30, 79);
 }
-.piggy{
-    margin-left:auto;
+.heartc{
+    margin-left: auto;
     margin-right: auto;
+    width: 90%;
+    margin-bottom: 5%;
+}
+.pig{
+    width: 100%;
 }
 /*----------------------------------------------------------*/
 
