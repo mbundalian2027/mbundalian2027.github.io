@@ -634,6 +634,12 @@ footer{
 
 /*----------------------------------------------------------*/
 
+.pigheartAA{
+    background-image: url('pics/index/greetingsbg.png');
+    background-size: 200px;
+    padding-top:3%;
+    padding-bottom: 5%;
+}
 .ror{
     color: rgba(0, 30, 79);
 }
