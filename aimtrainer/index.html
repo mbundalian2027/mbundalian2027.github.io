@@ -7,23 +7,31 @@
 
     <style>
         .circle {
-            background-color: rgb(2,29,55);
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
+        background-color: rgb(2, 29, 55);
+        border-radius: 50%;
+        width: 7vw;
+        height: 7vw;
+        top: calc(50% - 5vw);
+        left: calc(50% - 5vw);
+        position: absolute;
+        z-index: 5;
+        }
+
+        @media (max-width:1250px) {
+            .circle {
+            width: 12vw;
+            height: 12vw;
+            }
         }
 
         body {
             cursor: crosshair;
+            overflow:hidden;
         }
 
         #container {
             position: relative;
-            width: 100%;
+            width: 100vw;
             height: 100vh;
         }
 
@@ -48,7 +56,7 @@
         var killCountDisplay = document.getElementById('killCount');
         var lastClickTime;
         var totalReactionTime = 0;
-        var clickCount = 0;
+        var clickCount = 1;
         var spawnAreaWidth = 50;
         var spawnAreaHeight = 50;
 
@@ -72,28 +80,28 @@
         }
 
         function resetCircle() {
-        var containerWidth = window.innerWidth;
-        var containerHeight = window.innerHeight;
+            var containerWidth = window.innerWidth * 0.85;
+            var containerHeight = window.innerHeight * 0.85;
 
-        var maxLeft = containerWidth - spawnAreaWidth;
-        var maxTop = containerHeight - spawnAreaHeight;
+            var randomLeft = Math.max(5, Math.floor(Math.random() * containerWidth));
+            var randomTop = Math.max(5, Math.floor(Math.random() * containerHeight));
 
-        var randomLeft = Math.max(0, Math.floor(Math.random() * maxLeft));
-        var randomTop = Math.max(0, Math.floor(Math.random() * maxTop));
 
-        icon.style.top = randomTop + "px";
-        icon.style.left = randomLeft + "px";
-        icon.style.display = "block";
+            icon.style.top = randomTop + "px";
+            icon.style.left = randomLeft + "px";
+            icon.style.display = "block";
 
-        if (clickCount > 0 && clickCount % 20 === 0) {
-            var averageReactionTime = totalReactionTime / clickCount;
-            alert("Average Reaction Time between clicks: " + averageReactionTime.toFixed(2) + " milliseconds");
-            totalReactionTime = 0;
-            clickCount = 0;
-            killCountDisplay.textContent = clickCount;
+            if (clickCount % 20 === 0) {
+                var averageReactionTime = totalReactionTime / clickCount;
+                alert("Average Reaction Time between clicks: " + averageReactionTime.toFixed(2) + " milliseconds");
+                totalReactionTime = 0;
+                clickCount = 0;
+                killCountDisplay.textContent = clickCount;
+
+                icon.style.top = "calc(50% - 5vw)";
+                icon.style.left = "calc(50% - 5vw)";
+            }
         }
-    }
-
     </script>
 </body>
 </html>
