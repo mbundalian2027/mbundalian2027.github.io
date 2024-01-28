@@ -19,15 +19,15 @@
 
         @media (max-width:1250px) {
             .circle {
-                width: 15vw;
-                height: 15vw;
+                width: 14vw;
+                height: 14vw;
             }
         }
 
         @media (max-width:573px) {
             .circle {
-                width: 20vw;
-                height: 20vw;
+                width: 23vw;
+                height: 23vw;
             }
         }
 
@@ -36,13 +36,21 @@
             overflow: hidden;
             background-color: aliceblue;
             font-family: Arial, Helvetica, sans-serif;
+            font-size: 180%;
         }
 
         #counter {
             position: fixed;
             top: 10px;
             left: 10px;
-            font-size: 200%;
+            font-weight: bold;
+            color: rgb(2, 29, 55);
+        }
+
+        #timer {
+            position: fixed;
+            top: 10px;
+            right: 10px;
             font-weight: bold;
             color: rgb(2, 29, 55);
         }
@@ -53,11 +61,13 @@
         <div class="circle" onclick="handleClick()"></div>
     </div>
     <div id="counter">Counter: <span id="killCount">0</span></div>
+    <div id="timer">Time: <span id="timeDisplay">30</span>s</div>
 
     <script>
         var container = document.getElementById('container');
         var icon = document.querySelector('.circle');
         var killCountDisplay = document.getElementById('killCount');
+        var timeDisplay = document.getElementById('timeDisplay');
         var lastClickTime;
         var totalReactionTime = 0;
         var clickCount = 1;
@@ -96,18 +106,23 @@
             icon.style.display = "block";
 
             if (!timer) {
-                timer = setTimeout(function () {
-                    var averageReactionTime = totalReactionTime / clickCount;
-                    alert("Average Reaction Time: " + averageReactionTime.toFixed(2) + " milliseconds");
-                    totalReactionTime = 0;
-                    clickCount = 0;
-                    killCountDisplay.textContent = clickCount;
-
-                    icon.style.top = "calc(50% - 5vw)";
-                    icon.style.left = "calc(50% - 5vw)";
-                    clearTimeout(timer);
-                    timer = null;
-                }, 30000);
+                timer = setInterval(function () {
+                    var timeLeft = parseInt(timeDisplay.textContent);
+                    timeLeft--;
+                    timeDisplay.textContent = timeLeft;
+                    if (timeLeft <= 0) {
+                        var averageReactionTime = totalReactionTime / clickCount;
+                        alert("Average Reaction Time: " + averageReactionTime.toFixed(2) + " milliseconds");
+                        totalReactionTime = 0;
+                        clickCount = 0;
+                        killCountDisplay.textContent = clickCount;
+                        timeDisplay.textContent = "30";
+                        icon.style.top = "calc(50% - 5vw)";
+                        icon.style.left = "calc(50% - 5vw)";
+                        clearInterval(timer);
+                        timer = null;
+                    }
+                }, 1000);
             }
         }
     </script>
