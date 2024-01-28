@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aim Trainer</title>
+
+    <style>
+        .circle {
+            background-color: rgb(255, 0, 208);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+        }
+
+        body {
+            cursor: crosshair;
+        }
+
+        #container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        #counter {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="circle" onclick="handleClick()"></div>
+    </div>
+    <div id="counter">Counter: <span id="killCount">0</span></div>
+
+    <script>
+        var container = document.getElementById('container');
+        var icon = document.querySelector('.circle');
+        var killCountDisplay = document.getElementById('killCount');
+        var lastClickTime;
+        var totalReactionTime = 0;
+        var clickCount = 0;
+
+        function handleClick() {
+            var currentTime = Date.now();
+
+            if (lastClickTime) {
+                var reactionTime = currentTime - lastClickTime;
+                totalReactionTime += reactionTime;
+                clickCount++;
+            }
+
+            lastClickTime = currentTime;
+
+            killCountDisplay.textContent = clickCount;
+
+            icon.style.display = "none";
+            setTimeout(function () {
+                resetCircle();
+            }, 300);
+        }
+
+        function resetCircle() {
+            var containerWidth = window.innerWidth;
+            var containerHeight = window.innerHeight;
+            var circleSize = 100;
+
+            var maxLeft = containerWidth - circleSize;
+            var maxTop = containerHeight - circleSize;
+
+            var randomLeft = Math.max(0, Math.floor(Math.random() * maxLeft));
+            var randomTop = Math.max(0, Math.floor(Math.random() * maxTop));
+
+            icon.style.top = randomTop + "px";
+            icon.style.left = randomLeft + "px";
+            icon.style.display = "block";
+
+            if (clickCount % 20 === 0) {
+                var averageReactionTime = totalReactionTime / clickCount;
+                alert("Average Reaction Time between clicks: " + averageReactionTime.toFixed(2) + " milliseconds");
+                totalReactionTime = 0;
+                clickCount = 0;
+                killCountDisplay.textContent = clickCount;
+            }
+        }
+    </script>
+</body>
+</html>
