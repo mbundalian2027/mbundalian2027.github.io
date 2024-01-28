@@ -4,46 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Aim Trainer</title>
-    
 
     <style>
         .circle {
-        background-color: rgb(2, 29, 55);
-        border-radius: 50%;
-        width: 5vw;
-        height: 5vw;
-        top: calc(50% - 5vw);
-        left: calc(50% - 5vw);
-        position: absolute;
-        z-index: 5;
+            background-color: rgb(2, 29, 55);
+            border-radius: 50%;
+            width: 5vw;
+            height: 5vw;
+            top: calc(50% - 5vw);
+            left: calc(50% - 5vw);
+            position: absolute;
+            z-index: 5;
         }
 
         @media (max-width:1250px) {
             .circle {
-            width: 15vw;
-            height: 15vw;
+                width: 15vw;
+                height: 15vw;
             }
         }
+
         @media (max-width:573px) {
             .circle {
-            width: 20vw;
-            height: 20vw;
+                width: 20vw;
+                height: 20vw;
             }
         }
 
         body {
             cursor: crosshair;
-            overflow:hidden;
+            overflow: hidden;
             background-color: aliceblue;
             font-family: Arial, Helvetica, sans-serif;
         }
-
 
         #counter {
             position: fixed;
             top: 10px;
             left: 10px;
-            font-size: 20px;
+            font-size: 200%;
+            font-weight: bold;
             color: rgb(2, 29, 55);
         }
     </style>
@@ -63,6 +63,7 @@
         var clickCount = 1;
         var spawnAreaWidth = 50;
         var spawnAreaHeight = 50;
+        var timer;
 
         function handleClick() {
             var currentTime = Date.now();
@@ -90,20 +91,23 @@
             var randomLeft = Math.max(5, Math.floor(Math.random() * containerWidth));
             var randomTop = Math.max(5, Math.floor(Math.random() * containerHeight));
 
-
             icon.style.top = randomTop + "px";
             icon.style.left = randomLeft + "px";
             icon.style.display = "block";
 
-            if (clickCount % 20 === 0) {
-                var averageReactionTime = totalReactionTime / clickCount;
-                alert("Average Reaction Time between clicks: " + averageReactionTime.toFixed(2) + " milliseconds");
-                totalReactionTime = 0;
-                clickCount = 0;
-                killCountDisplay.textContent = clickCount;
+            if (!timer) {
+                timer = setTimeout(function () {
+                    var averageReactionTime = totalReactionTime / clickCount;
+                    alert("Average Reaction Time: " + averageReactionTime.toFixed(2) + " milliseconds");
+                    totalReactionTime = 0;
+                    clickCount = 0;
+                    killCountDisplay.textContent = clickCount;
 
-                icon.style.top = "calc(50% - 5vw)";
-                icon.style.left = "calc(50% - 5vw)";
+                    icon.style.top = "calc(50% - 5vw)";
+                    icon.style.left = "calc(50% - 5vw)";
+                    clearTimeout(timer);
+                    timer = null;
+                }, 30000);
             }
         }
     </script>
