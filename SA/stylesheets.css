@@ -1,0 +1,621 @@
+@keyframes pagefadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body{
+    animation: pagefadein .5s ease-in-out;
+    background-color: black;
+    color:white;
+}
+
+/*-----------------NAVBAR1-----------------*/
+:root {
+    --sidebar-width: 16%;
+}
+.thenavbar{
+    height: 100%;
+    width: var(--sidebar-width); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    border-right: 1px solid rgb(49, 49, 49);
+}
+.thenavbar2{
+    display:none;
+}
+.nav{
+    flex-direction: column;
+    height: 100%;
+    padding-top: 7%;
+    padding-bottom: 5%;
+}
+.insta{
+    padding:8%;
+    width: 60%;
+}
+.special{
+    display: none;
+}
+.nav ul li a{
+    text-decoration: none;
+}
+.botnav{
+    margin-top: auto;
+    margin-bottom:5%;
+}
+@media (max-width:990px) {
+    .botnav{
+        margin-top: auto;
+        margin-bottom:25%;
+    }
+}
+.nav ul{
+    padding-left:8.5%;
+    width: 90%;
+}
+.nav ul li{
+    margin-top:12%;
+    list-style: none;
+    padding:3px;
+}
+.nav .text{
+    display: flex;
+    align-items: center;
+}
+.nav .icon{
+    display: flex;
+    align-items: center;
+}
+.nav li:hover{
+    background-color: rgba(90, 90, 90, 0.224);
+    border-radius: 10px;
+}
+.nav .tabs a:link{
+    text-decoration: none;
+    color:rgb(255, 255, 255)
+}
+.nav .tabs a:visited{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.nav .text{
+    font-size: 100%;
+}
+.nav .icon{
+    font-size: 165%;
+    font-weight: bold;
+}
+.nav .usersprofile{
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+}
+
+/*-----------------NAVBAR2-----------------*/
+
+.thenavbar2{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 7%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-top: 1px solid rgb(49, 49, 49);
+}
+.nav2 .icon{
+    font-size: 20pt;
+}
+.nav2 img{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nav2 a{
+    margin-left: auto;
+    margin-right: auto;
+}
+.nav2  a:link{
+    text-decoration: none;
+    color:rgb(255, 255, 255)
+}
+.nav2  a:visited{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+/*-----------------------------------------------*/
+
+.thecontent{
+    margin-left: var(--sidebar-width);
+}
+.content{
+    margin-left: auto;
+    margin-right: auto;
+}
+@media(min-width:1250px){
+    .content{
+        width: 75%;
+    }
+}
+
+/*-----------------PROFILE1-----------------*/
+.profile1{
+    border-bottom: 1px solid rgb(49, 49, 49);
+}
+.profile{
+    margin-top:4%;
+}
+.mypfp{
+    width: 51%;
+    overflow: hidden;
+}
+.profilepic{
+    border-radius: 50%;
+    width: 100%;
+}
+@media(max-width:1250px){
+    .mypfp{
+        width: 85%;
+        overflow: hidden;
+    }
+    .profile{
+        margin-top:5%;
+    }
+}
+.username{
+    font-size: 15pt;
+}
+.username .break-word{
+    overflow-wrap: break-word;
+    vertical-align: middle;
+}
+.username .verified{
+    font-size:17pt;
+    color: rgb(69, 184, 255);
+    background-color: white;
+    border-radius: 50%;
+}
+.username button{
+    font-weight: bold;
+    margin-left: 2%;
+    font-size: 14px;
+    background-color: #363636;
+    border:none;
+    border-radius: 7px;
+    color:#F5F5F5;
+    padding:16px;
+    padding-top:7px;
+    padding-bottom:7px;
+}
+@media(max-width:1250px){
+    .username button{
+        margin-right: 1%;
+        margin-left: 0%;
+    }
+}
+.username button:hover{
+    background-color: rgb(35, 35, 35);
+}
+.username span{
+    cursor: pointer;
+}
+.pff{
+    width:90%;
+}
+.pff span{
+    margin-right: 10%;
+}
+.info{
+    font-size: 10pt;
+}
+.info .followedby{
+    font-size: 9.5pt;
+    color:rgb(163, 163, 163);
+}
+.info a{
+    text-decoration: none;
+}
+.info .followedby b{
+    color:rgb(241, 241, 241);
+}
+
+/*-----------------PROFILE2-----------------*/
+
+.threedots{
+    cursor:pointer;
+    transition:.5s;
+}
+.threedots:hover{
+    color:gray;
+}
+.profile2{
+    display: none;
+    margin-top:2%;
+}
+.idkwhat{
+    font-size: 27pt;
+    padding-bottom: 2%;
+    border-bottom: 1px solid rgb(49, 49, 49);
+}
+.idkwhat .col-2{
+    cursor:pointer;
+    transition: .5s;
+}
+.idkwhat .col-2:hover{
+    color:gray;
+}
+.idkwhat b{
+    font-size: 12pt;
+    margin-left: auto;
+    margin-right: auto;
+}
+.thenames{
+    margin-top: 5%;
+}
+.profilepic2{
+    border-radius: 50%;
+    width:110%;
+    padding-left: 5px;
+}
+.profile2name{
+    font-size: 20px;
+}
+.profile2 button{
+    font-weight: bold;
+    width: 120.5px;
+    font-size: 12px;
+    background-color: #363636;
+    border:none;
+    border-radius: 7px;
+    color:#F5F5F5;
+    padding-top:6px;
+    padding-bottom:6px;
+}
+.profile2 .messagebutton{
+    width: 100px;
+}
+#oogabooga{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pff2{
+    border-top: 1px solid rgb(49, 49, 49);
+    border-bottom: 1px solid rgb(49, 49, 49);
+    color:gray;
+    padding-top:3%;
+    padding-bottom:3%;
+    font-size: 10pt;
+}
+.pff2 .number{
+    color:white;
+    font-weight: bold;
+}
+
+/*-----------------CONTENT-----------------*/
+
+.headers{
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
+    font-size: 80%;
+}
+
+
+.headers2{
+    display: none;
+    width: 100%;
+    font-size:150%;
+    padding-top: 3.5%;
+    padding-bottom: 3.5%;
+}
+.headers2 a{
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.headers2 a:link{
+    color:gray;
+}
+.headers2 a:visited{
+    color:gray;
+}
+
+
+.headers a{
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.headers a:link{
+    color:gray;
+}
+.headers a:visited{
+    color:gray;
+}
+
+
+/*---------------------------------------------------*/
+
+.popup{
+    position: absolute;
+}
+.popup .content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 90%;
+    color: rgba(255, 255, 255, 0.921);
+    background-color: #000000;
+    border: .1px solid gray;
+    z-index: 3;
+    padding:.5%;
+    transform: translate(-50%, -50%) scale(0);
+}
+.popup .overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 2;
+    display: none;
+}
+.popup .closebtn{
+    position:absolute;
+    cursor: pointer;
+    right: 12px;
+    top: 12px;
+    width: 20px;
+    height: 20px;
+    font-size:  25px;
+    font-weight: 600;
+    border-radius: 50%;
+    z-index: 3;
+    background-color: white;
+    color: black;
+}
+.popup.active{
+    display: flex;
+}
+.popup.active .overlay{
+    display: block;
+}
+.popup.active .content{
+    transition: all 200ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@media (max-width:1250px){
+    .popup.active .content{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/*---------------------------------------------------*/
+.interests .col-4 {
+    overflow: hidden;
+    padding: 2px;
+}
+.interests .col-4 img{
+    width: 100%;
+}
+
+.interestc{
+    overflow: hidden;
+    width: 100%;
+}
+.explanation{
+    font-size:80%;
+    height: 100%;
+    margin-top:1px;
+}
+.bottomparts{
+    padding:1px;
+    margin-top: auto;
+    margin-bottom: .1%;
+}
+.content .row .col{
+    height: 100%;
+}
+.commentheader{
+    font-size: 90%;
+    padding-top: 1%;
+}
+.commentpic{
+    width: 75%;
+    border-radius: 50%;
+}
+.comments{
+    font-size:80%;
+}
+.comments p{
+    font-size:75%;
+    color:gray;
+}
+.msu{
+    font-size:200%;
+    font-weight: bolder;
+    cursor:pointer;
+    transition: .5s;
+}
+.msu:hover{
+    color:gray;
+}
+.commentbar{
+    font-size: 90%;
+}
+.commentbar b{
+    color:gray;
+}
+.redhart{
+    color:rgb(251, 33, 44);
+}
+@media (max-width:1250px){
+    .interestc{
+        overflow: hidden;
+        width: 70%;
+    }
+    .popup .content{
+        padding:1%;
+        padding-top: .7%;
+    }
+}
+@media (max-width:576px){
+    .interestc{
+        overflow: hidden;
+        width: 92%;
+    }
+}
+@media (min-width:1250px){
+    .popup .closebtn{
+        display: none;
+    }
+}
+
+/*---------------------------------------------------*/
+
+.albumrow{
+    height: 100%;
+}
+.carousel-inner{
+    margin-left: auto;
+    margin-right: auto;
+}
+.albumc .carousel-item img{
+    width:90%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.prevnext{
+    width: 35%;
+}
+.carousel-control-prev-icon {
+    left: .5%;
+    color:black;
+  }
+  
+.carousel-control-next-icon {
+    right: .5%;
+    color:black;
+  }
+@media (max-width:1250px){
+    .albumc .carousel-item img{
+        width:80%;
+    }
+}
+@media (max-width:576px){
+    .albumc .carousel-item img{
+        width:100%;
+    }
+}
+
+/*---------------------------------------------------*/
+
+#popup1-3{
+    overflow-y:scroll;
+}
+.explanation b{
+    font-size:110%;
+}
+.blogbuttons{
+    display: none;
+}
+.carousel-item{
+    overflow: hidden;
+}
+.blogrow .carousel-item img{
+    width: 80%;
+}
+.blogrow .bottomparts{
+    margin-bottom:1%
+}
+
+@media (max-width:1250px){
+    .blogrow .carousel-item img{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .imagecol{
+        height: 50%;
+    }
+}
+@media (max-width:576px){
+    .blogrow .carousel-item img{
+        height: 100%;
+    }
+}
+/*---------------------RESPONSIVENESS----------------------*/
+@media (max-width:990px) {
+    :root {
+        --sidebar-width: 10%;
+    }
+    .special{
+        margin-top: 25%;
+        margin-bottom: 40%;
+    }
+    .nav ul{
+        padding-left: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .nav ul li .icon{
+        margin-top:25%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .nav .text{
+        display: none;
+    }
+    .insta{
+        display:none;
+    }
+    .special{
+        display: block;
+    }
+    .content{
+        padding-left: 10px;
+    }
+}
+
+@media (max-width:576px){
+    :root{
+        --sidebar-width:0;
+    }
+    .content{
+        padding-left: 0;
+    }
+    .thenavbar{
+        display:none;
+    }
+    .thenavbar2{
+        display:block;
+        background-color:black;
+        z-index: 2;
+    }
+    .profile1{
+        display:none;
+    }
+    .profile2{
+        display:block;
+    }
+    .headers{
+        display: none;
+    }
+    .headers2{
+        display: block;
+    }
+}
