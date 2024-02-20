@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Keyboard</title>
+
+    <style>
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 10pt;
+        }
+        .keys{
+            display: inline-block;
+            width: 6.3%;
+            height: 40px;
+            border: 2px solid;
+            text-align: center;
+            line-height: 42.5px;
+            transition: .09s;
+            background-color: rgb(13, 56, 94);
+            color:whitesmoke;
+        }
+        .keys:hover{
+            background-color: rgb(12, 12, 51);
+        }
+        .all{
+            width: 850px;
+            margin: 0 auto;
+        }
+        textarea{
+            margin: 0 auto;
+            margin-bottom: 10px;
+            height: 200px;
+            width: 99%;
+        }
+        .thekeyboard{
+            text-align: center;
+            user-select: none;
+        }
+        #dotthing{
+            width: 3.3%;
+        }
+        #backspace{
+            width:9.3%;
+        }
+        #capslock{
+            width:8%;
+        }
+        #enter{
+            width:11.6%;
+        }
+        #shift1{
+            width:11.3%;
+        }
+        #shift2{
+            width:15.4%;
+        }
+        #space{
+            width:34.5%;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <div class="all">
+    <textarea id="text"></textarea><br><br>
+        <div class="thekeyboard">
+            <div class="row">
+                <div class="keys" onclick="type('`')" id="dotthing">`</div>
+                <div class="keys" onclick="type('1')">1</div>
+                <div class="keys" onclick="type('2')">2</div>
+                <div class="keys" onclick="type('3')">3</div>
+                <div class="keys" onclick="type('4')">4</div>
+                <div class="keys" onclick="type('5')">5</div>
+                <div class="keys" onclick="type('6')">6</div>
+                <div class="keys" onclick="type('7')">7</div>
+                <div class="keys" onclick="type('8')">8</div>
+                <div class="keys" onclick="type('9')">9</div>
+                <div class="keys" onclick="type('0')">0</div>
+                <div class="keys" onclick="type('-')">-</div>
+                <div class="keys" onclick="type('=')">=</div>
+                <div class="keys" onclick="back()" id="backspace">&leftarrow;</div>
+            </div>
+        <br>
+            <div class="row">
+                <div class="keys" onclick="tab()">TAB</div>
+                <div class="keys" onclick="type('q')">Q</div>
+                <div class="keys" onclick="type('w')">W</div>
+                <div class="keys" onclick="type('e')">E</div>
+                <div class="keys" onclick="type('r')">R</div>
+                <div class="keys" onclick="type('t')">T</div>
+                <div class="keys" onclick="type('y')">Y</div>
+                <div class="keys" onclick="type('u')">U</div>
+                <div class="keys" onclick="type('i')">I</div>
+                <div class="keys" onclick="type('o')">O</div>
+                <div class="keys" onclick="type('p')">P</div>
+                <div class="keys" onclick="type('[')">[</div>
+                <div class="keys" onclick="type(']')">]</div>
+                <div class="keys" onclick="type('\')">\</div>
+            </div> 
+        <br>
+            <div class="row">
+                <div class="keys" onclick="caps()" id="capslock">CAPS</div>
+                <div class="keys" onclick="type('a')">A</div>
+                <div class="keys" onclick="type('s')">S</div>
+                <div class="keys" onclick="type('d')">D</div>
+                <div class="keys" onclick="type('F')">F</div>
+                <div class="keys" onclick="type('G')">G</div>
+                <div class="keys" onclick="type('H')">H</div>
+                <div class="keys" onclick="type('J')">J</div>
+                <div class="keys" onclick="type('K')">K</div>
+                <div class="keys" onclick="type('L')">L</div>
+                <div class="keys" onclick="type(';')">;</div>
+                <div class="keys" onclick="type(''')">'</div>
+                <div class="keys" onclick="enter()" id="enter">ENTER</div>
+            </div> 
+        <br>
+            <div class="row">
+                <div class="keys" onclick="shift()" id="shift1">SHIFT</div>
+                <div class="keys" onclick="type('Z')">Z</div>
+                <div class="keys" onclick="type('X')">X</div>
+                <div class="keys" onclick="type('C')">C</div>
+                <div class="keys" onclick="type('V')">V</div>
+                <div class="keys" onclick="type('B')">B</div>
+                <div class="keys" onclick="type('N')">N</div>
+                <div class="keys" onclick="type('M')">M</div>
+                <div class="keys" onclick="type(',')">,</div>
+                <div class="keys" onclick="type('.')">.</div>
+                <div class="keys" onclick="type('/')">/</div>
+                <div class="keys" onclick="shift()" id="shift2">SHIFT</div>
+            </div>
+        <br>
+            <div class="row">
+                <div class="keys">CTRL</div>
+                <div class="keys">FN</div>
+                <div class="keys">&boxplus;</div>
+                <div class="keys">ALT</div>
+                <div class="keys" onclick="type(' ')" id="space">SPACE</div>
+                <div class="keys">ALT</div>
+                <div class="keys">CTRL</div>
+                <div class="keys" onclick="type('')">&lt;</div>
+                <div class="keys" onclick="type('')">&DownArrowUpArrow;</div>
+                <div class="keys" onclick="type('')">></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var text = document.getElementById('text');
+        var capslock = false;
+        var shiftlock = false;
+
+        function type(lol){
+            if ((capslock || shiftlock) && !(capslock && shiftlock)) {
+                text.value += lol.toUpperCase();
+            } else {
+                text.value += lol.toLowerCase();
+            }
+            
+            if (shiftlock){
+                shiftlock = !shiftlock;
+                document.getElementById('shift1').style.backgroundColor = "rgb(13, 56, 94)";
+                document.getElementById('shift2').style.backgroundColor = "rgb(13, 56, 94)";
+            }
+        }
+
+        function shift(){
+            shiftlock = !shiftlock;
+            
+            if (shiftlock == true){
+                document.getElementById('shift1').style.backgroundColor = "rgb(12, 12, 51)";
+                document.getElementById('shift2').style.backgroundColor = "rgb(12, 12, 51)";
+            }
+        }
+
+        function caps(){
+            capslock = !capslock;
+            if (capslock == true){
+                document.getElementById('capslock').style.backgroundColor = "rgb(12, 12, 51)";
+            }
+            else{
+                document.getElementById('capslock').style.backgroundColor = "rgb(13, 56, 94)";
+            }
+        }
+
+        
+
+        function back(){
+            text.value = text.value.slice(0,-1);
+        }
+
+        function enter(){
+            text.value += '\n';
+        }
+
+    </script>
+</body>
+</html>
