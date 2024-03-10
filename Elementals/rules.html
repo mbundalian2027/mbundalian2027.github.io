@@ -8,49 +8,91 @@
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fondamento&display=swap" rel="stylesheet">
 
     <style>
         body{
-            font-family: "Rubik", sans-serif;
+            background-image: url('pics/bg2.jpg');
+            background-size: cover;
+            background-position: center bottom;
+            background-attachment: fixed;
+        }
+        .text{
+            font-family: "Fondamento", cursive;
+            font-weight: 150;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            background-image: url('pics/scrollbg.avif');
+            background-size: cover;
+            padding: 2%;
+            font-size: 15pt;
         }
         .heading{
-            font-size: 20pt;
+            font-size: 20pt; 
+            text-align: center;
+        }
+        .back{
+            text-decoration: none;
+            color:white;
+            font-size: 30pt;
+            position: fixed;
+            top:10px;
+            left:10px;
         }
     </style>
 </head>
 <body>
-    <div class="rules">
-        <b class="heading">RULES:</b><br><br>
+    <a href="index.html" class="back"><div>◀</div></a>
+    <div class="text">
+        <div class="heading"><b>RULES:</b></div><br><br>
         ELEMENTALS IS A STRATEGICAL PLAYER VS PLAYER GAME<br><br><br>
 
-        1. EACH PLAYER CHOOSES THEIR ELEMENTAL ATTRIBUTE WHICH HAVE THEIR OWN PASSIVE <br><br>
-        &bullet; Fire: High DMG with No Heal Skill (Passive - Burning Soul: Deals extra DMG equal to 10%-20% of lost HP) <br><br>
-        &bullet; Water: Decent Heal with Mid DMG (Passive - Sea Cradle: Heal effectiveness will increase as HP drops) <br><br>
-        &bullet; Earth: Massive Heal with Low DMG (Passive - Magnitude: Deals 10-15 additional DMG every skill as HP drops) <br><br>
-        &bullet; Wind: Well balanced all rounder (Passive - Windtalker: Heals 15% of current HP every successful move) <br><br>
+        1. EACH PLAYER CHOOSES THEIR ELEMENTAL ATTRIBUTE WHICH HAVE THEIR OWN PASSIVE <br>
+        &bullet; <b>Fire</b>: High offensive capabilities with no heal skill <br>
+                    Hell's Inferno: 12 DMG <br>
+                    Scorching Sun: 17 DMG | 25 MANA <br>
+                    Hellfire's Incarnate: 40 DMG | 80 MANA <br><br>
+                    Passive: Burning Soul - Deal extra damage equals to 20% of lost HP <br><br><br>
 
-        <br>
-        2. EACH ELEMENT HAVE 3 DIFFERENT SKILLS (1 BASIC AND 2 SPECIAL) WITH 2 DIFFERENT EFFECTS (HEAL AND DAMAGE) <br><br><br>
-        3. EACH ATTACK WILL GO THROUGH A RANDOMIZER TO DETERMINE WHETHER IT WILL BE EFFECTIVE OR NOT (<b>EACH MOVE HAS AN 80% CHANCE OF WORKING</b>)<br><br><br>
-        4. PLAYERS HAVE <b>LIMITED MANA</b> TO PREVENT SPAMMING (<b>BASIC ATTACKS REPLENISH 10 MANA PER MOVE</b>) <br><br><br>
-        5. EACH PLAYER WILL TAKE TURNS EXECUTING THEIR MOVES UNTIL ONE PLAYER'S HP DROPS TO 0 OR BELOW 0<br><br><br>
+        &bullet;  <b>Water</b>: An all rounder with decent damage and heal <br>
+                    Striking Tide: 10 DMG <br>
+                    Hydro-Shield: +30 HP | 25 MANA <br>
+                    Drowning Wave: 20 DMG (+10% of enemy's HP) | 35 MANA <br><br>
+                    Passive: Sea Cradle - Gains an extra +10 heal if HP drops below 30 <br>
+                    Active Passive: Regeneration - Permanent 20 mana gain <br><br><br>
 
-        <br><br>
-        <b class="heading">TIPS AND TRICKS:</b> <br><br>
-        1. ELEMENTALS IS COMPLETELY BASED ON YOUR STRATEGY AND LUCK  <br><br>
-        &bullet; EARTH counters FIRE <br><br>
-        &bullet; FIRE counters WATER <br><br>
-        &bullet; WATER counters WIND <br><br>
-        &bullet; WIND counters EARTH <br><br><br>
+        &bullet; <b>Earth</b>: Tanky with massive heals but low on offense <br>
+                    Groundbreaker: 7 DMG <br>
+                    Earthen Wall: +50 HP | 40 MANA <br>
+                    Geo Grandia: 20 DMG | 45 MANA <br><br>
+                    Passive: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana and regenerates +10 mana. <br><br><br>
 
-        NOTE: THESE ARE JUST BASED ON ELEMENTAL STATS (<b>THERE ARE OTHER VARIABLES THAT CAN AFFECT YOUR WINRATE</b>)
+        &bullet; <b>Wind</b>: Balanced offensive and defensive capabilities <br><br>
+                    Towering Tornado: 15 DMG <br>
+                    Goddess's Breath: +20 HP | 30 MANA <br>
+                    Tempest Drive: 30 DMG | 50 MANA <br><br>
+
+                    Passive: Windtalker - Heals +30% of damage dealt to the enemy in every attack
+                    Active Passive: Faith or Luck? - All skills have a high chance of working
+
         <br><br><br>
+        <br>
+    
+        2. EACH ELEMENT HAVE 3 DIFFERENT SKILLS (1 BASIC AND 2 SPECIAL) WITH 2 DIFFERENT EFFECTS (HEAL AND DAMAGE) <br><br><br>
+        3. EACH ATTACK WILL GO THROUGH A RANDOMIZER TO DETERMINE WHETHER IT WILL BE EFFECTIVE OR NOT (<b>EACH MOVE HAS DIFFERENT CHANCES OF WORKING</b>)<br><br><br>
+        4. PLAYERS HAVE <b>LIMITED MANA</b> TO PREVENT SPAMMING (<b>BASIC ATTACKS REPLENISH 10 MANA PER MOVE</b>) <br><br><br>
+        5. EACH PLAYER WILL TAKE TURNS EXECUTING THEIR MOVES UNTIL ONE PLAYER'S HP DROPS TO 0<br><br><br>
+
+        <br><br><br><br><br>
+        <div class="heading"><b>TIPS AND TRICKS:</b></div><br><br>
+        1. ELEMENTALS IS COMPLETELY BASED ON YOUR STRATEGY AND LUCK  <br><br>
+        &bullet; FIRE - Stay on offense, save your mana for the finishing blow <br><br>
+        &bullet; WATER - Shuffle in between offense and defense based on your opponent <br><br>
+        &bullet; EARTH - Play it safe, take turns in spamming heals and attacking until your opponent is one hit<br><br>
+        &bullet; WIND - You are always on defense, spam your basic attack until you have enough mana for your ultimate <br><br><br>
         2. USE <b>CONSOLE</b> TO CHECK PLAYERS' LIVES AFTER EVERY ROUND <br><br><br>
-        3. PLAYER 1 ALWAYS GOES FIRST (USE THIS TO YOUR ADVANTAGE)
+        3. PLAYER ONE ALWAYS GOES FIRST (USE THIS TO YOUR ADVANTAGE) <br><br><br>
     </div>
 </body>
 </html>

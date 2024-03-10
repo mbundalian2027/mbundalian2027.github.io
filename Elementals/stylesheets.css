@@ -45,25 +45,90 @@ body{
 }
 #pvpchoosecontainer button{
     width: 80%;
-    height: 50px;
-    margin:2%;
-    font-size: 30pt;
+    padding:1%;
+    font-size: 17pt;
     font-family: "VT323", monospace;
 }
 .selection1{
+    margin:1%;
     border: 2px dashed rgb(0, 0, 0);
+    height: 40%;
 }
 .submit{
     background-color: rgb(17, 77, 40);
     color:white;
     border: 3px solid black;
 }
+
+
 #turns{
     display: none;
+    font-size: 20pt;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
 }
-#turns button{
+
+.space{
+    width: 100%;
+}
+.actual{
+    background-color: rgb(253, 241, 226);
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid;
+    width: 300px;
+    height: 330px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.player button{
     font-family: "Madimi One";
+    font-size: 10pt;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    border: none;
+    border-radius: 2px;
+    color:white;
 }
+.player button b{
+    font-size: 13pt;
+}
+#moves1 #firemoves1 button{
+    background-color: rgb(175, 0, 0);
+}
+#moves1 #watermoves1 button{
+    background-color: rgb(18, 35, 75);
+}
+#moves1 #earthmoves1 button{
+    background-color: rgb(71, 46, 46);
+}
+#moves1 #windmoves1 button{
+    background-color: rgb(231, 244, 255);
+    color:black;
+}
+
+#moves2 #firemoves2 button{
+    background-color: rgb(175, 0, 0);
+}
+#moves2 #watermoves2 button{
+    background-color: rgb(18, 35, 75);
+}
+#moves2 #earthmoves2 button{
+    background-color: rgb(71, 46, 46);
+}
+#moves2 #windmoves2 button{
+    background-color: rgb(197, 200, 203);
+    border: 2px solid rgb(179, 238, 245);
+    color:black;
+}
+
+
 .player1moves{
     display:none;
 }
