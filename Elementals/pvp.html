@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,34 +16,31 @@
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet">
     
 </head>
-<body>
+<body class="pvpbody pagefadein">
     <div id="pvpchoosecontainer">
-        <div id="pvp1">
-            <b>P1 CHOOSE YOUR CHARACTER</b> <br>
-            <button onclick="fire1()">FIRE</button><br>
-            <button onclick="water1()">WATER</button><br>
-            <button onclick="earth1()">EARTH</button><br>
-            <button onclick="wind1()">WIND</button>  <br><br>
-            <button onclick="submit1()" id="submit1">Enter</button>
+        <div id="pvp1" >
+            <b>PLAYER 1:</b> <br>
+            <button onclick="fire1()" class="selection1" id="selectfire1">FIRE</button><br>
+            <button onclick="water1()" class="selection1" id="selectwater1">WATER</button><br>
+            <button onclick="earth1()"class="selection1" id="selectearth1">EARTH</button><br>
+            <button onclick="wind1()" class="selection1" id="selectwind1">WIND</button>  <br><br>
+            <button onclick="submit1()" id="submit1" class="submit">ENTER</button>
         </div>
         
         <div id="pvp2">
-            <b>P2 CHOOSE YOUR CHARACTER</b> <br>
-            <button onclick="fire2()">FIRE</button><br>
-            <button onclick="water2()">WATER</button><br>
-            <button onclick="earth2()">EARTH</button><br>
-            <button onclick="wind2()">WIND</button>  <br><br>
-            <button onclick="submit2()" id="submit2">Enter</button>
+            <b>PLAYER 2:</b> <br>
+            <button onclick="fire2()" class="selection1" id="selectfire2">FIRE</button><br>
+            <button onclick="water2()" class="selection1" id="selectwater2">WATER</button><br>
+            <button onclick="earth2()" class="selection1" id="selectearth2">EARTH</button><br>
+            <button onclick="wind2()" class="selection1" id="selectwind2">WIND</button>  <br><br>
+            <button onclick="submit2()" id="submit2" class="submit">ENTER</button>
         </div>
     </div>
 
-    <table id="turns">
+    <table id="turns" >
         <tr>
             <td class="playerpics">PLAYER 1 PICTURE</td> 
             <td class="playerpics">PLAYER 2 PICTURE</td>
@@ -59,12 +55,12 @@
                     <div id="firemoves1" class="player1moves">
                         <button onclick="p1fire1()" class="indivmoves1">Hell's Inferno <br>(12 DMG)</button><br><br>
                         <button onclick="p1fire2()" class="indivmoves1">Scorching Sun <br>(17 DMG | 30 MANA)</button><br><br>
-                        <button onclick="p1fire3()" class="indivmoves1">Hellfire's Incarnate <br>(25 DMG | 60 MANA)</button>
+                        <button onclick="p1fire3()" class="indivmoves1">Hellfire's Incarnate <br>(25 DMG | 50 MANA)</button>
                     </div>
                     <div id="watermoves1" class="player1moves">
                         <button onclick="p1water1()" class="indivmoves1">Striking Tide <br>(7 DMG)</button><br><br>
                         <button onclick="p1water2()" class="indivmoves1">Hydro Shield <br>(+20 HP | 40 MANA)</button><br><br>
-                        <button onclick="p1water3()" class="indivmoves1">Drowning Wave <br>(17 DMG | 40 MANA)</button>
+                        <button onclick="p1water3()" class="indivmoves1">Drowning Wave <br>(17 DMG | 35 MANA)</button>
                     </div>
                     <div id="earthmoves1" class="player1moves">
                         <button onclick="p1earth1()" class="indivmoves1">Groundbreaker <br>(5 DMG)</button><br><br>
@@ -91,12 +87,12 @@
                     <div id="firemoves2" class="player2moves">
                         <button onclick="p2fire1()" class="indivmoves2">Hell's Inferno <br>(12 DMG)</button><br><br>
                         <button onclick="p2fire2()" class="indivmoves2">Scorching Sun <br>(17 DMG | 30 MANA)</button><br><br>
-                        <button onclick="p2fire3()" class="indivmoves2">Hellfire's Incarnate <br>(25 DMG | 60 MANA)</button>
+                        <button onclick="p2fire3()" class="indivmoves2">Hellfire's Incarnate <br>(25 DMG | 50 MANA)</button>
                     </div>
                     <div id="watermoves2" class="player2moves">
                         <button onclick="p2water1()" class="indivmoves2">Striking Tide <br>(7 DMG)</button><br><br>
                         <button onclick="p2water2()" class="indivmoves2">Hydro Shield <br>(+20 HP | 40 MANA)</button><br><br>
-                        <button onclick="p2water3()" class="indivmoves2">Drowning Wave <br>(17 DMG | 40 MANA)</button>
+                        <button onclick="p2water3()" class="indivmoves2">Drowning Wave <br>(17 DMG | 35 MANA)</button>
                     </div>
                     <div id="earthmoves2" class="player2moves">
                         <button onclick="p2earth1()" class="indivmoves2">Groundbreaker <br>(5 DMG)</button><br><br>

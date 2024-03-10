@@ -1,50 +1,68 @@
+@keyframes pagefadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 body{
-    font-family: "Rubik", sans-serif;
+    font-family: "VT323", monospace;
+    animation: pagefadein 1s ease-in-out;
 }
-#menucontainer{
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-    position: fixed;
-    top:0;
-    left: 0;
-    background-color: rgb(255, 255, 255);
-}
-.themenu{
-    background-color: rgba(15, 143, 255, 0.69);
-    padding: 7%;
-    max-width: 70%;
-    max-height: 40%;
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform:translate(-50%, -50%);
-    border:1px solid;
-    text-align: center;
 
+.pvpbody{
+    color:whitesmoke;
+    background-image: url('pics/bg1.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
 }
-.themenu b{
-    font-size: 60pt;
-}
-.themenu button{
-    width: 50%;
-    height: 90%;
-    margin: 1%;
-    padding: 10px;
+
+#pvpchoosecontainer{
+    z-index: 4;
+    position:absolute;
+    left :50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    width:  60%;
+    height: 75%;
+    padding: 2%;
+    text-align: center;
     border-radius: 5px;
+    background-color: rgb(229, 229, 229);
 }
 
 #pvp2{
     display: none;
 }
-
-.pvpchoosecontainer{
-    z-index: 4;
+#pvpchoosecontainer b{
+    font-size:60pt;
+    color:black;
+    border-radius: 2px;
+    padding: 2px;
 }
-
+#pvpchoosecontainer button{
+    width: 80%;
+    height: 50px;
+    margin:2%;
+    font-size: 30pt;
+    font-family: "VT323", monospace;
+}
+.selection1{
+    border: 2px dashed rgb(0, 0, 0);
+}
+.submit{
+    background-color: rgb(17, 77, 40);
+    color:white;
+    border: 3px solid black;
+}
 #turns{
     display: none;
+}
+#turns button{
+    font-family: "Madimi One";
 }
 .player1moves{
     display:none;

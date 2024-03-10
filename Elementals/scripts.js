@@ -16,23 +16,40 @@ let movework1determine;
 let movework2determine;
 
 //PLAYER 1
+document.body.classList.add('pagefadein');
 let p1choice;
 
 function fire1(){
     p1choice = "fire";
+    document.querySelectorAll('button.selection1').forEach(elem => {
+        elem.style.backgroundColor = "";
+    });
+    document.getElementById('selectfire1').style.backgroundColor = "rgb(232, 48, 7)";
 }
 function water1(){
     p1choice = "water";
+    document.querySelectorAll('button.selection1').forEach(elem => {
+        elem.style.backgroundColor = "";
+    });
+    document.getElementById('selectwater1').style.backgroundColor = "rgb(15, 80, 171)";
 }
 function earth1(){
     p1choice = "earth";
+    document.querySelectorAll('button.selection1').forEach(elem => {
+        elem.style.backgroundColor = "";
+    });
+    document.getElementById('selectearth1').style.backgroundColor = "rgb(118, 98, 61)";
 }
 function wind1(){
     p1choice = "wind";
+    document.querySelectorAll('button.selection1').forEach(elem => {
+        elem.style.backgroundColor = "";
+    });
+    document.getElementById('selectwind1').style.backgroundColor = "rgb(204, 246, 242)";
 }
 
 function turnRedForOneSecond1() {
-    document.getElementById('submit1').style.backgroundColor = "rgb(232, 27, 27)";
+    document.getElementById('submit1').style.backgroundColor = "rgb(180, 0, 0)";
 
     setTimeout(() => {
         document.getElementById('submit1').style.backgroundColor = "";
@@ -67,8 +84,15 @@ function submit1(){
                 document.getElementById('type1').innerHTML="Wind";
                 break;
         }
-        document.getElementById('pvp1').style.display = "none";
-        document.getElementById('pvp2').style.display = "block";
+        document.getElementById('submit1').style.backgroundColor = "rgb(3, 33, 15)";
+        setTimeout(() => {
+            document.getElementById('pvp1').style.display = "none";
+            document.getElementById('pvp2').style.display = "block";
+            document.querySelectorAll('button.indivmoves2').forEach(elem => {
+                elem.disabled = true;
+            });
+        }, 500);
+        
         console.log("Player 1 moves\n" + moves1);
         console.log("Life: " + life1 + "\n\n");
     }else{
@@ -83,18 +107,34 @@ let p2choice;
 
 function fire2(){
     p2choice = "fire";
+    document.querySelectorAll('button.selection1').forEach(elem => {
+        elem.style.backgroundColor = "";
+    });
+    document.getElementById('selectfire2').style.backgroundColor = "rgb(232, 48, 7)";
 }
 function water2(){
     p2choice = "water";
+    document.querySelectorAll('button.selection1').forEach(elem => {
+        elem.style.backgroundColor = "";
+    });
+    document.getElementById('selectwater2').style.backgroundColor = "rgb(15, 80, 171)";
 }
 function earth2(){
     p2choice = "earth";
+    document.querySelectorAll('button.selection1').forEach(elem => {
+        elem.style.backgroundColor = "";
+    });
+    document.getElementById('selectearth2').style.backgroundColor = "rgb(118, 98, 61)";
 }
 function wind2(){
     p2choice = "wind";
+    document.querySelectorAll('button.selection1').forEach(elem => {
+        elem.style.backgroundColor = "";
+    });
+    document.getElementById('selectwind2').style.backgroundColor = "rgb(204, 246, 242)";
 }
 function turnRedForOneSecond2() {
-    document.getElementById('submit2').style.backgroundColor = "rgb(232, 27, 27)";
+    document.getElementById('submit2').style.backgroundColor = "rgb(180, 0, 0)";
 
     setTimeout(() => {
         document.getElementById('submit2').style.backgroundColor = "";
@@ -131,8 +171,11 @@ function submit2(){
         }
         console.log("Player 2 moves\n" + moves2);
         console.log("Life: " + life2);
-        document.getElementById('pvp2').style.display = "none";
-        document.getElementById('turns').style.display = "block";
+        document.getElementById('submit2').style.backgroundColor = "rgb(3, 33, 15)";
+        setTimeout(() => {
+            document.getElementById('pvpchoosecontainer').style.display = "none";
+            document.getElementById('turns').style.display = "block";
+        }, 500);
         console.log("--------------------------------------------\n\n");
         player1turn();
     }else{
@@ -142,14 +185,41 @@ function submit2(){
 }
 
 //GAME
+//DAMAGE PER MOVE
+let dmgf1 = 12,
+    dmgf2 = 17,
+    dmgf3 = 25,
 
+    dmgw1 = 7,
+    healw2 = 20,
+    dmgw3 = 17,
+
+    dmge1 = 5,
+    heale2 = 50,
+    dmge3 = 15,
+
+    dmgwi1 = 10,
+    healwi2 = 15,
+    dmgwi3 = 20
+
+let manaf2 = 30,
+    manaf3 = 50,
+
+    manaw2 = 40,
+    manaw3 = 35,
+
+    manae2 = 40,
+    manae3 = 30,
+
+    manawi2 = 30,
+    manawi3 = 40
 //-----------------------------PLAYER 1----------------------------------
 //FIRE
 function p1fire1(){
     const randomnumber = Math.floor(Math.random() * 100);
     
     if (randomnumber <= 79 ){
-        life2 -= 12;
+        life2 -= dmgf1;
         movework1determine = "yes";
     }
 
@@ -159,15 +229,15 @@ function p1fire1(){
     work1();
 }
 function p1fire2(){
-    if (mana1 <=30){
+    if (mana1 < manaf2){
         console.log("INSUFFICIENT MANA");
         movework1determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life2 -= 17;
-        mana1 -= 30;
+        life2 -= dmgf2;
+        mana1 -= manaf2;
         movework1determine = "yes";
         }
         player1turn();
@@ -176,15 +246,15 @@ function p1fire2(){
     work1();
 }
 function p1fire3(){
-    if (mana1 <=60){
+    if (mana1 < manaf3){
         console.log("INSUFFICIENT MANA");
         movework1determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life2 -= 25;
-        mana1 -= 60;
+        life2 -= dmgf3;
+        mana1 -= manaf3;
         movework1determine = "yes";
         }
         player1turn();
@@ -198,7 +268,7 @@ function p1water1(){
     const randomnumber = Math.floor(Math.random() * 100);
     
     if (randomnumber <= 79 ){
-    life2 -= 7;
+    life2 -= dmgw1;
     movework1determine = "yes";
     }
         
@@ -208,15 +278,15 @@ function p1water1(){
     work1();
 }
 function p1water2(){
-    if (mana1 <=40){
+    if (mana1 < manaw2){
         console.log("INSUFFICIENT MANA");
         movework1determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life1 += 20;
-        mana1 -= 40;
+        life1 += healw2;
+        mana1 -= manaw2;
         movework1determine = "yes";
         }
         player1turn();
@@ -226,15 +296,15 @@ function p1water2(){
     
 }
 function p1water3(){
-    if (mana1 <=40){
+    if (mana1 < manaw3){
         console.log("INSUFFICIENT MANA");
         movework1determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life2 -= 17;
-        mana1 -= 40;
+        life2 -= dmgw3;
+        mana1 -= manaw3;
         movework1determine = "yes";
         }
         player1turn();
@@ -250,7 +320,7 @@ function p1earth1(){
     const randomnumber = Math.floor(Math.random() * 100);
     
     if (randomnumber <= 79 ){
-    life2 -= 5;
+    life2 -= dmge1;
     movework1determine = "yes";
     }
         
@@ -260,15 +330,15 @@ function p1earth1(){
     work1();
 }
 function p1earth2(){
-    if (mana1 <=40){
+    if (mana1 < manae2){
         console.log("INSUFFICIENT MANA");
         movework1determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life1 += 50;
-        mana1 -= 40;
+        life1 += heale2;
+        mana1 -= manae2;
         movework1determine = "yes";
         }
         player1turn();
@@ -277,15 +347,15 @@ function p1earth2(){
     work1();
 }
 function p1earth3(){
-    if (mana1 <=30){
+    if (mana1 < manae3){
         console.log("INSUFFICIENT MANA");
         movework1determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life2 -= 15;
-        mana1 -= 30;
+        life2 -= dmge3;
+        mana1 -= manae3;
         movework1determine = "yes";
         }
         player1turn();
@@ -299,7 +369,7 @@ function p1wind1(){
     const randomnumber = Math.floor(Math.random() * 100);
     
     if (randomnumber <= 79 ){
-    life2 -= 10;
+    life2 -= dmgwi1;
     movework1determine = "yes";
     }
     
@@ -309,15 +379,15 @@ function p1wind1(){
     work1();
 }
 function p1wind2(){
-    if (mana1 <=30){
+    if (mana1 < manawi2){
         console.log("INSUFFICIENT MANA");
         movework1determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life1 += 15;
-        mana1 -= 30;
+        life1 += healwi2;
+        mana1 -= manawi2;
         movework1determine = "yes";
         }
         player1turn();
@@ -326,15 +396,15 @@ function p1wind2(){
     work1();
 }
 function p1wind3(){
-    if (mana1 <=40){
+    if (mana1 < manawi3){
         console.log("INSUFFICIENT MANA");
         movework1determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life2 -= 20;
-        mana1 -= 40;
+        life2 -= dmgwi3;
+        mana1 -= manawi3;
         movework1determine = "yes";
         }
         player1turn();
@@ -349,7 +419,7 @@ function p2fire1(){
     const randomnumber = Math.floor(Math.random() * 100);
     
     if (randomnumber <= 79 ){
-        life1 -= 12;
+        life1 -= dmgf1;
         movework2determine = "yes";
     }
     
@@ -359,15 +429,15 @@ function p2fire1(){
     work2();
 }
 function p2fire2(){
-    if (mana2 <=30){
+    if (mana2 <manaf2){
         console.log("INSUFFICIENT MANA");
         movework2determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life1 -= 17;
-        mana2 -= 30;
+        life1 -= dmgf2;
+        mana2 -= manaf2;
         movework2determine = "yes";
         }
         player2turn();
@@ -376,15 +446,15 @@ function p2fire2(){
     work2();
 }
 function p2fire3(){
-    if (mana2 <=60){
+    if (mana2 < manaf3){
         console.log("INSUFFICIENT MANA");
         movework2determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life1 -= 25;
-        mana2 -= 60;
+        life1 -= dmgf3;
+        mana2 -= manaf3;
         movework2determine = "yes";
         }
         player2turn();
@@ -398,7 +468,7 @@ function p2water1(){
     const randomnumber = Math.floor(Math.random() * 100);
     
     if (randomnumber <= 79 ){
-    life1 -= 7;
+    life1 -= dmgw1;
     movework2determine = "yes";
     }
     
@@ -408,15 +478,15 @@ function p2water1(){
     work2();
 }
 function p2water2(){
-    if (mana2 <=40){
+    if (mana2 < manaw2){
         console.log("INSUFFICIENT MANA");
         movework2determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life2 += 20;
-        mana2 -= 40;
+        life2 += healw2;
+        mana2 -= manaw2;
         movework2determine = "yes";
         }
         player2turn();
@@ -425,15 +495,15 @@ function p2water2(){
     work2();
 }
 function p2water3(){
-    if (mana2 <=40){
+    if (mana2 < manaw3){
         console.log("INSUFFICIENT MANA");
         movework2determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life1 -= 17;
-        mana2 -= 40;
+        life1 -= dmgw3;
+        mana2 -= manaw3;
         movework2determine = "yes";
         }
         player2turn();
@@ -448,7 +518,7 @@ function p2earth1(){
     const randomnumber = Math.floor(Math.random() * 100);
     
     if (randomnumber <= 79 ){
-    life1 -= 5;
+    life1 -= dmge1;
     movework2determine = "yes";
     }
     addmana2();
@@ -457,15 +527,15 @@ function p2earth1(){
     work2();
 }
 function p2earth2(){
-    if (mana2 <=40){
+    if (mana2 < manae2){
         console.log("INSUFFICIENT MANA");
         movework2determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life2 += 50;
-        mana2 -= 40;
+        life2 += heale2;
+        mana2 -= manae2;
         movework2determine = "yes";
         }
         player2turn();
@@ -474,15 +544,15 @@ function p2earth2(){
     work2();
 }
 function p2earth3(){
-    if (mana2 <=30){
+    if (mana2 < manae3){
         console.log("INSUFFICIENT MANA");
         movework2determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life1 -= 15;
-        mana2 -= 30;
+        life1 -= dmge3;
+        mana2 -= manae3;
         movework2determine = "yes";
         }
         player2turn();
@@ -496,7 +566,7 @@ function p2wind1(){
     const randomnumber = Math.floor(Math.random() * 100);
     
     if (randomnumber <= 79 ){
-    life2 -= 10;
+    life1 -= dmgwi1;
     movework2determine = "yes";
     }
     addmana2();
@@ -505,15 +575,15 @@ function p2wind1(){
     work2();
 }
 function p2wind2(){
-    if (mana2 <=30){
+    if (mana2 < manawi2){
         console.log("INSUFFICIENT MANA");
         movework2determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life2 += 15;
-        mana2 -= 30;
+        life2 += healwi2;
+        mana2 -= manawi2;
         movework2determine = "yes";
         }
         player2turn();
@@ -522,15 +592,15 @@ function p2wind2(){
     work2();
 }
 function p2wind3(){
-    if (mana2 <=40){
+    if (mana2 < manawi3){
         console.log("INSUFFICIENT MANA");
         movework2determine = "nomana";
     }else{
         const randomnumber = Math.floor(Math.random() * 100);
         
         if (randomnumber <= 79 ){
-        life1 -= 20;
-        mana2 -= 40;
+        life1 -= dmgwi3;
+        mana2 -= manawi3;
         movework2determine = "yes";
         }
         player2turn();
@@ -542,14 +612,10 @@ function p2wind3(){
 
 //OPERATIONS
 function addmana1(){
+    mana1 += 10;
     if (mana1 >= 100){
         mana1 = 100;
-    } else{
-        mana1 += 10;
     }
-    
-    
-
 }
 function work1(){
     //move work determine
@@ -565,25 +631,22 @@ function work1(){
     movework1determine = "no";
 }
 function disableButton1(){
-    document.querySelectorAll('button.indivmoves1').forEach(elem => {
-        elem.disabled = true;
-    });
-    document.querySelectorAll('button.indivmoves2').forEach(elem => {
-        elem.disabled = false;
-    });
-
-    
+    setTimeout(() => {
+        document.querySelectorAll('button.indivmoves1').forEach(elem => {
+            elem.disabled = true;
+        });
+        document.querySelectorAll('button.indivmoves2').forEach(elem => {
+            elem.disabled = false;
+        });
+    }, 1000);
 }
 
 
 function addmana2(){
-    
+    mana2 += 10;
     if (mana2 >= 100){
         mana2 = 100;
-    } else{
-        mana2 += 10;
     }
-    
 }
 function work2(){
     //move work determine
@@ -599,13 +662,14 @@ function work2(){
     movework2determine = "no";
 }
 function disableButton2(){
-    document.querySelectorAll('button.indivmoves1').forEach(elem => {
-        elem.disabled = false;
-    });
-    document.querySelectorAll('button.indivmoves2').forEach(elem => {
-        elem.disabled = true;
-    });
-    
+    setTimeout(() => {
+        document.querySelectorAll('button.indivmoves1').forEach(elem => {
+            elem.disabled = false;
+        });
+        document.querySelectorAll('button.indivmoves2').forEach(elem => {
+            elem.disabled = true;
+        });
+    }, 1000);
 }
 
 //-------------------------------------------------------------------------------
