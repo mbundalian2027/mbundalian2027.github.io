@@ -199,6 +199,7 @@ function submit2() {
             document.getElementById('turns').style.display = "block";
         }, 500);
         console.log("--------------------------------------------\n\n");
+        disableButton2();
         player1turn();
     } else {
         turnRedForOneSecond2();
@@ -670,14 +671,15 @@ function work1() {
     movework1determine = "no";
 }
 function disableButton1() {
-    setTimeout(() => {
-        document.querySelectorAll('button.indivmoves1').forEach(elem => {
-            elem.disabled = true;
-        });
+    document.querySelectorAll('button.indivmoves1').forEach(elem => {
+        elem.disabled = true;
+    });
+    setTimeout(function() {
         document.querySelectorAll('button.indivmoves2').forEach(elem => {
             elem.disabled = false;
         });
-    }, 1000);
+    }, 500);
+
 }
 
 
@@ -703,14 +705,15 @@ function work2() {
     movework2determine = "no";
 }
 function disableButton2() {
-    setTimeout(() => {
+    document.querySelectorAll('button.indivmoves2').forEach(elem => {
+        elem.disabled = true;
+    });
+    setTimeout(function() {
         document.querySelectorAll('button.indivmoves1').forEach(elem => {
             elem.disabled = false;
         });
-        document.querySelectorAll('button.indivmoves2').forEach(elem => {
-            elem.disabled = true;
-        });
-    }, 1000);
+    }, 500);
+
 }
 
 //-------------------------------------------------------------------------------
@@ -728,7 +731,6 @@ function roundanalyzer() {
 
 function player1turn() {
     //PLAYER 1 TURN
-    disableButton2();
     document.getElementById('movework2').innerHTML = "";
     document.getElementById('movework1').style.color = "black";
     switch (p1choice) {
@@ -841,6 +843,7 @@ function player1turn() {
 
 function player2turn() {
     //PLAYER 2 TURN
+
     document.getElementById('movework1').innerHTML = "";
     document.getElementById('movework2').style.color = "black";
     switch (p1choice) {
