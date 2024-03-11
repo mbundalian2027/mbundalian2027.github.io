@@ -9,8 +9,9 @@
 
 body{
     font-family: "VT323", monospace;
-    animation: pagefadein 1s ease-in-out;
+    animation: pagefadein 0.5s ease-in-out;
     user-select: none;
+    overflow: hidden;
 }
 
 .pvpbody{
@@ -21,57 +22,101 @@ body{
     background-attachment: fixed;
 }
 
+.back{
+    text-decoration: none;
+    color:white;
+    font-size: 25pt;
+    position: fixed;
+    top:10px;
+    left:10px;
+}
+#backtopvp{
+    display:none;
+}
 #pvpchoosecontainer{
     z-index: 4;
+    text-align: center;
+}
+.pvpcontainer{
+    background-image:url('pics/scrollbg.png');
     position:absolute;
-    left :50%;
+    left:50%;
     top:50%;
     transform:translate(-50%, -50%);
-    width:  60%;
+    border-radius: 5px;
+    width: 900px;
     height: 75%;
     padding: 2%;
-    text-align: center;
-    border-radius: 5px;
-    background-color: rgb(229, 229, 229);
+    border: 5px solid rgb(66, 32, 32);
+}
+#pvp2{
+    display:none;
+}
+.pvpcontainer .submit{
+    height: 10%;
+    background-color: rgb(25, 84, 48);
+    font-size: 20pt;
+    color:white;
+    border-radius: 10px;
+    border: 3px solid black;
 }
 
-#pvp2{
-    display: none;
+.buttonsss{
+    position:fixed;
+    top:50%;
+    color:rgb(0, 0, 0);
+    font-size: 50pt;
+    padding:5px;
 }
-#pvpchoosecontainer b{
+#right{
+    right:5%;
+    transform:translateY(-50%);
+}
+#left{
+    left:5%;
+    transform:translateY(-50%);
+    display:none;
+}
+
+#pvpchoosecontainer .header{
     font-size:60pt;
     color:black;
     border-radius: 2px;
     padding: 2px;
 }
-#pvpchoosecontainer button{
+.pvpcontainer button{
     width: 80%;
+    height: 75px;
     padding:1%;
-    font-size: 17pt;
     font-family: "VT323", monospace;
+    margin-bottom:5px;
+    margin:.5%;
+    border: 3px dotted rgb(0, 0, 0);
+    font-size: 12pt;
 }
-.selection1{
-    margin:1%;
-    border: 2px dashed rgb(0, 0, 0);
-    height: 40%;
+.selection1 b{
+    font-size: 15pt;
 }
-.submit{
-    background-color: rgb(17, 77, 40);
-    color:white;
-    border: 3px solid black;
+.selection1 .passivetext{
+    font-size: 12pt;
 }
+.selection1:hover{
+    background-color: rgb(210, 210, 210);
+}
+
+
 
 
 #turns{
     display: none;
-    font-size: 20pt;
+    font-size: 120%;
     margin-right: auto;
     margin-left: auto;
     width: 90%;
 }
 
 .space{
-    width: 100%;
+    width: 95%;
 }
 .actual{
     background-color: rgb(253, 241, 226);
@@ -79,15 +124,15 @@ body{
     padding: 5px;
     border-radius: 5px;
     border: 2px solid;
-    width: 300px;
-    height: 360px;
+    width: 250px;
+    height: 325px;
     margin-right: auto;
     margin-left: auto;
 }
 
 .player button{
     font-family: "Madimi One";
-    font-size: 10pt;
+    font-size: 9pt;
     width: 100%;
     height: 60px;
     margin-bottom: 5px;
@@ -102,8 +147,23 @@ body{
     cursor: not-allowed;
 }
 .player button b{
-    font-size: 13pt;
+    font-size: 12pt;
 }
+.bar {
+    width: 100%;
+    height: 15px;
+    border: 1px solid #000;
+    background-color: #f0f0f0;
+}
+.health{
+    height: 100%;
+    background-color: #4caf50;
+}
+.passives{
+    font-weight: bolder;
+    color:rgb(216, 0, 0);
+}
+
 #moves1 #firemoves1 button{
     background-color: rgb(175, 0, 0);
 }
@@ -140,3 +200,27 @@ body{
     display: none;
 }
 
+
+#screen{
+    width: 90%;
+    display:none;
+    left:50%;
+    transform:translateX(-50%);
+    position:absolute;
+    bottom:5%;
+}
+#screen td{
+    border:2px solid;
+}
+.visualscreen{
+    width: 400px;
+}
+
+.users img{
+    display: none;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

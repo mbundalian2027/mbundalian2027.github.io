@@ -25,8 +25,9 @@ function fire1() {
         elem.style.backgroundColor = "";
         elem.style.color = "";
     });
-    document.getElementById('selectfire1').style.backgroundColor = "rgb(220, 0, 0)";
+    document.getElementById('selectfire1').style.backgroundColor = "rgb(207, 0, 0)";
     document.getElementById('selectfire1').style.color ="white";
+    document.getElementById('submit1').style.backgroundColor = "";
 }
 function water1() {
     p1choice = "water";
@@ -36,6 +37,7 @@ function water1() {
     });
     document.getElementById('selectwater1').style.backgroundColor = "rgb(8, 51, 115)";
     document.getElementById('selectwater1').style.color ="white";
+    document.getElementById('submit1').style.backgroundColor = "";
 }
 function earth1() {
     p1choice = "earth";
@@ -43,8 +45,9 @@ function earth1() {
         elem.style.backgroundColor = "";
         elem.style.color = "";
     });
-    document.getElementById('selectearth1').style.backgroundColor = "rgb(71, 46, 46)";
+    document.getElementById('selectearth1').style.backgroundColor = "rgb(43, 21, 21)";
     document.getElementById('selectearth1').style.color ="white";
+    document.getElementById('submit1').style.backgroundColor = "";
 }
 function wind1() {
     p1choice = "wind";
@@ -53,6 +56,7 @@ function wind1() {
         elem.style.color = "";
     });
     document.getElementById('selectwind1').style.backgroundColor = "rgb(204, 246, 242)";
+    document.getElementById('submit1').style.backgroundColor = "";
 }
 
 function turnRedForOneSecond1() {
@@ -92,17 +96,21 @@ function submit1() {
                 life1 = lifewind;
                 console.log("PLAYER 1 CHOSE WIND");
                 document.getElementById('type1').innerHTML = "Wind";
-                passive1.innerHTML = "Lifesteal: 30%";
+                passive1.innerHTML = "Lifesteal: 50%";
                 break;
         }
-        document.getElementById('submit1').style.backgroundColor = "rgb(3, 33, 15)";
+
+        document.getElementById('submit1').style.backgroundColor = "rgb(9, 22, 14)";
         setTimeout(() => {
-            document.getElementById('pvp1').style.display = "none";
-            document.getElementById('pvp2').style.display = "block";
+            document.getElementById('pvp2').classList.remove('hidden');
             document.querySelectorAll('button.indivmoves2').forEach(elem => {
                 elem.disabled = true;
             });
         }, 500);
+
+        //      DISABLE BACK BUTTON
+        document.getElementById('backtoindex').style.display = "none";
+        document.getElementById('backtopvp').style.display = "block";
 
         console.log("Player 1 moves\n" + moves1);
         console.log("Life: " + life1 + "\n\n");
@@ -111,7 +119,12 @@ function submit1() {
     }
 
 }
-
+function move1(){
+    document.getElementById('pvp1').style.display ="none";
+    document.getElementById('pvp2').style.display ="block";
+    document.getElementById('right').style.display ="none";
+    document.getElementById('left').style.display ="block";
+}
 
 //PLAYER 2
 let p2choice;
@@ -122,8 +135,9 @@ function fire2() {
         elem.style.backgroundColor = "";
         elem.style.color = "";
     });
-    document.getElementById('selectfire2').style.backgroundColor = "rgb(220, 0, 0)";
+    document.getElementById('selectfire2').style.backgroundColor = "rgb(207, 0, 0)";
     document.getElementById('selectfire2').style.color ="white";
+    document.getElementById('submit2').style.backgroundColor = "";
 }
 function water2() {
     p2choice = "water";
@@ -133,6 +147,7 @@ function water2() {
     });
     document.getElementById('selectwater2').style.backgroundColor = "rgb(8, 51, 115)";
     document.getElementById('selectwater2').style.color ="white";
+    document.getElementById('submit2').style.backgroundColor = "";
 }
 function earth2() {
     p2choice = "earth";
@@ -140,8 +155,9 @@ function earth2() {
         elem.style.backgroundColor = "";
         elem.style.color = "";
     });
-    document.getElementById('selectearth2').style.backgroundColor = "rgb(71, 46, 46)";
+    document.getElementById('selectearth2').style.backgroundColor = "rgb(43, 21, 21)";
     document.getElementById('selectearth2').style.color ="white";
+    document.getElementById('submit2').style.backgroundColor = "";
 }
 function wind2() {
     p2choice = "wind";
@@ -150,6 +166,7 @@ function wind2() {
         elem.style.color = "";
     });
     document.getElementById('selectwind2').style.backgroundColor = "rgb(204, 246, 242)";
+    document.getElementById('submit2').style.backgroundColor = "";
 }
 function turnRedForOneSecond2() {
     document.getElementById('submit2').style.backgroundColor = "rgb(180, 0, 0)";
@@ -160,53 +177,70 @@ function turnRedForOneSecond2() {
 }
 
 function submit2() {
-    if (p2choice) {
-        switch (p2choice) {
-            case "fire":
-                moves2 = firemoves;
-                life2 = lifefire;
-                console.log("PLAYER 2 CHOSE FIRE");
-                document.getElementById('type2').innerHTML = "Fire";
-                passive2.innerHTML = "Additional DMG: 0 DMG";
-                break;
-            case "water":
-                moves2 = watermoves;
-                life2 = lifewater;
-                console.log("PLAYER 2 CHOSE WATER");
-                document.getElementById('type2').innerHTML = "Water";
-                passive2.innerHTML = "Passive: Inactive";
-                break;
-            case "earth":
-                moves2 = earthmoves;
-                life2 = lifeearth;
-                console.log("PLAYER 2 CHOSE EARTH");
-                document.getElementById('type2').innerHTML = "Earth";
-                passive1.innerHTML = "Passive: Inactive";
-                break;
-            case "wind":
-                moves2 = windmoves;
-                life2 = lifewind;
-                console.log("PLAYER 2 CHOSE WIND");
-                document.getElementById('type2').innerHTML = "Wind";
-                passive2.innerHTML = "Lifesteal: 30%";
-                break;
+    if (life1 != 0){
+        if (p2choice) {
+            switch (p2choice) {
+                case "fire":
+                    moves2 = firemoves;
+                    life2 = lifefire;
+                    console.log("PLAYER 2 CHOSE FIRE");
+                    document.getElementById('type2').innerHTML = "Fire";
+                    passive2.innerHTML = "Additional DMG: 0 DMG";
+                    break;
+                case "water":
+                    moves2 = watermoves;
+                    life2 = lifewater;
+                    console.log("PLAYER 2 CHOSE WATER");
+                    document.getElementById('type2').innerHTML = "Water";
+                    passive2.innerHTML = "Passive: Inactive";
+                    break;
+                case "earth":
+                    moves2 = earthmoves;
+                    life2 = lifeearth;
+                    console.log("PLAYER 2 CHOSE EARTH");
+                    document.getElementById('type2').innerHTML = "Earth";
+                    passive1.innerHTML = "Passive: Inactive";
+                    break;
+                case "wind":
+                    moves2 = windmoves;
+                    life2 = lifewind;
+                    console.log("PLAYER 2 CHOSE WIND");
+                    document.getElementById('type2').innerHTML = "Wind";
+                    passive2.innerHTML = "Lifesteal: 50%";
+                    break;
+            }
+            console.log("Player 2 moves\n" + moves2);
+            console.log("Life: " + life2);
+            document.getElementById('submit2').style.backgroundColor = "rgb(9, 22, 14)";
+
+            if (life1 != 0 && life2 != 0){
+                setTimeout(() => {
+                    document.getElementById('pvpchoosecontainer').style.display = "none";
+                    document.getElementById('turns').style.display = "block";
+                    document.getElementById('screen').style.display = "block";
+                    document.getElementById('left').style.display ="none";
+                    player1turn();
+                }, 500);
+            } else{
+                turnRedForOneSecond2();
+            }
+            console.log("--------------------------------------------\n\n");
+            disableButton2();
+
+        } else {
+            turnRedForOneSecond2();
         }
-        console.log("Player 2 moves\n" + moves2);
-        console.log("Life: " + life2);
-        document.getElementById('submit2').style.backgroundColor = "rgb(3, 33, 15)";
-        setTimeout(() => {
-            document.getElementById('pvpchoosecontainer').style.display = "none";
-            document.getElementById('turns').style.display = "block";
-        }, 500);
-        console.log("--------------------------------------------\n\n");
-        disableButton2();
-        player1turn();
     } else {
         turnRedForOneSecond2();
     }
 
 }
-
+function move2(){
+    document.getElementById('pvp1').style.display ="block";
+    document.getElementById('pvp2').style.display ="none";
+    document.getElementById('right').style.display ="block";
+    document.getElementById('left').style.display ="none";
+}
 //GAME
 //DAMAGE PER MOVE
 let dmgf1 = 12,
@@ -215,7 +249,7 @@ let dmgf1 = 12,
 
     dmgw1 = 10,
     healw2 = 30,
-    dmgw3 = 20,
+    dmgw3 = 25,
 
     dmge1 = 7,
     heale2 = 50,
@@ -228,8 +262,8 @@ let dmgf1 = 12,
 let manaf2 = 25,
     manaf3 = 80,
 
-    manaw2 = 25,
-    manaw3 = 35,
+    manaw2 = 20,
+    manaw3 = 45,
 
     manae2 = 40,
     manae3 = 45,
@@ -243,7 +277,7 @@ let passive2 = document.getElementById('passive2');
 //FIRE
 
 function p1fire1() {
-    life2 = life2 - (dmgf1 + (0.2 * (lifefire - life1)));
+    life2 = life2 - (dmgf1 + (0.3 * (lifefire - life1)));
     movework1determine = "yes";
 
     addmana1();
@@ -259,7 +293,7 @@ function p1fire2() {
         const randomnumber = Math.floor(Math.random() * 100);
 
         if (randomnumber <= 79) {
-            life2 = life2 - (dmgf2 + (0.2 * (lifefire - life1)));
+            life2 = life2 - (dmgf2 + (0.3 * (lifefire - life1)));
             mana1 -= manaf2;
             movework1determine = "yes";
         }
@@ -276,7 +310,7 @@ function p1fire3() {
         const randomnumber = Math.floor(Math.random() * 100);
 
         if (randomnumber <= 69) {
-            life2 = life2 - (dmgf3 + (0.2 * (lifefire - life1)));
+            life2 = life2 - (dmgf3 + (0.3 * (lifefire - life1)));
             mana1 -= manaf3;
             movework1determine = "yes";
         }
@@ -305,10 +339,10 @@ function p1water2() {
         const randomnumber = Math.floor(Math.random() * 100);
 
         if (randomnumber <= 79) {
-            life1 += healw2;
             if (life1 <= 30) {
                 life1 += 10;
             }
+            life1 += healw2;
             mana1 -= manaw2;
             movework1determine = "yes";
         }
@@ -347,6 +381,8 @@ function p1earth1() {
     player1turn();
     disableButton1();
     work1();
+
+
 }
 function p1earth2() {
     if (life1 <= 50){
@@ -354,7 +390,6 @@ function p1earth2() {
     
         if (randomnumber <= 69) {
             life1 += heale2;
-            mana1 += 10;
             movework1determine = "yes";
         }
         player1turn();
@@ -398,7 +433,7 @@ function p1earth3() {
 //WIND
 function p1wind1() {
     life2 -= dmgwi1;
-    life1 += (0.3*dmgwi1);
+    life1 += (0.5*dmgwi1);
     movework1determine = "yes";
 
     addmana1();
@@ -432,7 +467,7 @@ function p1wind3() {
 
         if (randomnumber <= 94) {
             life2 -= dmgwi3;
-            life1 += (0.3*dmgwi3);
+            life1 += (0.5*dmgwi3);
             mana1 -= manawi3;
             movework1determine = "yes";
         }
@@ -446,7 +481,7 @@ function p1wind3() {
 //-----------------------------PLAYER 2----------------------------------
 //FIRE
 function p2fire1() {
-    life1 = life1 - (dmgf1 + (0.2 * (lifefire - life2)));
+    life1 = life1 - (dmgf1 + (0.3 * (lifefire - life2)));
     movework2determine = "yes";
 
     addmana2();
@@ -462,7 +497,7 @@ function p2fire2() {
         const randomnumber = Math.floor(Math.random() * 100);
 
         if (randomnumber <= 79) {
-            life1 = life1 - (dmgf2 + (0.2 * (lifefire - life2)));
+            life1 = life1 - (dmgf2 + (0.3 * (lifefire - life2)));
             mana2 -= manaf2;
             movework2determine = "yes";
         }
@@ -479,7 +514,7 @@ function p2fire3() {
         const randomnumber = Math.floor(Math.random() * 100);
 
         if (randomnumber <= 69) {
-            life1 = life1 - (dmgf3 + (0.2 * (lifefire - life2)));
+            life1 = life1 - (dmgf3 + (0.3 * (lifefire - life2)));
             mana2 -= manaf3;
             movework2determine = "yes";
         }
@@ -508,10 +543,10 @@ function p2water2() {
         const randomnumber = Math.floor(Math.random() * 100);
 
         if (randomnumber <= 79) {
-            life2 += healw2;
             if (life2 <= 30) {
                 life2 += 10;
             }
+            life2 += healw2;
             mana2 -= manaw2;
             movework2determine = "yes";
         }
@@ -556,7 +591,6 @@ function p2earth2() {
 
         if (randomnumber <= 69) {
             life2 += heale2;
-            mana2 += 10;
             movework2determine = "yes";
         }
         player2turn();
@@ -602,7 +636,7 @@ function p2earth3() {
 //WIND
 function p2wind1() {
     life1 -= dmgwi1;
-    life2 += (0.3*dmgwi1);
+    life2 += (0.5*dmgwi1);
     movework2determine = "yes";
     
     addmana2();
@@ -636,7 +670,7 @@ function p2wind3() {
 
         if (randomnumber <= 94) {
                 life1 -= dmgwi3;
-                life2 += (0.3*dmgwi3);
+                life2 += (0.5*dmgwi3);
                 mana2 -= manawi3;
                 movework2determine = "yes";
         }
@@ -729,19 +763,40 @@ function roundanalyzer() {
         "--PLAYER 2-- \nLife: " + life2 + "\nMana: " + mana2 + "\n-----------------------\n\n");
 }
 
+function updateHealth1(currentHealth, baseHealth) {
+    const healthPercentage = (currentHealth / baseHealth) * 100;
+  
+    const clampedHealthPercentage = Math.max(0, Math.min(healthPercentage, 100));
+  
+    const healthLevel = document.getElementById('health1');
+    healthLevel.style.width = clampedHealthPercentage + '%';
+}
+
+function updateHealth2(currentHealth, baseHealth) {
+    const healthPercentage = (currentHealth / baseHealth) * 100;
+  
+    const clampedHealthPercentage = Math.max(0, Math.min(healthPercentage, 100));
+  
+    const healthLevel = document.getElementById('health2');
+    healthLevel.style.width = clampedHealthPercentage + '%';
+}
+
 function player1turn() {
     //PLAYER 1 TURN
+
     document.getElementById('movework2').innerHTML = "";
     document.getElementById('movework1').style.color = "black";
     switch (p1choice) {
         case "fire":
+            updateHealth1(life1, lifefire);
             document.getElementById('firemoves1').style.display = "block";
-            passive1.innerHTML = "Additional DMG: " + (0.2 * (lifefire - life1)).toFixed(0) + " DMG";
+            passive1.innerHTML = "Additional DMG: " + (0.3 * (lifefire - life1)).toFixed(0) + " DMG";
                     if (life1 > lifefire){
                         life1 = lifefire;
                     }
             break;
         case "water":
+            updateHealth1(life1, lifewater);
             document.getElementById('watermoves1').style.display = "block";
             if (life1 <= 30) {
                 passive1.innerHTML = "Passive: Active (+10 HP)";
@@ -753,6 +808,7 @@ function player1turn() {
                     }
             break;
         case "earth":
+            updateHealth1(life1, lifeearth);
             document.getElementById('earthmoves1').style.display = "block";
             if (life1 <= 50) {
                 passive1.innerHTML = "Passive: Active (Heal doesn't use mana)";
@@ -764,8 +820,9 @@ function player1turn() {
                     }
             break;
         case "wind":
+            updateHealth1(life1, lifewind);
             document.getElementById('windmoves1').style.display = "block";
-                passive1.innerHTML = "Lifesteal 30%";
+                passive1.innerHTML = "Lifesteal 50%";
                     if (life1 > lifewind){
                         life1 = lifewind;
                     }
@@ -775,13 +832,15 @@ function player1turn() {
 
     switch (p2choice) {
         case "fire":
+            updateHealth2(life2, lifefire);
             document.getElementById('firemoves2').style.display = "block";
-            passive2.innerHTML = "Additional DMG: " + (0.2 * (lifefire - life2)).toFixed(0) + " DMG";
+            passive2.innerHTML = "Additional DMG: " + (0.3 * (lifefire - life2)).toFixed(0) + " DMG";
                     if (life2 > lifefire){
                         life2 = lifefire;
                     }
             break;
         case "water":
+        updateHealth2(life2, lifewater);
             document.getElementById('watermoves2').style.display = "block";
             if (life2 <= 30) {
                 passive2.innerHTML = "Passive: Active (+10 HP)";
@@ -793,6 +852,7 @@ function player1turn() {
                     }
             break;
         case "earth":
+            updateHealth2(life2, lifeearth);
             document.getElementById('earthmoves2').style.display = "block";
             if (life2 <= 50) {
                 passive2.innerHTML = "Passive: Active (Heal doesn't use mana)";
@@ -804,8 +864,9 @@ function player1turn() {
                     }
             break;
         case "wind":
+            updateHealth2(life2, lifewind);
             document.getElementById('windmoves2').style.display = "block";
-            passive2.innerHTML = "Lifesteal 30%";
+            passive2.innerHTML = "Lifesteal 50%";
                     if (life2 > lifewind){
                         life2 = lifewind;
                     }
@@ -843,18 +904,22 @@ function player1turn() {
 
 function player2turn() {
     //PLAYER 2 TURN
+    updateHealth1(life1);
+    updateHealth2(life2);
 
     document.getElementById('movework1').innerHTML = "";
     document.getElementById('movework2').style.color = "black";
     switch (p1choice) {
         case "fire":
+            updateHealth1(life1, lifefire);
             document.getElementById('firemoves1').style.display = "block";
-            passive1.innerHTML = "Additional DMG: " + (0.2 * (lifefire - life1)).toFixed(0) + " DMG";
+            passive1.innerHTML = "Additional DMG: " + (0.3 * (lifefire - life1)).toFixed(0) + " DMG";
                     if (life1 > lifefire){
                         life1 = lifefire;
                     }
             break;
         case "water":
+            updateHealth1(life1, lifewater);
             document.getElementById('watermoves1').style.display = "block";
             if (life1 <= 30) {
                 passive1.innerHTML = "Passive: Active (+10 HP)";
@@ -866,6 +931,7 @@ function player2turn() {
                     }
             break;
         case "earth":
+            updateHealth1(life1, lifeearth);
             document.getElementById('earthmoves1').style.display = "block";
             if (life1 <= 50) {
                 passive1.innerHTML = "Passive: Active (Heal doesn't use mana)";
@@ -877,8 +943,9 @@ function player2turn() {
                     }
             break;
         case "wind":
+            updateHealth1(life1, lifewind);
             document.getElementById('windmoves1').style.display = "block";
-                passive1.innerHTML = "Lifesteal 30%";
+                passive1.innerHTML = "Lifesteal 50%";
                     if (life1 > lifewind){
                         life1 = lifewind;
                     }
@@ -888,13 +955,15 @@ function player2turn() {
 
     switch (p2choice) {
         case "fire":
+            updateHealth2(life2, lifefire);
             document.getElementById('firemoves2').style.display = "block";
-            passive2.innerHTML = "Additional DMG: " + (0.2 * (lifefire - life2)).toFixed(0) + " DMG";
+            passive2.innerHTML = "Additional DMG: " + (0.3 * (lifefire - life2)).toFixed(0) + " DMG";
                     if (life2 > lifefire){
                         life2 = lifefire;
                     }
             break;
         case "water":
+        updateHealth2(life2, lifewater);
             document.getElementById('watermoves2').style.display = "block";
             if (life2 <= 30) {
                 passive2.innerHTML = "Passive: Active (+10 HP)";
@@ -906,6 +975,7 @@ function player2turn() {
                     }
             break;
         case "earth":
+            updateHealth2(life2, lifeearth);
             document.getElementById('earthmoves2').style.display = "block";
             if (life2 <= 50) {
                 passive2.innerHTML = "Passive: Active (Heal doesn't use mana)";
@@ -917,8 +987,9 @@ function player2turn() {
                     }
             break;
         case "wind":
+            updateHealth2(life2, lifewind);
             document.getElementById('windmoves2').style.display = "block";
-            passive2.innerHTML = "Lifesteal 30%";
+            passive2.innerHTML = "Lifesteal 50%";
                     if (life2 > lifewind){
                         life2 = lifewind;
                     }

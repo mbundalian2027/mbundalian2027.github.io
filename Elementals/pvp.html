@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elementals</title>
 
-    <!--BOOTSTRAP-->
+    <!--BOOTSTRAP & IONICON-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <!--CSS & JS-->
     <link href="stylesheets.css" rel="stylesheet">
@@ -20,31 +22,44 @@
     
 </head>
 <body class="pvpbody pagefadein">
+    <a href="index.html" class="back" id="backtoindex"><div><ion-icon name="arrow-back-outline"></ion-icon></div></a>
+    <a href="pvp.html" class="back" id="backtopvp"><div><ion-icon name="arrow-back-outline"></ion-icon></div></a>
     <div id="pvpchoosecontainer">
-        <div id="pvp1" >
-            <b>PLAYER 1:</b> <br>
-            <button onclick="fire1()" class="selection1" id="selectfire1">FIRE <br>Passive: Deals +20% of lost HP</button> <br>
-            <button onclick="water1()" class="selection1" id="selectwater1">WATER <br>Passive: Gains +10 heal if HP drops below 30</button><br>
-            <button onclick="earth1()"class="selection1" id="selectearth1">EARTH <br>Passive: If HP drops below 50, heal skill won't require mana and regenerates +10 mana.</button><br>
-            <button onclick="wind1()" class="selection1" id="selectwind1">WIND <br>Passive: Heals +30% of damage dealt to the enemy in every attack</button> <br><br>
-            <button onclick="submit1()" id="submit1" class="submit">ENTER</button>
+        <div id="pvp1" class="pvpcontainer">
+            <b class="header">PLAYER 1:</b> <br>
+            <button onclick="fire1()" class="selection1" id="selectfire1"><b>FIRE</b><br><b class="passivetext">Passive</b>: Burning Soul - Deal extra damage equals to 30% of lost HP</button> <br>
+            <button onclick="water1()" class="selection1" id="selectwater1"><b>WATER</b><br><b class="passivetext">Passive</b>: Sea Cradle - Gains an extra +10 heal if HP drops below 30<br><b class="passivetext">Active Passive</b>: Neptune's Gift - Permanent 20 mana gain</button><br>
+            <button onclick="earth1()"class="selection1" id="selectearth1"><b>EARTH</b><br><b class="passivetext">Passive</b>: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana</button><br>
+            <button onclick="wind1()" class="selection1" id="selectwind1"><b>WIND</b><br><b class="passivetext">Passive</b>: Windtalker - Heals +50% of damage dealt to the enemy in every attack <br> <b class="passivetext">Active Passive</b>: Faith or Luck? - All skills have a high chance of working</button>  <br>
+            <button onclick="submit1()" id="submit1" class="submit">E N T E R</button>
         </div>
-        
-        <div id="pvp2">
-            <b>PLAYER 2:</b> <br>
-            <button onclick="fire2()" class="selection1" id="selectfire2">FIRE <br>Passive: Deals +20% of lost HP</button><br>
-            <button onclick="water2()" class="selection1" id="selectwater2">WATER <br>Passive: Gains +10 heal if HP drops below 30</button><br>
-            <button onclick="earth2()"class="selection1" id="selectearth2">EARTH <br>Passive: If HP drops below 50, heal skill won't require mana and regenerates +10 mana.</button><br>
-            <button onclick="wind2()" class="selection1" id="selectwind2">WIND <br>Passive: Heals +30% of damage dealt to the enemy in every attack</button>  <br><br>
-            <button onclick="submit2()" id="submit2" class="submit">ENTER</button>
+        <br>
+        <div id="pvp2" class="pvpcontainer">
+            <b class="header">PLAYER 2:</b> <br>
+            <button onclick="fire2()" class="selection1" id="selectfire2"><b>FIRE</b><br><b class="passivetext">Passive</b>: Burning Soul - Deal extra damage equals to 30% of lost HP</button><br>
+            <button onclick="water2()" class="selection1" id="selectwater2"><b>WATER</b><br><b class="passivetext">Passive</b>: Sea Cradle - Gains an extra +10 heal if HP drops below 30<br><b class="passivetext">Active Passive</b>: Neptune's Gift - Permanent 20 mana gain</button><br>
+            <button onclick="earth2()"class="selection1" id="selectearth2"><b>EARTH</b><br><b class="passivetext">Passive</b>: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana</button><br>
+            <button onclick="wind2()" class="selection1" id="selectwind2"><b>WIND</b><br><b class="passivetext">Passive</b>: Windtalker - Heals +50% of damage dealt to the enemy in every attack <br> <b class="passivetext">Active Passive</b>: Faith or Luck? - All skills have a high chance of working</button>  <br>
+            <button onclick="submit2()" id="submit2" class="submit">S T A R T</button>
         </div>
     </div>
+    <div id="right" class="buttonsss" onclick="move1()"><ion-icon name="caret-forward-circle-outline"></ion-icon></div>
+    <div id="left" class="buttonsss" onclick="move2()"><ion-icon name="caret-back-circle-outline"></ion-icon></div>
 
+
+
+
+    <!--TURNS-->
     <table id="turns">
         <tr>
             <td class="player" id="p1">
                 <div class="actual" id="a1">
                     PLAYER 1 (<b id="type1"></b>)<br>
+
+                    <div class="bar">
+                        <div class="health" id="health1"></div>
+                    </div>
+
                     Life: <b id="p1life"> </b> <br>
                     Mana: <b id="p1mana"> </b>
                     <!--PLAYER 1 MOVES-->
@@ -56,8 +71,8 @@
                         </div>
                         <div id="watermoves1" class="player1moves">
                             <button onclick="p1water1()" class="indivmoves1"><b>Striking Tide</b> <br>(10 DMG)</button><br>
-                            <button onclick="p1water2()" class="indivmoves1"><b>Hydro Shield</b> <br>(+30 HP | 25 MANA)</button><br>
-                            <button onclick="p1water3()" class="indivmoves1"><b>Drowning Wave</b> <br>(20 DMG (+10% of enemy's HP) | 35 MANA)</button>
+                            <button onclick="p1water2()" class="indivmoves1"><b>Hydro Shield</b> <br>(+30 HP | 20 MANA)</button><br>
+                            <button onclick="p1water3()" class="indivmoves1"><b>Drowning Wave</b> <br>(25 DMG (+10% of enemy's HP) | 45 MANA)</button>
                         </div>
                         <div id="earthmoves1" class="player1moves">
                             <button onclick="p1earth1()" class="indivmoves1"><b>Groundbreaker</b> <br>(7 DMG)</button><br>
@@ -70,7 +85,7 @@
                             <button onclick="p1wind3()" class="indivmoves1"><b>Tempest Drive</b> <br>(30 DMG | 50 MANA)</button>
                         </div>
 
-                        <div id="passive1"></div>
+                        <div id="passive1" class="passives"></div>
                         
                         <div id="movework1"></div>
                     </div>
@@ -80,6 +95,11 @@
             <td class="player" id="p2">
                 <div class="actual" id="a2">
                     PLAYER 2 (<b id="type2"></b>)<br>
+                    
+                    <div class="bar">
+                        <div class="health" id="health2"></div>
+                    </div>
+
                     Life: <b id="p2life"> </b> <br>
                     Mana: <b id="p2mana"> </b>
 
@@ -92,8 +112,8 @@
                         </div>
                         <div id="watermoves2" class="player2moves">
                             <button onclick="p2water1()" class="indivmoves2"><b>Striking Tide</b> <br>(10 DMG)</button><br>
-                            <button onclick="p2water2()" class="indivmoves2"><b>Hydro Shield</b> <br>(+30 HP | 25 MANA)</button><br>
-                            <button onclick="p2water3()" class="indivmoves2"><b>Drowning Wave</b> <br>(20 DMG (+10% of enemy's HP) | 35 MANA)</button>
+                            <button onclick="p2water2()" class="indivmoves2"><b>Hydro Shield</b> <br>(+30 HP | 20 MANA)</button><br>
+                            <button onclick="p2water3()" class="indivmoves2"><b>Drowning Wave</b> <br>(25 DMG (+10% of enemy's HP) | 45 MANA)</button>
                         </div>
                         <div id="earthmoves2" class="player2moves">
                             <button onclick="p2earth1()" class="indivmoves2"><b>Groundbreaker</b> <br>(7 DMG)</button><br>
@@ -106,17 +126,45 @@
                             <button onclick="p2wind3()" class="indivmoves2"><b>Tempest Drive</b> <br>(30 DMG | 50 MANA)</button>
                         </div>
                     </div>
-                    <div id="passive2"></div>
+                    <div id="passive2" class="passives"></div>
 
                     <div id="movework2"></div>
                 </div>
             </td>
         </tr>
     </table>
-    <div >IAMGES</div>
     
-    
-    
+    <table id="screen">
+        <tr>
+            <td>
+                <div class="visualscreen">
+                    PLAYER 1
+
+                    <div class="users">
+                        <img src="pics/animations/fire2.png" alt="char" id="fire2">
+                        <img src="pics/animations/fire2.png" alt="char" id="water2">
+                        <img src="pics/animations/fire2.png" alt="char" id="earth2">
+                        <img src="pics/animations/fire2.png" alt="char" id="wind2">
+                    </div>
+                </div>
+            
+            </td>
+            <td class="space"></td>
+            <td>
+                <div class="visualscreen">
+                    PLAYER 2    
+
+                    <div class="users">
+                        <img src="pics/animations/fire2.png" alt="char" id="fire1">
+                        <img src="pics/animations/fire2.png" alt="char" id="water1">
+                        <img src="pics/animations/fire2.png" alt="char" id="earth1">
+                        <img src="pics/animations/fire2.png" alt="char" id="wind1">
+                    </div>
+                </div>
+                
+            </td>
+        </tr>
+    </table>
     
 </body>
 </html>
