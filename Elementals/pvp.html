@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elementals</title>
+    <title>Elementals | PVP</title>
 
     <!--BOOTSTRAP & IONICON-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -19,37 +19,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Angkor&display=swap" rel="stylesheet">
     
+        
 </head>
 <body class="pvpbody pagefadein">
     <a href="index.html" class="back" id="backtoindex"><div><ion-icon name="arrow-back-outline"></ion-icon></div></a>
     <a href="pvp.html" class="back" id="backtopvp"><div><ion-icon name="arrow-back-outline"></ion-icon></div></a>
     <div id="pvpchoosecontainer">
         <div id="pvp1" class="pvpcontainer">
-            <b class="header">PLAYER 1:</b> <br>
-            <button onclick="fire1()" class="selection1" id="selectfire1"><b>FIRE</b><br><b class="passivetext">Passive</b>: Burning Soul - Deal extra damage equals to 30% of lost HP</button> <br>
-            <button onclick="water1()" class="selection1" id="selectwater1"><b>WATER</b><br><b class="passivetext">Passive</b>: Sea Cradle - Gains an extra +10 heal if HP drops below 30<br><b class="passivetext">Active Passive</b>: Neptune's Gift - Permanent 20 mana gain</button><br>
-            <button onclick="earth1()"class="selection1" id="selectearth1"><b>EARTH</b><br><b class="passivetext">Passive</b>: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana</button><br>
-            <button onclick="wind1()" class="selection1" id="selectwind1"><b>WIND</b><br><b class="passivetext">Passive</b>: Windtalker - Heals +50% of damage dealt to the enemy in every attack <br> <b class="passivetext">Active Passive</b>: Faith or Luck? - All skills have a high chance of working</button>  <br>
+            <b class="header" id="header1">PLAYER 1:</b> <br>
+            <button onclick="fire1()" class="selection1" id="selectfire1"><b class="names">FIRE</b><br><b>Passive</b>: Burning Soul - Deal extra damage equals to 30% of lost HP</button> <br>
+            <button onclick="water1()" class="selection1" id="selectwater1"><b class="names">WATER</b><br><b>Passive</b>: Sea Cradle - Gains an extra +10 heal if HP drops below 30<br><b>Active Passive</b>: Neptune's Gift - Permanent 20 mana gain</button><br>
+            <button onclick="earth1()"class="selection1" id="selectearth1"><b class="names">EARTH</b><br><b>Passive</b>: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana</button><br>
+            <button onclick="wind1()" class="selection1" id="selectwind1"><b class="names">WIND</b><br><b>Passive</b>: Windtalker - Heals +30% of damage dealt to the enemy in every attack <br> <b>Active Passive</b>: Faith or Luck? - All skills have a high chance of working</button>  <br>
             <button onclick="submit1()" id="submit1" class="submit">E N T E R</button>
         </div>
         <br>
         <div id="pvp2" class="pvpcontainer">
-            <b class="header">PLAYER 2:</b> <br>
-            <button onclick="fire2()" class="selection1" id="selectfire2"><b>FIRE</b><br><b class="passivetext">Passive</b>: Burning Soul - Deal extra damage equals to 30% of lost HP</button><br>
-            <button onclick="water2()" class="selection1" id="selectwater2"><b>WATER</b><br><b class="passivetext">Passive</b>: Sea Cradle - Gains an extra +10 heal if HP drops below 30<br><b class="passivetext">Active Passive</b>: Neptune's Gift - Permanent 20 mana gain</button><br>
-            <button onclick="earth2()"class="selection1" id="selectearth2"><b>EARTH</b><br><b class="passivetext">Passive</b>: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana</button><br>
-            <button onclick="wind2()" class="selection1" id="selectwind2"><b>WIND</b><br><b class="passivetext">Passive</b>: Windtalker - Heals +50% of damage dealt to the enemy in every attack <br> <b class="passivetext">Active Passive</b>: Faith or Luck? - All skills have a high chance of working</button>  <br>
+            <b class="header" id="header2">PLAYER 2:</b> <br>
+            <button onclick="fire2()" class="selection1" id="selectfire2"><b class="names">FIRE</b><br><b>Passive</b>: Burning Soul - Deal extra damage equals to 30% of lost HP</button><br>
+            <button onclick="water2()" class="selection1" id="selectwater2"><b class="names">WATER</b><br><b>Passive</b>: Sea Cradle - Gains an extra +10 heal if HP drops below 30<br><b>Active Passive</b>: Neptune's Gift - Permanent 20 mana gain</button><br>
+            <button onclick="earth2()"class="selection1" id="selectearth2"><b class="names">EARTH</b><br><b>Passive</b>: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana</button><br>
+            <button onclick="wind2()" class="selection1" id="selectwind2"><b class="names">WIND</b><br><b>Passive</b>: Windtalker - Heals +30% of damage dealt to the enemy in every attack <br> <b>Active Passive</b>: Faith or Luck? - All skills have a high chance of working</button>  <br>
             <button onclick="submit2()" id="submit2" class="submit">S T A R T</button>
         </div>
     </div>
-    <div id="right" class="buttonsss" onclick="move1()"><ion-icon name="caret-forward-circle-outline"></ion-icon></div>
-    <div id="left" class="buttonsss" onclick="move2()"><ion-icon name="caret-back-circle-outline"></ion-icon></div>
+    <div id="right" class="buttonsss" onclick="move1()"><ion-icon name="caret-forward-outline"></ion-icon></div>
+    <div id="left" class="buttonsss" onclick="move2()"><ion-icon name="caret-back-outline"></ion-icon></div>
 
 
 
 
     <!--TURNS-->
+    
     <table id="turns">
         <tr>
             <td class="player" id="p1">
@@ -87,7 +92,7 @@
 
                         <div id="passive1" class="passives"></div>
                         
-                        <div id="movework1"></div>
+                        <div id="movework1" class="movework"></div>
                     </div>
                 </div>
             </td>
@@ -128,12 +133,15 @@
                     </div>
                     <div id="passive2" class="passives"></div>
 
-                    <div id="movework2"></div>
+                    <div id="movework2" class="movework"></div>
                 </div>
             </td>
         </tr>
     </table>
     
+    <div id="whitebar"></div>
+    <div id="fight">FIGHT!!</div>
+
     <table id="screen">
         <tr>
             <td>

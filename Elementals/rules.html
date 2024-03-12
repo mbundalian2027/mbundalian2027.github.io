@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELEMENTALS | RULES</title>
+    <title>Elementals | RULES</title>
+
 
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,10 +16,22 @@
 
 
     <style>
+        @keyframes pagefadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         body{
-            background-image: url('pics/bg2.jpg');
+            animation: pagefadein 1s ease-in-out;
+        }
+        body{
+            background-image: url('pics/dungeon.png');
             background-size: cover;
-            background-position: center bottom;
+            background-position: center;
             background-attachment: fixed;
         }
         .text{
@@ -26,14 +39,32 @@
             font-weight: 150;
             margin-left: auto;
             margin-right: auto;
-            width: 50%;
+            width: 60%;
             background-image: url('pics/scrollbg.avif');
             background-size: cover;
             padding: 2%;
             font-size: 15pt;
+            color:rgb(82, 49, 49);
+            animation: scrolling 3s linear forwards;
+        }
+        @keyframes scrolling{
+                0% {
+                clip-path: inset(0 0 100% 0);
+            }
+            100% {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        .white{
+            background-color: rgba(245, 245, 245, 0.5);
+            padding:3%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
         }
         .heading{
-            font-size: 20pt; 
+            font-size: 40pt; 
             text-align: center;
         }
         .back{
@@ -46,57 +77,59 @@
         }
     </style>
 </head>
-<body>
+<body class="pagefadein">
     <a href="index.html" class="back"><ion-icon name="arrow-back-outline"></ion-icon></a>
     <div class="text">
-        <div class="heading"><b>RULES:</b></div><br><br>
-        ELEMENTALS IS A STRATEGICAL PLAYER VS PLAYER GAME<br><br><br>
+        <div class="white">
+            <div class="heading"><b>RULES:</b></div><br><br>
+            ELEMENTALS IS A STRATEGICAL PLAYER VS PLAYER GAME<br><br><br>
 
-        1. EACH PLAYER CHOOSES THEIR ELEMENTAL ATTRIBUTE WHICH HAVE THEIR OWN PASSIVE <br>
-        &bullet; <b>Fire</b>: High offensive capabilities with no heal skill <br>
-                    Hell's Inferno: 12 DMG <br>
-                    Scorching Sun: 17 DMG | 25 MANA <br>
-                    Hellfire's Incarnate: 40 DMG | 80 MANA <br><br>
-                    Passive: Burning Soul - Deal extra damage equals to 30% of lost HP <br><br><br>
+            1. EACH PLAYER CHOOSES THEIR ELEMENTAL ATTRIBUTE WHICH HAVE THEIR OWN PASSIVE <br>
+            &bullet; <b>Fire</b>: High offensive capabilities with no heal skill <br>
+                        Hell's Inferno: 12 DMG <br>
+                        Scorching Sun: 17 DMG | 25 MANA <br>
+                        Hellfire's Incarnate: 40 DMG | 80 MANA <br><br>
+                        Passive: Burning Soul - Deal extra damage equals to 30% of lost HP <br><br><br>
 
-        &bullet;  <b>Water</b>: An all rounder with decent damage and heal <br>
-                    Striking Tide: 10 DMG <br>
-                    Hydro-Shield: +30 HP | 20 MANA <br>
-                    Drowning Wave: 25 DMG (+10% of enemy's HP) | 45 MANA <br><br>
-                    Passive: Sea Cradle - Gains an extra +10 heal if HP drops below 30 <br>
-                    Active Passive: Neptune's Gift - Permanent 20 mana gain <br><br><br>
+            &bullet;  <b>Water</b>: An all rounder with decent damage and heal <br>
+                        Striking Tide: 10 DMG <br>
+                        Hydro-Shield: +30 HP | 20 MANA <br>
+                        Drowning Wave: 25 DMG (+10% of enemy's HP) | 45 MANA <br><br>
+                        Passive: Sea Cradle - Gains an extra +10 heal if HP drops below 30 <br>
+                        Active Passive: Neptune's Gift - Permanent 20 mana gain <br><br><br>
 
-        &bullet; <b>Earth</b>: Tanky with massive heals but low on offense <br>
-                    Groundbreaker: 7 DMG <br>
-                    Earthen Wall: +50 HP | 40 MANA <br>
-                    Geo Grandia: 20 DMG | 45 MANA <br><br>
-                    Passive: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana <br><br><br>
+            &bullet; <b>Earth</b>: Tanky with massive heals but low on offense <br>
+                        Groundbreaker: 7 DMG <br>
+                        Earthen Wall: +50 HP | 40 MANA <br>
+                        Geo Grandia: 20 DMG | 45 MANA <br><br>
+                        Passive: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana <br><br><br>
 
-        &bullet; <b>Wind</b>: Balanced offensive and defensive capabilities <br><br>
-                    Towering Tornado: 15 DMG <br>
-                    Goddess's Breath: +20 HP | 30 MANA <br>
-                    Tempest Drive: 30 DMG | 50 MANA <br><br>
+            &bullet; <b>Wind</b>: Balanced offensive and defensive capabilities <br><br>
+                        Towering Tornado: 15 DMG <br>
+                        Goddess's Breath: +20 HP | 30 MANA <br>
+                        Tempest Drive: 30 DMG | 50 MANA <br><br>
 
-                    Passive: Windtalker - Heals +50% of damage dealt to the enemy in every attack <br>
-                    Active Passive: Faith or Luck? - All skills have a high chance of working
+                        Passive: Windtalker - Heals +30% of damage dealt to the enemy in every attack <br>
+                        Active Passive: Faith or Luck? - All skills have a high chance of working
 
-        <br><br><br>
-        <br>
-    
-        2. EACH ELEMENT HAVE 3 DIFFERENT SKILLS (1 BASIC AND 2 SPECIAL) WITH 2 DIFFERENT EFFECTS (HEAL AND DAMAGE) <br><br><br>
-        3. EACH ATTACK WILL GO THROUGH A RANDOMIZER TO DETERMINE WHETHER IT WILL BE EFFECTIVE OR NOT (<b>EACH MOVE HAS DIFFERENT CHANCES OF WORKING</b>)<br><br><br>
-        4. PLAYERS HAVE <b>LIMITED MANA</b> TO PREVENT SPAMMING (<b>BASIC ATTACKS REPLENISH 10 MANA PER MOVE</b>) <br><br><br>
-        5. EACH PLAYER WILL TAKE TURNS EXECUTING THEIR MOVES UNTIL ONE PLAYER'S HP DROPS TO 0<br><br><br>
+            <br><br><br>
+            <br>
+        
+            2. EACH ELEMENT HAVE 3 DIFFERENT SKILLS (1 BASIC AND 2 SPECIAL) WITH 2 DIFFERENT EFFECTS (HEAL AND DAMAGE) <br><br><br>
+            3. EACH ATTACK WILL GO THROUGH A RANDOMIZER TO DETERMINE WHETHER IT WILL BE EFFECTIVE OR NOT (<b>EACH MOVE HAS DIFFERENT CHANCES OF WORKING</b>)<br><br><br>
+            4. PLAYERS HAVE <b>LIMITED MANA</b> TO PREVENT SPAMMING (<b>BASIC ATTACKS REPLENISH 10 MANA PER MOVE</b>) <br><br><br>
+            5. EACH PLAYER WILL TAKE TURNS EXECUTING THEIR MOVES UNTIL ONE PLAYER'S HP DROPS TO 0<br><br><br>
 
-        <br><br><br><br><br>
-        <div class="heading"><b>TIPS AND TRICKS:</b></div><br><br>
-        1. ELEMENTALS IS COMPLETELY BASED ON YOUR STRATEGY AND LUCK  <br><br>
-        &bullet; FIRE - Stay on offense, save your mana for the finishing blow <br><br>
-        &bullet; WATER - Shuffle in between offense and defense based on your opponent <br><br>
-        &bullet; EARTH - Play it safe, take turns in spamming heals and attacking until your opponent is one hit<br><br>
-        &bullet; WIND - You are always on defense, spam your basic attack until you have enough mana for your ultimate <br><br><br>
-        2. USE <b>CONSOLE</b> TO CHECK PLAYERS' LIVES AFTER EVERY ROUND <br><br><br>
-        3. PLAYER ONE ALWAYS GOES FIRST (USE THIS TO YOUR ADVANTAGE) <br><br><br>
+            <br><br><br><br><br>
+            <div class="heading"><b>TIPS AND TRICKS:</b></div><br><br>
+            1. ELEMENTALS IS COMPLETELY BASED ON YOUR STRATEGY AND LUCK  <br><br>
+            &bullet; FIRE - Watch your health, the lower it is, the more you hurt so keep you opponents level down, save your mana for the finishing blow <br><br>
+            &bullet; WATER - Your regeneration abilities are strong so shuffle in between offense and defense based on your opponent. <br><br>
+            &bullet; EARTH - Your passive is your best friend. Just watch out for burst damage elements like fire<br><br>
+            &bullet; WIND - You are always on defense, spam your basic attack until you have enough mana for your ultimate <br><br><br>
+            2. USE <b>CONSOLE</b> TO CHECK PLAYERS' LIVES AFTER EVERY ROUND <br><br><br>
+            3. PLAYER ONE ALWAYS GOES FIRST (USE THIS TO YOUR ADVANTAGE) <br><br><br>
+        </div>
     </div>
 </body>
 </html>

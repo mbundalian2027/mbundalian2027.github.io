@@ -25,7 +25,7 @@ function fire1() {
         elem.style.backgroundColor = "";
         elem.style.color = "";
     });
-    document.getElementById('selectfire1').style.backgroundColor = "rgb(207, 0, 0)";
+    document.getElementById('selectfire1').style.backgroundColor = "rgb(241, 18, 18)";
     document.getElementById('selectfire1').style.color ="white";
     document.getElementById('submit1').style.backgroundColor = "";
 }
@@ -35,7 +35,7 @@ function water1() {
         elem.style.backgroundColor = "";
         elem.style.color = "";
     });
-    document.getElementById('selectwater1').style.backgroundColor = "rgb(8, 51, 115)";
+    document.getElementById('selectwater1').style.backgroundColor = "rgb(0, 97, 187)";
     document.getElementById('selectwater1').style.color ="white";
     document.getElementById('submit1').style.backgroundColor = "";
 }
@@ -45,7 +45,7 @@ function earth1() {
         elem.style.backgroundColor = "";
         elem.style.color = "";
     });
-    document.getElementById('selectearth1').style.backgroundColor = "rgb(43, 21, 21)";
+    document.getElementById('selectearth1').style.backgroundColor = "rgb(56, 18, 18)";
     document.getElementById('selectearth1').style.color ="white";
     document.getElementById('submit1').style.backgroundColor = "";
 }
@@ -60,7 +60,7 @@ function wind1() {
 }
 
 function turnRedForOneSecond1() {
-    document.getElementById('submit1').style.backgroundColor = "rgb(180, 0, 0)";
+    document.getElementById('submit1').style.backgroundColor = "rgb(255, 239, 96)";
 
     setTimeout(() => {
         document.getElementById('submit1').style.backgroundColor = "";
@@ -100,7 +100,7 @@ function submit1() {
                 break;
         }
 
-        document.getElementById('submit1').style.backgroundColor = "rgb(9, 22, 14)";
+        document.getElementById('submit1').style.backgroundColor = "black";
         setTimeout(() => {
             document.getElementById('pvp2').classList.remove('hidden');
             document.querySelectorAll('button.indivmoves2').forEach(elem => {
@@ -120,10 +120,16 @@ function submit1() {
 
 }
 function move1(){
-    document.getElementById('pvp1').style.display ="none";
-    document.getElementById('pvp2').style.display ="block";
-    document.getElementById('right').style.display ="none";
+    document.getElementById('pvp2').style.animation = "toPlayer2 .5s ease forwards";
+    document.getElementById('pvp1').style.animation = "exitPlayer1 1s ease forwards";
     document.getElementById('left').style.display ="block";
+    document.getElementById('right').style.display ="none";
+}
+function move2(){
+    document.getElementById('pvp2').style.animation = "exitPlayer2 1s ease forwards";
+    document.getElementById('pvp1').style.animation = "toPlayer1 .5s ease forwards";
+    document.getElementById('right').style.display ="block";
+    document.getElementById('left').style.display ="none";
 }
 
 //PLAYER 2
@@ -135,7 +141,7 @@ function fire2() {
         elem.style.backgroundColor = "";
         elem.style.color = "";
     });
-    document.getElementById('selectfire2').style.backgroundColor = "rgb(207, 0, 0)";
+    document.getElementById('selectfire2').style.backgroundColor = "rgb(241, 18, 18)";
     document.getElementById('selectfire2').style.color ="white";
     document.getElementById('submit2').style.backgroundColor = "";
 }
@@ -145,7 +151,7 @@ function water2() {
         elem.style.backgroundColor = "";
         elem.style.color = "";
     });
-    document.getElementById('selectwater2').style.backgroundColor = "rgb(8, 51, 115)";
+    document.getElementById('selectwater2').style.backgroundColor = "rgb(0, 97, 187)";
     document.getElementById('selectwater2').style.color ="white";
     document.getElementById('submit2').style.backgroundColor = "";
 }
@@ -155,7 +161,7 @@ function earth2() {
         elem.style.backgroundColor = "";
         elem.style.color = "";
     });
-    document.getElementById('selectearth2').style.backgroundColor = "rgb(43, 21, 21)";
+    document.getElementById('selectearth2').style.backgroundColor = "rgb(56, 18, 18)";
     document.getElementById('selectearth2').style.color ="white";
     document.getElementById('submit2').style.backgroundColor = "";
 }
@@ -169,7 +175,7 @@ function wind2() {
     document.getElementById('submit2').style.backgroundColor = "";
 }
 function turnRedForOneSecond2() {
-    document.getElementById('submit2').style.backgroundColor = "rgb(180, 0, 0)";
+    document.getElementById('submit2').style.backgroundColor = "rgb(255, 239, 96)";
 
     setTimeout(() => {
         document.getElementById('submit2').style.backgroundColor = "";
@@ -211,7 +217,7 @@ function submit2() {
             }
             console.log("Player 2 moves\n" + moves2);
             console.log("Life: " + life2);
-            document.getElementById('submit2').style.backgroundColor = "rgb(9, 22, 14)";
+            document.getElementById('submit2').style.backgroundColor = "black";
 
             if (life1 != 0 && life2 != 0){
                 setTimeout(() => {
@@ -219,8 +225,24 @@ function submit2() {
                     document.getElementById('turns').style.display = "block";
                     document.getElementById('screen').style.display = "block";
                     document.getElementById('left').style.display ="none";
+                    
+
+                    //WHITE SCREEN DASH ANIMATION
+                    document.getElementById("whitebar").style.display = "block";     
+
+                    setTimeout(() => {
+                        document.getElementById("whitebar").style.animation = "whitebar 3s ease forwards";
+                        document.getElementById("fight").style.display = "block";
+                        document.body.style.backgroundImage = "url('pics/bg1.jpg')"
+                        
+                    }, 1000);
+                    
+                    setTimeout(function() {
+                        document.getElementById("fight").style.display = "none";
+                    }, 3000);
                     player1turn();
-                }, 500);
+                    
+                }, 10);
             } else{
                 turnRedForOneSecond2();
             }
@@ -234,12 +256,6 @@ function submit2() {
         turnRedForOneSecond2();
     }
 
-}
-function move2(){
-    document.getElementById('pvp1').style.display ="block";
-    document.getElementById('pvp2').style.display ="none";
-    document.getElementById('right').style.display ="block";
-    document.getElementById('left').style.display ="none";
 }
 //GAME
 //DAMAGE PER MOVE
@@ -433,7 +449,7 @@ function p1earth3() {
 //WIND
 function p1wind1() {
     life2 -= dmgwi1;
-    life1 += (0.5*dmgwi1);
+    life1 += (0.3*dmgwi1);
     movework1determine = "yes";
 
     addmana1();
@@ -467,7 +483,7 @@ function p1wind3() {
 
         if (randomnumber <= 94) {
             life2 -= dmgwi3;
-            life1 += (0.5*dmgwi3);
+            life1 += (0.3*dmgwi3);
             mana1 -= manawi3;
             movework1determine = "yes";
         }
@@ -636,7 +652,7 @@ function p2earth3() {
 //WIND
 function p2wind1() {
     life1 -= dmgwi1;
-    life2 += (0.5*dmgwi1);
+    life2 += (0.3*dmgwi1);
     movework2determine = "yes";
     
     addmana2();
@@ -670,7 +686,7 @@ function p2wind3() {
 
         if (randomnumber <= 94) {
                 life1 -= dmgwi3;
-                life2 += (0.5*dmgwi3);
+                life2 += (0.3*dmgwi3);
                 mana2 -= manawi3;
                 movework2determine = "yes";
         }
@@ -715,7 +731,6 @@ function disableButton1() {
     }, 500);
 
 }
-
 
 function addmana2() {
     mana2 += 10;
@@ -822,7 +837,7 @@ function player1turn() {
         case "wind":
             updateHealth1(life1, lifewind);
             document.getElementById('windmoves1').style.display = "block";
-                passive1.innerHTML = "Lifesteal 50%";
+                passive1.innerHTML = "Lifesteal 30%";
                     if (life1 > lifewind){
                         life1 = lifewind;
                     }
@@ -866,7 +881,7 @@ function player1turn() {
         case "wind":
             updateHealth2(life2, lifewind);
             document.getElementById('windmoves2').style.display = "block";
-            passive2.innerHTML = "Lifesteal 50%";
+            passive2.innerHTML = "Lifesteal 30%";
                     if (life2 > lifewind){
                         life2 = lifewind;
                     }
@@ -945,7 +960,7 @@ function player2turn() {
         case "wind":
             updateHealth1(life1, lifewind);
             document.getElementById('windmoves1').style.display = "block";
-                passive1.innerHTML = "Lifesteal 50%";
+                passive1.innerHTML = "Lifesteal 30%";
                     if (life1 > lifewind){
                         life1 = lifewind;
                     }
@@ -989,7 +1004,7 @@ function player2turn() {
         case "wind":
             updateHealth2(life2, lifewind);
             document.getElementById('windmoves2').style.display = "block";
-            passive2.innerHTML = "Lifesteal 50%";
+            passive2.innerHTML = "Lifesteal 30%";
                     if (life2 > lifewind){
                         life2 = lifewind;
                     }
@@ -1027,3 +1042,5 @@ function player2turn() {
 
 
 
+
+  

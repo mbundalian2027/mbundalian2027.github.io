@@ -9,22 +9,22 @@
 
 body{
     font-family: "VT323", monospace;
-    animation: pagefadein 0.5s ease-in-out;
+    animation: pagefadein 1s ease-in-out;
     user-select: none;
     overflow: hidden;
 }
 
 .pvpbody{
     color:whitesmoke;
-    background-image: url('pics/bg1.jpg');
-    background-size: cover;
+    background-image: url('pics/forest.png');
+    background-size: 101%;
     background-position: center bottom;
     background-attachment: fixed;
 }
 
 .back{
     text-decoration: none;
-    color:white;
+    color:rgb(255, 255, 255);
     font-size: 25pt;
     position: fixed;
     top:10px;
@@ -38,7 +38,8 @@ body{
     text-align: center;
 }
 .pvpcontainer{
-    background-image:url('pics/scrollbg.png');
+    background-image:url('pics/ancient.avif');
+    background-size: cover;
     position:absolute;
     left:50%;
     top:50%;
@@ -47,66 +48,143 @@ body{
     width: 900px;
     height: 75%;
     padding: 2%;
-    border: 5px solid rgb(66, 32, 32);
-}
-#pvp2{
-    display:none;
-}
-.pvpcontainer .submit{
-    height: 10%;
-    background-color: rgb(25, 84, 48);
-    font-size: 20pt;
-    color:white;
-    border-radius: 10px;
-    border: 3px solid black;
+    border: 5px solid rgb(84, 35, 35);
 }
 
 .buttonsss{
     position:fixed;
     top:50%;
-    color:rgb(0, 0, 0);
-    font-size: 50pt;
+    font-size: 700%;
     padding:5px;
 }
 #right{
     right:5%;
     transform:translateY(-50%);
+    color:rgb(168, 0, 0);
 }
 #left{
     left:5%;
     transform:translateY(-50%);
     display:none;
+    color:rgb(0, 15, 92);
+}
+#pvp2{
+    transform:translateX(5000px);
+}
+@keyframes toPlayer2 {
+    0% { 
+        transform:translate(5000px,-50%);
+    }
+    100% {
+        transform:translate(-50%,-50%);
+    }
+}
+@keyframes toPlayer1 {
+    0% { 
+        transform:translate(-5000px,-50%);
+    }
+    100% {
+        transform:translate(-50%,-50%);
+    }
+}
+
+@keyframes exitPlayer1{
+    0%{
+        transform:translate(-50%,-50%);
+    }
+    100%{
+        transform:translate(-5000px,-50%);
+    }
+}
+@keyframes exitPlayer2{
+    0% { 
+        transform:translate(-50%,-50%);
+    }
+    100% {
+        transform:translate(5000px,-50%);
+    }
 }
 
 #pvpchoosecontainer .header{
-    font-size:60pt;
-    color:black;
+    font-size:400%;
     border-radius: 2px;
     padding: 2px;
 }
-.pvpcontainer button{
+#header1{
+    color:rgb(168, 0, 0);
+}
+#header2{
+    color:rgb(0, 15, 92);
+}
+
+.selection1{
     width: 80%;
-    height: 75px;
+    height: 16%;
     padding:1%;
     font-family: "VT323", monospace;
     margin-bottom:5px;
     margin:.5%;
-    border: 3px dotted rgb(0, 0, 0);
-    font-size: 12pt;
+    border: 3.5px solid rgb(66, 32, 32);
+    border-radius: 10px;
+    font-size: 110%;
+    transition:.2s;
 }
-.selection1 b{
-    font-size: 15pt;
+.submit{
+    height: 10%;
+    width: 60%;
+    margin-top: 3%;
+    font-family: "VT323", monospace;
+    font-size:280%;
+    color:white;
+    border-radius: 10px;
+    border: 3px solid black;
 }
-.selection1 .passivetext{
-    font-size: 12pt;
+#submit1{
+    background-color:rgb(168, 0, 0);
+}
+#submit2{
+    background-color:rgb(0, 15, 92);
+}
+.selection1 .names{
+    font-size: 120%;
 }
 .selection1:hover{
-    background-color: rgb(210, 210, 210);
+    background-color: rgb(204, 204, 204);
 }
 
 
 
-
+#whitebar{
+    width: 100%;
+    height:100%;
+    z-index: 10;
+    top:0;
+    right: 0;
+    background-color: white;
+    position:absolute;
+    display: none;
+}
+@keyframes whitebar{
+    100%{
+        transform:translateX(-100%);
+    }
+}
+#fight{
+    font-family: "Angkor", sans-serif;
+    font-size: 900%;
+    position:absolute;
+    color:rgb(255, 255, 255);
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display:none;
+    z-index:9;
+    text-shadow:
+    -3px -3px 0 #000,  
+     3px -3px 0 #000,
+    -3px  3px 0 #000,
+     3px  3px 0 #000; 
+}
 #turns{
     display: none;
     font-size: 120%;
@@ -119,11 +197,11 @@ body{
     width: 95%;
 }
 .actual{
-    background-color: rgb(253, 241, 226);
+    background-color: rgb(255, 234, 207);
     color: black;
     padding: 5px;
     border-radius: 5px;
-    border: 2px solid;
+    border: 3px solid rgb(73, 37, 37);
     width: 250px;
     height: 325px;
     margin-right: auto;
@@ -150,20 +228,23 @@ body{
     font-size: 12pt;
 }
 .bar {
-    width: 100%;
+    width: 99%;
     height: 15px;
     border: 1px solid #000;
     background-color: #f0f0f0;
 }
 .health{
     height: 100%;
-    background-color: #4caf50;
+    background-color: rgb(0, 168, 112);
 }
 .passives{
     font-weight: bolder;
-    color:rgb(216, 0, 0);
+    color:rgb(117, 13, 13);
 }
-
+.movework{
+    font-weight: 900;
+    color:rgb(0, 24, 44);
+}
 #moves1 #firemoves1 button{
     background-color: rgb(175, 0, 0);
 }
@@ -207,7 +288,7 @@ body{
     left:50%;
     transform:translateX(-50%);
     position:absolute;
-    bottom:5%;
+    bottom:4%;
 }
 #screen td{
     border:2px solid;
