@@ -228,18 +228,29 @@ function submit2() {
                     
 
                     //WHITE SCREEN DASH ANIMATION
-                    document.getElementById("whitebar").style.display = "block";     
-
+                    document.getElementById("whitebar").style.display = "block";   
+                    document.getElementById('backgroundMusic').pause();
+                    kokonut = 1;
+                    setTimeout(() => {
+                        document.getElementById('fightaudio').play();  
+                        document.getElementById('fightaudio').volume = 1;
+                    }, 500);
                     setTimeout(() => {
                         document.getElementById("whitebar").style.animation = "whitebar 3s ease forwards";
                         document.getElementById("fight").style.display = "block";
                         document.body.style.backgroundImage = "url('pics/bg1.jpg')"
-                        
                     }, 1000);
                     
                     setTimeout(function() {
                         document.getElementById("fight").style.display = "none";
+                        document.getElementById('fightingmusic').play();
+                        document.getElementById('fightingmusic').volume = 1;
+                        toknow = 0;
                     }, 3000);
+
+                    setTimeout(() => {
+
+                    }, 6000);
                     player1turn();
                     
                 }, 10);
@@ -1039,8 +1050,89 @@ function player2turn() {
     }
 }
 
+//SOUND
+var toknow = 1;
+var backgroundMusic = document.getElementById("backgroundMusic");
+var kokonut = 0;
 
+function sound(){
 
+    if (toknow == 1){
+        document.getElementById("mute").style.display="none";
+        document.getElementById("unmute").style.display="block";
+        
+        if (kokonut == 1){
+            document.getElementById('fightingmusic').play();
+        } else{
+            backgroundMusic.play();
+        }
 
+        backgroundMusic.volume = 1;
+        toknow = 0;
+
+    } else if (toknow == 0){
+        document.getElementById("mute").style.display="block";
+        document.getElementById("unmute").style.display="none";
+        backgroundMusic.pause();
+
+        document.querySelectorAll('audio.background').forEach(elem => {
+            elem.pause();
+        });
+
+        toknow = 1;
+    }
+}
+function reload(){
+    window.location.reload();
+}
+
+function rules(){
+    document.getElementById('text1').style.display = "block";
+    document.getElementById('index').style.display = "none";
+    document.body.style.backgroundImage="url('pics/dungeon.png')";
+    document.getElementById('rules').style.display = "block";
+    document.body.style.overflowY="scroll";
+    document.getElementById('text1').style.animation = "scrolling 5s linear forwards";
+}
+
+function dev(){
+    document.getElementById('text2').style.display = "block";
+    document.getElementById('index').style.display = "none";
+    document.body.style.backgroundImage="url('pics/bbg.png')";
+    document.getElementById('aboutus').style.display = "block";
+    document.body.style.overflowY="scroll";
+    document.getElementById('text2').style.animation = "scrolling 2s linear forwards";
+}
+function backhome(){
+    document.getElementById('index').style.display = "block";
+    document.body.style.backgroundImage="url('pics/intro.png')";
+    document.body.style.overflow="hidden";
+    document.getElementById('rules').style.display = "none";
+    document.getElementById('aboutus').style.display = "none";
+    document.getElementById('text1').style.display = "none";
+    document.getElementById('text2').style.display = "none";
+}
+function clickanywhere(){
+    document.getElementById('menu').style.display = "block";
+    document.getElementById('menu').style.animation = "drop 1s ease forwards";
+    document.getElementById('clickanywhere').style.animation = "drop2 2s ease forwards";
+    setTimeout(function(){
+        document.getElementById('clickanywhere').style.display = "none";
+    }, 3000);
+    
+    backgroundMusic.play();
+    backgroundMusic.volume = 1;
+    toknow = 0;
+}
+
+function pvp(){
+    document.getElementById('lahat').style.display = "block";
+    document.getElementById('choosemuna').style.display = "none";
+    kokonut = 0;
+    
+    document.getElementById('backgroundMusic').play();
+    document.getElementById('backgroundMusic').volume = 1;
+    toknow = 0;
+}
 
   

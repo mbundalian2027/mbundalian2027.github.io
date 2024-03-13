@@ -173,17 +173,17 @@ body{
     font-family: "Angkor", sans-serif;
     font-size: 900%;
     position:absolute;
-    color:rgb(255, 255, 255);
+    color:rgb(255, 48, 48);
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
     display:none;
     z-index:9;
     text-shadow:
-    -3px -3px 0 #000,  
-     3px -3px 0 #000,
-    -3px  3px 0 #000,
-     3px  3px 0 #000; 
+    -3px -3px 0 #ffffff,  
+     3px -3px 0 #ffffff,
+    -3px  3px 0 #ffffff,
+     3px  3px 0 #ffffff; 
 }
 #turns{
     display: none;
@@ -272,13 +272,69 @@ body{
     background-color: rgb(255, 255, 255);
     color:black;
 }
-
-
 .player1moves{
     display:none;
 }
 .player2moves{
     display: none;
+}
+
+/*-------------------SETTINGS-------------------*/
+.settings{
+    background-color: white;
+    border-radius: 10px;
+    font-weight: 1000;
+    bottom:0;
+    left: 0;
+    position:absolute;
+    width: fit-content;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-size: 20pt;
+    position:fixed;
+    z-index:4;
+    color:black;
+}
+.settings table{
+    text-align: center;
+}
+
+.settings ion-icon{
+    display: block;
+}
+.settings ion-icon:hover{
+    background-color: rgb(190, 190, 190);
+    border-radius: 5px;
+}
+#mute{
+    display: none;
+}
+#lahat{
+    display: none;
+}
+
+#choosemuna{
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position:absolute;
+    width: 80%;
+    text-align: center;
+}
+
+#choosemuna button{
+    width: 50%;
+    height: 80px;
+    border-radius: 10px;
+    border:none;
+    font-size: 40pt;
+    font-family: "VT323", monospace;
+}
+#choosemuna button:hover{
+    background-color: rgb(1, 6, 54);
+    color:white;
 }
 
 

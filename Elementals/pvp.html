@@ -28,151 +28,182 @@
 <body class="pvpbody pagefadein">
     <a href="index.html" class="back" id="backtoindex"><div><ion-icon name="arrow-back-outline"></ion-icon></div></a>
     <a href="pvp.html" class="back" id="backtopvp"><div><ion-icon name="arrow-back-outline"></ion-icon></div></a>
-    <div id="pvpchoosecontainer">
-        <div id="pvp1" class="pvpcontainer">
-            <b class="header" id="header1">PLAYER 1:</b> <br>
-            <button onclick="fire1()" class="selection1" id="selectfire1"><b class="names">FIRE</b><br><b>Passive</b>: Burning Soul - Deal extra damage equals to 30% of lost HP</button> <br>
-            <button onclick="water1()" class="selection1" id="selectwater1"><b class="names">WATER</b><br><b>Passive</b>: Sea Cradle - Gains an extra +10 heal if HP drops below 30<br><b>Active Passive</b>: Neptune's Gift - Permanent 20 mana gain</button><br>
-            <button onclick="earth1()"class="selection1" id="selectearth1"><b class="names">EARTH</b><br><b>Passive</b>: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana</button><br>
-            <button onclick="wind1()" class="selection1" id="selectwind1"><b class="names">WIND</b><br><b>Passive</b>: Windtalker - Heals +30% of damage dealt to the enemy in every attack <br> <b>Active Passive</b>: Faith or Luck? - All skills have a high chance of working</button>  <br>
-            <button onclick="submit1()" id="submit1" class="submit">E N T E R</button>
-        </div>
-        <br>
-        <div id="pvp2" class="pvpcontainer">
-            <b class="header" id="header2">PLAYER 2:</b> <br>
-            <button onclick="fire2()" class="selection1" id="selectfire2"><b class="names">FIRE</b><br><b>Passive</b>: Burning Soul - Deal extra damage equals to 30% of lost HP</button><br>
-            <button onclick="water2()" class="selection1" id="selectwater2"><b class="names">WATER</b><br><b>Passive</b>: Sea Cradle - Gains an extra +10 heal if HP drops below 30<br><b>Active Passive</b>: Neptune's Gift - Permanent 20 mana gain</button><br>
-            <button onclick="earth2()"class="selection1" id="selectearth2"><b class="names">EARTH</b><br><b>Passive</b>: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana</button><br>
-            <button onclick="wind2()" class="selection1" id="selectwind2"><b class="names">WIND</b><br><b>Passive</b>: Windtalker - Heals +30% of damage dealt to the enemy in every attack <br> <b>Active Passive</b>: Faith or Luck? - All skills have a high chance of working</button>  <br>
-            <button onclick="submit2()" id="submit2" class="submit">S T A R T</button>
-        </div>
+    
+    <div class="settings">
+        <audio id="fightingmusic" class="background" autoplay loop>
+            <source src="pics/game.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="fightaudio">
+            <source src="pics/fight.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="backgroundMusic" class="background" autoplay loop>
+            <source src="pics/calm.mp3" type="audio/mpeg">
+        </audio>
+        <table>
+            <tr>
+                <td class="sound">
+                    <ion-icon id="mute" name="volume-mute-outline" onclick="sound()"></ion-icon>
+                    <ion-icon id="unmute" name="musical-notes-outline" onclick="sound()"></ion-icon>
+                </td>
+                <td class="reset">
+                    <ion-icon name="refresh-outline" onclick="reload()"></ion-icon>
+                </td>
+            </tr>
+        </table>
     </div>
-    <div id="right" class="buttonsss" onclick="move1()"><ion-icon name="caret-forward-outline"></ion-icon></div>
-    <div id="left" class="buttonsss" onclick="move2()"><ion-icon name="caret-back-outline"></ion-icon></div>
 
 
+    <div id="choosemuna">
+        <button onclick="pvp()">PVP (1v1)</button>
+    </div>
 
-
-    <!--TURNS-->
+    <div id="lahat">
+        <div id="pvpchoosecontainer">
+            <div id="pvp1" class="pvpcontainer">
+                <b class="header" id="header1">PLAYER 1:</b> <br>
+                <button onclick="fire1()" class="selection1" id="selectfire1"><b class="names">FIRE</b><br><b>Passive</b>: Burning Soul - Deal extra damage equals to 30% of lost HP</button> <br>
+                <button onclick="water1()" class="selection1" id="selectwater1"><b class="names">WATER</b><br><b>Passive</b>: Sea Cradle - Gains an extra +10 heal if HP drops below 30<br><b>Active Passive</b>: Neptune's Gift - Permanent 20 mana gain</button><br>
+                <button onclick="earth1()"class="selection1" id="selectearth1"><b class="names">EARTH</b><br><b>Passive</b>: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana</button><br>
+                <button onclick="wind1()" class="selection1" id="selectwind1"><b class="names">WIND</b><br><b>Passive</b>: Windtalker - Heals +30% of damage dealt to the enemy in every attack <br> <b>Active Passive</b>: Faith or Luck? - All skills have a high chance of working</button>  <br>
+                <button onclick="submit1()" id="submit1" class="submit">E N T E R</button>
+            </div>
+            <br>
+            <div id="pvp2" class="pvpcontainer">
+                <b class="header" id="header2">PLAYER 2:</b> <br>
+                <button onclick="fire2()" class="selection1" id="selectfire2"><b class="names">FIRE</b><br><b>Passive</b>: Burning Soul - Deal extra damage equals to 30% of lost HP</button><br>
+                <button onclick="water2()" class="selection1" id="selectwater2"><b class="names">WATER</b><br><b>Passive</b>: Sea Cradle - Gains an extra +10 heal if HP drops below 30<br><b>Active Passive</b>: Neptune's Gift - Permanent 20 mana gain</button><br>
+                <button onclick="earth2()"class="selection1" id="selectearth2"><b class="names">EARTH</b><br><b>Passive</b>: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana</button><br>
+                <button onclick="wind2()" class="selection1" id="selectwind2"><b class="names">WIND</b><br><b>Passive</b>: Windtalker - Heals +30% of damage dealt to the enemy in every attack <br> <b>Active Passive</b>: Faith or Luck? - All skills have a high chance of working</button>  <br>
+                <button onclick="submit2()" id="submit2" class="submit">S T A R T</button>
+            </div>
+        </div>
+        <div id="right" class="buttonsss" onclick="move1()"><ion-icon name="caret-forward-outline"></ion-icon></div>
+        <div id="left" class="buttonsss" onclick="move2()"><ion-icon name="caret-back-outline"></ion-icon></div>
     
-    <table id="turns">
-        <tr>
-            <td class="player" id="p1">
-                <div class="actual" id="a1">
-                    PLAYER 1 (<b id="type1"></b>)<br>
-
-                    <div class="bar">
-                        <div class="health" id="health1"></div>
+    
+    
+    
+        <!--TURNS-->
+        
+        <table id="turns">
+            <tr>
+                <td class="player" id="p1">
+                    <div class="actual" id="a1">
+                        PLAYER 1 (<b id="type1"></b>)<br>
+    
+                        <div class="bar">
+                            <div class="health" id="health1"></div>
+                        </div>
+    
+                        Life: <b id="p1life"> </b> <br>
+                        Mana: <b id="p1mana"> </b>
+                        <!--PLAYER 1 MOVES-->
+                        <div id="moves1">
+                            <div id="firemoves1" class="player1moves">
+                                <button onclick="p1fire1()" class="indivmoves1"><b>Hell's Inferno</b><br>(12 DMG)</button><br>
+                                <button onclick="p1fire2()" class="indivmoves1"><b>Scorching Sun</b> <br>(17 DMG | 25 MANA)</button><br>
+                                <button onclick="p1fire3()" class="indivmoves1"><b>Hellfire's Incarnate</b> <br>(40 DMG | 80 MANA)</button>
+                            </div>
+                            <div id="watermoves1" class="player1moves">
+                                <button onclick="p1water1()" class="indivmoves1"><b>Striking Tide</b> <br>(10 DMG)</button><br>
+                                <button onclick="p1water2()" class="indivmoves1"><b>Hydro Shield</b> <br>(+30 HP | 20 MANA)</button><br>
+                                <button onclick="p1water3()" class="indivmoves1"><b>Drowning Wave</b> <br>(25 DMG (+10% of enemy's HP) | 45 MANA)</button>
+                            </div>
+                            <div id="earthmoves1" class="player1moves">
+                                <button onclick="p1earth1()" class="indivmoves1"><b>Groundbreaker</b> <br>(7 DMG)</button><br>
+                                <button onclick="p1earth2()" class="indivmoves1"><b>Earthen Wall</b> <br>(+50 HP | 40 MANA)</button><br>
+                                <button onclick="p1earth3()" class="indivmoves1"><b>Geo Grandia</b> <br>(20 DMG | 45 MANA)</button>
+                            </div>
+                            <div id="windmoves1" class="player1moves">
+                                <button onclick="p1wind1()" class="indivmoves1"><b>Towering Tornado</b> <br>(15 DMG)</button><br>
+                                <button onclick="p1wind2()" class="indivmoves1"><b>Goddess's Breath</b> <br>(+20 HP | 30 MANA)</button><br>
+                                <button onclick="p1wind3()" class="indivmoves1"><b>Tempest Drive</b> <br>(30 DMG | 50 MANA)</button>
+                            </div>
+    
+                            <div id="passive1" class="passives"></div>
+                            
+                            <div id="movework1" class="movework"></div>
+                        </div>
                     </div>
-
-                    Life: <b id="p1life"> </b> <br>
-                    Mana: <b id="p1mana"> </b>
-                    <!--PLAYER 1 MOVES-->
-                    <div id="moves1">
-                        <div id="firemoves1" class="player1moves">
-                            <button onclick="p1fire1()" class="indivmoves1"><b>Hell's Inferno</b><br>(12 DMG)</button><br>
-                            <button onclick="p1fire2()" class="indivmoves1"><b>Scorching Sun</b> <br>(17 DMG | 25 MANA)</button><br>
-                            <button onclick="p1fire3()" class="indivmoves1"><b>Hellfire's Incarnate</b> <br>(40 DMG | 80 MANA)</button>
-                        </div>
-                        <div id="watermoves1" class="player1moves">
-                            <button onclick="p1water1()" class="indivmoves1"><b>Striking Tide</b> <br>(10 DMG)</button><br>
-                            <button onclick="p1water2()" class="indivmoves1"><b>Hydro Shield</b> <br>(+30 HP | 20 MANA)</button><br>
-                            <button onclick="p1water3()" class="indivmoves1"><b>Drowning Wave</b> <br>(25 DMG (+10% of enemy's HP) | 45 MANA)</button>
-                        </div>
-                        <div id="earthmoves1" class="player1moves">
-                            <button onclick="p1earth1()" class="indivmoves1"><b>Groundbreaker</b> <br>(7 DMG)</button><br>
-                            <button onclick="p1earth2()" class="indivmoves1"><b>Earthen Wall</b> <br>(+50 HP | 40 MANA)</button><br>
-                            <button onclick="p1earth3()" class="indivmoves1"><b>Geo Grandia</b> <br>(20 DMG | 45 MANA)</button>
-                        </div>
-                        <div id="windmoves1" class="player1moves">
-                            <button onclick="p1wind1()" class="indivmoves1"><b>Towering Tornado</b> <br>(15 DMG)</button><br>
-                            <button onclick="p1wind2()" class="indivmoves1"><b>Goddess's Breath</b> <br>(+20 HP | 30 MANA)</button><br>
-                            <button onclick="p1wind3()" class="indivmoves1"><b>Tempest Drive</b> <br>(30 DMG | 50 MANA)</button>
-                        </div>
-
-                        <div id="passive1" class="passives"></div>
+                </td>
+                <td class="space"></td>
+                <td class="player" id="p2">
+                    <div class="actual" id="a2">
+                        PLAYER 2 (<b id="type2"></b>)<br>
                         
-                        <div id="movework1" class="movework"></div>
-                    </div>
-                </div>
-            </td>
-            <td class="space"></td>
-            <td class="player" id="p2">
-                <div class="actual" id="a2">
-                    PLAYER 2 (<b id="type2"></b>)<br>
-                    
-                    <div class="bar">
-                        <div class="health" id="health2"></div>
-                    </div>
-
-                    Life: <b id="p2life"> </b> <br>
-                    Mana: <b id="p2mana"> </b>
-
-                    <!--PLAYER 2 MOVES-->
-                    <div id="moves2">
-                        <div id="firemoves2" class="player2moves">
-                            <button onclick="p2fire1()" class="indivmoves2"><b>Hell's Inferno</b> <br>(12 DMG)</button><br>
-                            <button onclick="p2fire2()" class="indivmoves2"><b>Scorching Sun</b> <br>(17 DMG | 25 MANA)</button><br>
-                            <button onclick="p2fire3()" class="indivmoves2"><b>Hellfire's Incarnate</b> <br>(40 DMG | 80 MANA)</button>
+                        <div class="bar">
+                            <div class="health" id="health2"></div>
                         </div>
-                        <div id="watermoves2" class="player2moves">
-                            <button onclick="p2water1()" class="indivmoves2"><b>Striking Tide</b> <br>(10 DMG)</button><br>
-                            <button onclick="p2water2()" class="indivmoves2"><b>Hydro Shield</b> <br>(+30 HP | 20 MANA)</button><br>
-                            <button onclick="p2water3()" class="indivmoves2"><b>Drowning Wave</b> <br>(25 DMG (+10% of enemy's HP) | 45 MANA)</button>
-                        </div>
-                        <div id="earthmoves2" class="player2moves">
-                            <button onclick="p2earth1()" class="indivmoves2"><b>Groundbreaker</b> <br>(7 DMG)</button><br>
-                            <button onclick="p2earth2()" class="indivmoves2"><b>Earthen Wall</b> <br>(+50 HP | 40 MANA)</button><br>
-                            <button onclick="p2earth3()" class="indivmoves2"><b>Geo Grandia</b> <br>(20 DMG | 45 MANA)</button>
-                        </div>
-                        <div id="windmoves2" class="player1moves">
-                            <button onclick="p2wind1()" class="indivmoves2"><b>Towering Tornado</b> <br>(15 DMG)</button><br>
-                            <button onclick="p2wind2()" class="indivmoves2"><b>Goddess's Breath</b> <br>(+20 HP | 30 MANA)</button><br>
-                            <button onclick="p2wind3()" class="indivmoves2"><b>Tempest Drive</b> <br>(30 DMG | 50 MANA)</button>
-                        </div>
-                    </div>
-                    <div id="passive2" class="passives"></div>
-
-                    <div id="movework2" class="movework"></div>
-                </div>
-            </td>
-        </tr>
-    </table>
     
-    <div id="whitebar"></div>
-    <div id="fight">FIGHT!!</div>
-
-    <table id="screen">
-        <tr>
-            <td>
-                <div class="visualscreen">
-                    PLAYER 1
-
-                    <div class="users">
-                        <img src="pics/animations/fire2.png" alt="char" id="fire2">
-                        <img src="pics/animations/fire2.png" alt="char" id="water2">
-                        <img src="pics/animations/fire2.png" alt="char" id="earth2">
-                        <img src="pics/animations/fire2.png" alt="char" id="wind2">
+                        Life: <b id="p2life"> </b> <br>
+                        Mana: <b id="p2mana"> </b>
+    
+                        <!--PLAYER 2 MOVES-->
+                        <div id="moves2">
+                            <div id="firemoves2" class="player2moves">
+                                <button onclick="p2fire1()" class="indivmoves2"><b>Hell's Inferno</b> <br>(12 DMG)</button><br>
+                                <button onclick="p2fire2()" class="indivmoves2"><b>Scorching Sun</b> <br>(17 DMG | 25 MANA)</button><br>
+                                <button onclick="p2fire3()" class="indivmoves2"><b>Hellfire's Incarnate</b> <br>(40 DMG | 80 MANA)</button>
+                            </div>
+                            <div id="watermoves2" class="player2moves">
+                                <button onclick="p2water1()" class="indivmoves2"><b>Striking Tide</b> <br>(10 DMG)</button><br>
+                                <button onclick="p2water2()" class="indivmoves2"><b>Hydro Shield</b> <br>(+30 HP | 20 MANA)</button><br>
+                                <button onclick="p2water3()" class="indivmoves2"><b>Drowning Wave</b> <br>(25 DMG (+10% of enemy's HP) | 45 MANA)</button>
+                            </div>
+                            <div id="earthmoves2" class="player2moves">
+                                <button onclick="p2earth1()" class="indivmoves2"><b>Groundbreaker</b> <br>(7 DMG)</button><br>
+                                <button onclick="p2earth2()" class="indivmoves2"><b>Earthen Wall</b> <br>(+50 HP | 40 MANA)</button><br>
+                                <button onclick="p2earth3()" class="indivmoves2"><b>Geo Grandia</b> <br>(20 DMG | 45 MANA)</button>
+                            </div>
+                            <div id="windmoves2" class="player1moves">
+                                <button onclick="p2wind1()" class="indivmoves2"><b>Towering Tornado</b> <br>(15 DMG)</button><br>
+                                <button onclick="p2wind2()" class="indivmoves2"><b>Goddess's Breath</b> <br>(+20 HP | 30 MANA)</button><br>
+                                <button onclick="p2wind3()" class="indivmoves2"><b>Tempest Drive</b> <br>(30 DMG | 50 MANA)</button>
+                            </div>
+                        </div>
+                        <div id="passive2" class="passives"></div>
+    
+                        <div id="movework2" class="movework"></div>
                     </div>
-                </div>
-            
-            </td>
-            <td class="space"></td>
-            <td>
-                <div class="visualscreen">
-                    PLAYER 2    
-
-                    <div class="users">
-                        <img src="pics/animations/fire2.png" alt="char" id="fire1">
-                        <img src="pics/animations/fire2.png" alt="char" id="water1">
-                        <img src="pics/animations/fire2.png" alt="char" id="earth1">
-                        <img src="pics/animations/fire2.png" alt="char" id="wind1">
+                </td>
+            </tr>
+        </table>
+        
+        <div id="whitebar"></div>
+        <div id="fight">FIGHT!!</div>
+    
+        <table id="screen">
+            <tr>
+                <td>
+                    <div class="visualscreen">
+                        PLAYER 1
+    
+                        <div class="users">
+                            <img src="pics/animations/fire2.png" alt="char" id="fire2">
+                            <img src="pics/animations/fire2.png" alt="char" id="water2">
+                            <img src="pics/animations/fire2.png" alt="char" id="earth2">
+                            <img src="pics/animations/fire2.png" alt="char" id="wind2">
+                        </div>
                     </div>
-                </div>
                 
-            </td>
-        </tr>
-    </table>
+                </td>
+                <td class="space"></td>
+                <td>
+                    <div class="visualscreen">
+                        PLAYER 2    
+    
+                        <div class="users">
+                            <img src="pics/animations/fire2.png" alt="char" id="fire1">
+                            <img src="pics/animations/fire2.png" alt="char" id="water1">
+                            <img src="pics/animations/fire2.png" alt="char" id="earth1">
+                            <img src="pics/animations/fire2.png" alt="char" id="wind1">
+                        </div>
+                    </div>
+                    
+                </td>
+            </tr>
+        </table>
+    </div>
     
 </body>
 </html>

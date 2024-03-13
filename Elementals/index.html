@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +8,11 @@
     <!--BOOTSTRAP-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <!--CSS & JS-->
     <script defer src="scripts.js"></script>
-    <link href="stylesheets.css" rel="stylesheet">
 
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,42 +20,80 @@
     <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet">
     
     <style>
-        body{
+        .settings{
+            background-color: white;
+            border-radius: 10px;
+            font-weight: 1000;
+            bottom:0;
+            left: 0;
+            position:absolute;
+            width: fit-content;
+            padding-left: 7px;
+            padding-right: 7px;
+            padding-top:5px;
+            padding-bottom:5px;
+            font-size: 20pt;
+            position:fixed;
+        }
+        .settings table{
+            text-align: center;
+        }
+
+        .settings ion-icon{
+            display: block;
+        }
+        .settings ion-icon:hover{
+            background-color: rgb(190, 190, 190);
+            border-radius: 5px;
+        }
+        #mute{
+            display: none;
+        }
+
+        @keyframes pagefadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        body {
             font-family: "VT323", monospace;
-            background-image: url('pics/bbg.png');
+            background-image: url('pics/intro.png');
             background-size: 100%;
             background-position: center bottom;
             background-attachment: fixed;
+            overflow:hidden;
         }
-        @keyframes drop{
-            0%{
-                transform:translate(-50%,-100%);
+
+        @keyframes drop {
+            0% {
+                transform: translate(-50%, -1000%);
             }
-            60%{
-                transform:translate(-50%, -50%);
-            }
-            80%{
-                transform:translate(-50%, -50%);
-            }
-            100%{
-                transform:translate(-50%, -50%);
+            100% {
+                transform: translate(-50%, -50%);
             }
         }
-        .themenu{
+
+        .themenu {
             padding: 1%;
             width: 50%;
             height: fit-content;
             position: absolute;
-            top:50%;
+            top: 50%;
             left: 50%;
-            transform:translate(-50%, -50%);
+            transform: translate(-50%, -1000%);
             text-align: center;
-            animation:drop 2s ease forwards;
+            display: none;
         }
-        .themenu b{
-            font-size: 90pt;
+
+        .themenu b {
+            font-size: 900%;
         }
-        .themenu button{
+
+        .themenu button {
             width: 40%;
             height: 20%;
             margin: 1%;
@@ -65,20 +103,224 @@
             font-size: 40pt;
             transition: .5s;
         }
-        .tipsandtricks{
+
+        .tipsandtricks {
             background-image: url('pics/lightbulb.png');
         }
-        .themenu button:hover{
+
+        .themenu button:hover {
             background-color: rgb(24, 51, 97);
-            color:whitesmoke;
+            color: whitesmoke;
+        }
+
+        #clickanywhere {
+            width: 100vw;
+            z-index: 200;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #clickanywhere b {
+            z-index: 200;
+            font-size: 40pt;
+        }
+
+        @keyframes drop2 {
+            100% {
+                transform: translateY(1000%);
+            }
+        }
+        .lol{
+            font-size: 20pt;
+        }
+        .inspiration{
+            text-align: left;
+        }
+        #text1{
+            font-family: "Fondamento", cursive;
+            font-weight: 150;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+            background-image: url('pics/scrollbg.avif');
+            background-size: cover;
+            padding: 2%;
+            font-size: 15pt;
+            color:rgb(82, 49, 49);
+            animation: scrolling 3s linear forwards;
+        }
+        #text2{
+            font-family: "Fondamento", cursive;
+            font-weight: 150;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+            background-image: url('pics/scrollbg.avif');
+            background-size: cover;
+            padding: 2%;
+            font-size: 15pt;
+            color:rgb(82, 49, 49);
+            animation: scrolling 3s linear forwards;
+            text-align: center;
+        }
+        @keyframes scrolling{
+            0% {
+                clip-path: inset(0 0 100% 0);
+            }
+            100% {
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        .white{
+            background-color: rgba(245, 245, 245, 0.5);
+            padding:3%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+        }
+        .heading{
+            font-size: 40pt; 
+            text-align: center;
+        }
+        .back{
+            text-decoration: none;
+            color:white;
+            font-size: 25pt;
+            position: fixed;
+            top:10px;
+            left:10px;
+        }
+        #aboutus{
+            display:none;
+        }
+        #rules{
+            display:none;
         }
     </style>
 </head>
 <body class="pagefadein">
-    <div class="themenu" id="menu">
-        <b>ELEMENTALS</b><br>
-        <a href="pvp.html"><button>START (PVP)</button></a><br>
-        <a href="rules.html"><button class="tipsandtricks">RULES | TIPS</button></a> <br>
-        <a href="aboutus.html"><button class="abt">DEVELOPERS</button></a>
+    <div id="index">
+        <div class="settings">
+            <audio id="backgroundMusic" autoplay loop>
+                <source src="pics/intro.mp3" type="audio/mpeg">
+            </audio>
+
+            <table>
+                <tr>
+                    <td class="sound">
+                        <ion-icon id="mute" name="volume-mute-outline" onclick="sound()"></ion-icon>
+                        <ion-icon id="unmute" name="musical-notes-outline" onclick="sound()"></ion-icon>
+                    </td>
+                    <td class="reset">
+                        <ion-icon name="refresh-outline" onclick="reload()"></ion-icon>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div onclick="clickanywhere()" id="clickanywhere">
+            <b>Click anywhere to continue</b>
+        </div>
+        <div class="themenu" id="menu">
+            <b>ELEMENTALS</b><br>
+            <a href="pvp.html"><button>START</button></a><br>
+            <button class="tipsandtricks" onclick="rules()">RULES | TIPS</button> <br>
+            <button class="abt" onclick="dev()">DEVELOPERS</button>
+        </div>
+    </div>
+
+<div id="rules">
+    <ion-icon name="arrow-back-outline" onclick="backhome()" class="back"></ion-icon>
+    <div id="text1">
+        <div class="white">
+            <div class="heading"><b>RULES:</b></div><br><br>
+                ELEMENTALS IS A STRATEGICAL PLAYER VS PLAYER GAME<br><br><br>
+
+                1. EACH PLAYER CHOOSES THEIR ELEMENTAL ATTRIBUTE WHICH HAVE THEIR OWN PASSIVE <br>
+                &bullet; <b>Fire</b>: High offensive capabilities with no heal skill <br>
+                            Hell's Inferno: 12 DMG <br>
+                            Scorching Sun: 17 DMG | 25 MANA <br>
+                            Hellfire's Incarnate: 40 DMG | 80 MANA <br><br>
+                            Passive: Burning Soul - Deal extra damage equals to 30% of lost HP <br><br><br>
+
+                &bullet;  <b>Water</b>: An all rounder with decent damage and heal <br>
+                            Striking Tide: 10 DMG <br>
+                            Hydro-Shield: +30 HP | 20 MANA <br>
+                            Drowning Wave: 25 DMG (+10% of enemy's HP) | 45 MANA <br><br>
+                            Passive: Sea Cradle - Gains an extra +10 heal if HP drops below 30 <br>
+                            Active Passive: Neptune's Gift - Permanent 20 mana gain <br><br><br>
+
+                &bullet; <b>Earth</b>: Tanky with massive heals but low on offense <br>
+                            Groundbreaker: 7 DMG <br>
+                            Earthen Wall: +50 HP | 40 MANA <br>
+                            Geo Grandia: 20 DMG | 45 MANA <br><br>
+                            Passive: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana <br><br><br>
+
+                &bullet; <b>Wind</b>: Balanced offensive and defensive capabilities <br><br>
+                            Towering Tornado: 15 DMG <br>
+                            Goddess's Breath: +20 HP | 30 MANA <br>
+                            Tempest Drive: 30 DMG | 50 MANA <br><br>
+
+                            Passive: Windtalker - Heals +30% of damage dealt to the enemy in every attack <br>
+                            Active Passive: Faith or Luck? - All skills have a high chance of working
+
+                <br><br><br>
+                <br>
+            
+                2. EACH ELEMENT HAVE 3 DIFFERENT SKILLS (1 BASIC AND 2 SPECIAL) WITH 2 DIFFERENT EFFECTS (HEAL AND DAMAGE) <br><br><br>
+                3. EACH ATTACK WILL GO THROUGH A RANDOMIZER TO DETERMINE WHETHER IT WILL BE EFFECTIVE OR NOT (<b>EACH MOVE HAS DIFFERENT CHANCES OF WORKING</b>)<br><br><br>
+                4. PLAYERS HAVE <b>LIMITED MANA</b> TO PREVENT SPAMMING (<b>BASIC ATTACKS REPLENISH 10 MANA PER MOVE</b>) <br><br><br>
+                5. EACH PLAYER WILL TAKE TURNS EXECUTING THEIR MOVES UNTIL ONE PLAYER'S HP DROPS TO 0<br><br><br>
+
+                <br><br><br><br><br>
+                <div class="heading"><b>TIPS AND TRICKS:</b></div><br><br>
+                1. ELEMENTALS IS COMPLETELY BASED ON YOUR STRATEGY AND LUCK  <br><br>
+                &bullet; FIRE - Watch your health, the lower it is, the more you hurt so keep you opponents level down, save your mana for the finishing blow <br><br>
+                &bullet; WATER - Your regeneration abilities are strong so shuffle in between offense and defense based on your opponent. <br><br>
+                &bullet; EARTH - Your passive is your best friend. Just watch out for burst damage elements like fire<br><br>
+                &bullet; WIND - You are always on defense, spam your basic attack until you have enough mana for your ultimate <br><br><br>
+                2. USE <b>CONSOLE</b> TO CHECK PLAYERS' LIVES AFTER EVERY ROUND <br><br><br>
+                3. PLAYER ONE ALWAYS GOES FIRST (USE THIS TO YOUR ADVANTAGE) <br><br><br>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="aboutus">
+        <ion-icon name="arrow-back-outline" onclick="backhome()" class="back"></ion-icon>
+        <div id="text2">
+            <div class="white">
+                <div class="heading"><b>DEVELOPERS:</b></div><br><br>
+                <div class="miggy">
+                    <img src="" alt="m"><br>
+                    <b class="lol">GAME CODER AND DESIGNER</b>
+                </div>
+                <br><br>
+                <div class="rhon">
+                    <img src="" alt="i"><br>
+                    <b class="lol">GRAPHICS DESIGNER</b>
+                </div>
+                <br><br>
+                <div class="ian">
+                    <img src="" alt="m"><br>
+                    <b class="lol">CHARACTER DESIGNER</b>
+                </div>
+    
+                <br><br><br><br>
+    
+                <div class="inspiration">
+                    Our game concept was inspired by Pokemon. We took the turn-based combat and luck-based mechanics of Pokemon and incorporated them into our own game. Players engage in strategic battles where they take turns commanding their characters to use various skills and abilities. <br><br>
+        
+                    Similar to Pokemon, each character in our game has unique abilities and attributes, and players must carefully choose their next move to outmaneuver their opponents. However, we've added our own twist to the game by introducing different characters, skills, moves, and passives.
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
