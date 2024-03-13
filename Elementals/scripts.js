@@ -1099,6 +1099,7 @@ function dev(){
     document.getElementById('text2').style.display = "block";
     document.getElementById('index').style.display = "none";
     document.body.style.backgroundImage="url('pics/bbg.png')";
+    document.body.style.backgroundPosition= "center";
     document.getElementById('aboutus').style.display = "block";
     document.body.style.overflowY="scroll";
     document.getElementById('text2').style.animation = "scrolling 2s linear forwards";
@@ -1107,6 +1108,7 @@ function backhome(){
     document.getElementById('index').style.display = "block";
     document.body.style.backgroundImage="url('pics/intro.png')";
     document.body.style.overflow="hidden";
+    document.body.style.backgroundPosition= "center bottom";
     document.getElementById('rules').style.display = "none";
     document.getElementById('aboutus').style.display = "none";
     document.getElementById('text1').style.display = "none";
