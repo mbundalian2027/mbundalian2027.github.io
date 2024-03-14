@@ -77,6 +77,7 @@ function submit1() {
                 document.getElementById('type1').innerHTML = "Fire";
                 passive1.innerHTML = "Additional DMG: 0 DMG";
                 animationFramesPlayer1 = fireanimation1;
+                player1dmgpic = firedmg1;
                 break;
             case "water":
                 moves1 = watermoves;
@@ -85,6 +86,7 @@ function submit1() {
                 document.getElementById('type1').innerHTML = "Water";
                 passive2.innerHTML = "Passive: Inactive";
                 animationFramesPlayer1 = wateranimation1;
+                player1dmgpic = waterdmg1;
                 break;
             case "earth":
                 moves1 = earthmoves;
@@ -93,6 +95,7 @@ function submit1() {
                 document.getElementById('type1').innerHTML = "Earth";
                 passive1.innerHTML = "Passive: Inactive";
                 animationFramesPlayer1 = earthanimation1;
+                player1dmgpic = earthdmg1;
                 break;
             case "wind":
                 moves1 = windmoves;
@@ -101,6 +104,7 @@ function submit1() {
                 document.getElementById('type1').innerHTML = "Wind";
                 passive1.innerHTML = "Lifesteal: 50%";
                 animationFramesPlayer1 = windanimation1;
+                player1dmgpic = winddmg1;
                 break;
         }
 
@@ -197,6 +201,7 @@ function submit2() {
                     document.getElementById('type2').innerHTML = "Fire";
                     passive2.innerHTML = "Additional DMG: 0 DMG";
                     animationFramesPlayer2 = fireanimation2;
+                    player2dmgpic = firedmg2;
                     break;
                 case "water":
                     moves2 = watermoves;
@@ -205,6 +210,7 @@ function submit2() {
                     document.getElementById('type2').innerHTML = "Water";
                     passive2.innerHTML = "Passive: Inactive";
                     animationFramesPlayer2 = wateranimation2;
+                    player2dmgpic = waterdmg2;
                     break;
                 case "earth":
                     moves2 = earthmoves;
@@ -213,6 +219,7 @@ function submit2() {
                     document.getElementById('type2').innerHTML = "Earth";
                     passive1.innerHTML = "Passive: Inactive";
                     animationFramesPlayer2 = earthanimation2;
+                    player2dmgpic = earthdmg2;
                     break;
                 case "wind":
                     moves2 = windmoves;
@@ -221,6 +228,7 @@ function submit2() {
                     document.getElementById('type2').innerHTML = "Wind";
                     passive2.innerHTML = "Lifesteal: 50%";
                     animationFramesPlayer2 = windanimation2;
+                    player2dmgpic = winddmg2;
                     break;
             }
             console.log("Player 2 moves\n" + moves2);
@@ -829,7 +837,7 @@ function player1turn() {
     //ANIMATON
     if (life2 != currentlifeofplayer2){
         pauseAnimation2();
-        animationElementPlayer2.src = "pics/animations/dmg.png";
+        animationElementPlayer2.src = player2dmgpic;
 
         setTimeout(() => {
             startAnimation2();
@@ -963,7 +971,7 @@ function player2turn() {
     //ANIMATION
     if (life1 != currentlifeofplayer1){
         pauseAnimation1();
-        animationElementPlayer1.src = "pics/animations/dmg.png";
+        animationElementPlayer1.src = player1dmgpic;
 
             setTimeout(() => {
                 startAnimation1();
@@ -1197,20 +1205,31 @@ function pvp(){
 let currentFrameIndexPlayer1 = 0;
 let currentFrameIndexPlayer2 = 0;
 
-let fireanimation1 = ["pics/animations/1.png", "pics/animations/2.png", "pics/animations/3.png", "pics/animations/2.png"];
-let wateranimation1 = [];
-let earthanimation1 = [];
-let windanimation1 = [];
+let fireanimation1 = ["pics/animations/1.png", "pics/animations/2.png", "pics/animations/3.png", "pics/animations/2.png"],
+    firedmg1 = "pics/animations/dmg.png";
+let wateranimation1 = [],
+    waterdmg1 = "a";
+let earthanimation1 = [],
+    earthdmg1 = "a";
+let windanimation1 = [],
+    winddmg1 = "a";
 
 
 
-let fireanimation2 = ["pics/animations/1.png", "pics/animations/2.png", "pics/animations/3.png", "pics/animations/2.png"];
-let wateranimation2 = [];
-let earthanimation2 = [];
-let windanimation2 = [];
+let fireanimation2 = ["pics/animations/1.png", "pics/animations/2.png", "pics/animations/3.png", "pics/animations/2.png"],
+    firedmg2 = "pics/animations/dmg.png";
+let wateranimation2 = [],
+    waterdmg2 = "a";
+let earthanimation2 = [],
+    earthdmg2 = "a";
+let windanimation2 = [],
+    winddmg2 = "a";
 
-let animationFramesPlayer1 = [];
-let animationFramesPlayer2 = [];
+
+let animationFramesPlayer1 = [], 
+    player1dmgpic = 0;
+let animationFramesPlayer2 = [],
+    player2dmgpic = 0;
 
 let animationElementPlayer1 = document.getElementById('player1hero');
 let animationElementPlayer2 = document.getElementById('player2hero');
