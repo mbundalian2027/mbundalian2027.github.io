@@ -204,6 +204,15 @@
         #rules{
             display:none;
         }
+        .picc{
+            width: 300px;
+            display:block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .picc img{
+            width: 100%;
+        }
     </style>
 </head>
 <body class="pagefadein">
@@ -217,7 +226,7 @@
                 <tr>
                     <td class="sound">
                         <ion-icon id="mute" name="pause-circle-outline" onclick="sound()"></ion-icon>
-                        <ion-icon id="unmute"name="play-circle-outline" onclick="sound()"></ion-icon>
+                        <ion-icon id="unmute" name="play-circle-outline" onclick="sound()"></ion-icon>
                     </td>
                     <td>
                         <ion-icon name="remove-outline" onclick="weaker()" class="onlycontrols"></ion-icon>
@@ -240,7 +249,7 @@
         </div>
         <div class="themenu" id="menu">
             <b>ELEMENTALS</b><br>
-            <a href="pvp.html"><button>START</button></a><br>
+            <button onclick="window.location.href='pvp.html'">START</button><br>
             <button class="tipsandtricks" onclick="rules()">RULES | TIPS</button> <br>
             <button class="abt" onclick="dev()">DEVELOPERS</button>
         </div>
@@ -309,18 +318,27 @@
             <div class="white">
                 <div class="heading"><b>DEVELOPERS:</b></div><br><br>
                 <div class="miggy">
-                    <img src="" alt="m"><br>
-                    <b class="lol">GAME CODER AND DESIGNER</b>
+                    <div class="picc">
+                        <img src="pics/miggy.jpg" alt="m"><br>
+                    </div>
+                    Miggy Bundalian <br>
+                    <b class="lol">GAME CODER AND WEB DESIGNER</b>
                 </div>
                 <br><br>
                 <div class="rhon">
-                    <img src="" alt="i"><br>
-                    <b class="lol">GRAPHICS DESIGNER</b>
+                    <div class="picc">
+                        <img src="pics/rhon.jpg" alt="i"><br>
+                    </div>
+                    Rhon Tamboong <br>
+                    <b class="lol">CHARACTERS DESIGNER</b>
                 </div>
                 <br><br>
                 <div class="ian">
-                    <img src="" alt="m"><br>
-                    <b class="lol">CHARACTER DESIGNER</b>
+                    <div class="picc">
+                        <img src="" alt="m"><br>
+                    </div>
+                    Ian Aragoza <br>
+                    <b class="lol">CHARACTERS DESIGNER</b>
                 </div>
     
                 <br><br><br><br>

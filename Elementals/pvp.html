@@ -39,11 +39,14 @@
         <audio id="backgroundMusic" class="background" autoplay loop>
             <source src="pics/calm.mp3" type="audio/mpeg">
         </audio>
+        <audio id="winmusic">
+            <source src="pics/win.mp3" type="audio/mpeg">
+        </audio>
         <table>
             <tr>
                 <td class="sound">
                     <ion-icon id="mute" name="pause-circle-outline" onclick="sound()"></ion-icon>
-                    <ion-icon id="unmute"name="play-circle-outline" onclick="sound()"></ion-icon>
+                    <ion-icon id="unmute" name="play-circle-outline" onclick="sound()"></ion-icon>
                 </td>
                 <td>
                     <ion-icon name="remove-outline" onclick="weaker()" class="onlycontrols"></ion-icon>
@@ -72,7 +75,7 @@
                 <b class="header" id="header1">PLAYER 1:</b> <br>
                 <button onclick="fire1()" class="selection1" id="selectfire1"><b class="names">FIRE</b><br><b>Passive</b>: Burning Soul - Deal extra damage equals to 30% of lost HP</button> <br>
                 <button onclick="water1()" class="selection1" id="selectwater1"><b class="names">WATER</b><br><b>Passive</b>: Sea Cradle - Gains an extra +10 heal if HP drops below 30<br><b>Active Passive</b>: Neptune's Gift - Permanent 20 mana gain</button><br>
-                <button onclick="earth1()"class="selection1" id="selectearth1"><b class="names">EARTH</b><br><b>Passive</b>: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana</button><br>
+                <button onclick="earth1()" class="selection1" id="selectearth1"><b class="names">EARTH</b><br><b>Passive</b>: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana</button><br>
                 <button onclick="wind1()" class="selection1" id="selectwind1"><b class="names">WIND</b><br><b>Passive</b>: Windtalker - Heals +30% of damage dealt to the enemy in every attack <br> <b>Active Passive</b>: Faith or Luck? - All skills have a high chance of working</button>  <br>
                 <button onclick="submit1()" id="submit1" class="submit">E N T E R</button>
             </div>
@@ -81,7 +84,7 @@
                 <b class="header" id="header2">PLAYER 2:</b> <br>
                 <button onclick="fire2()" class="selection1" id="selectfire2"><b class="names">FIRE</b><br><b>Passive</b>: Burning Soul - Deal extra damage equals to 30% of lost HP</button><br>
                 <button onclick="water2()" class="selection1" id="selectwater2"><b class="names">WATER</b><br><b>Passive</b>: Sea Cradle - Gains an extra +10 heal if HP drops below 30<br><b>Active Passive</b>: Neptune's Gift - Permanent 20 mana gain</button><br>
-                <button onclick="earth2()"class="selection1" id="selectearth2"><b class="names">EARTH</b><br><b>Passive</b>: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana</button><br>
+                <button onclick="earth2()" class="selection1" id="selectearth2"><b class="names">EARTH</b><br><b>Passive</b>: Full Recovery - If HP drops below 50, "Earthen Wall" won't require mana</button><br>
                 <button onclick="wind2()" class="selection1" id="selectwind2"><b class="names">WIND</b><br><b>Passive</b>: Windtalker - Heals +30% of damage dealt to the enemy in every attack <br> <b>Active Passive</b>: Faith or Luck? - All skills have a high chance of working</button>  <br>
                 <button onclick="submit2()" id="submit2" class="submit">S T A R T</button>
             </div>
@@ -194,6 +197,19 @@
                 </td>
             </tr>
         </table>
+    </div>
+
+    <div id="p1win" class="winner">
+        <b>PLAYER 1 WINS</b> <br><br><br>
+
+        <button onclick="window.location.reload()" class="winbut">Play Again</button><br><br>
+        <button onclick="window.location.href = 'index.html'" class="winbut">Main Menu</button>
+    </div>
+    <div id="p2win" class="winner">
+        <b>PLAYER 2 WINS</b> <br><br><br>
+
+        <button onclick="window.location.reload()" class="winbut">Play Again</button><br><br>
+        <button onclick="window.location.href = 'index.html'" class="winbut">Main Menu</button>
     </div>
     
 </body>

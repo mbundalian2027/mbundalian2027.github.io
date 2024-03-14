@@ -173,7 +173,7 @@ body{
     font-family: "Angkor", sans-serif;
     font-size: 900%;
     position:absolute;
-    color:rgb(98, 1, 1);
+    color:rgb(155, 1, 1);
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -373,4 +373,43 @@ body{
     transform: translateX(-50%);
 }
 
+.winner{
+    padding: 1%;
+    width: 60%;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+    text-shadow:
+    -3px -3px 0 black,  
+     3px -3px 0 black,
+    -3px  3px 0 black,
+     3px  3px 0 black; 
+}
+#p1win{
+    color:rgb(168, 0, 0);
+}
+#p2win{
+    color:rgb(0, 15, 92);
+}
+.winner b{
+    font-size:900%;
+}
+.winner button{
+    width: 40%;
+    height: 20%;
+    margin: 1%;
+    padding: 2%;
+    border-radius: 5px;
+    font-family: "VT323", monospace;
+    font-size: 40pt;
+    transition: .5s;
+}
 
+.winner button:hover {
+    background-color: rgb(24, 51, 97);
+    color: whitesmoke;
+}

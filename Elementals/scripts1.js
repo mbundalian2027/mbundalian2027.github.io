@@ -841,7 +841,7 @@ function player1turn() {
 
         setTimeout(() => {
             startAnimation2();
-        }, 1000);
+        }, 500);
         currentlifeofplayer2 = life2;
     }
 
@@ -953,10 +953,16 @@ function player1turn() {
     if (life1 <= 0 || life2 <= 0) {
         if (life1 <= 0) {
             console.log("PLAYER 2 WINS");
-            document.body.innerHTML = "PLAYER 2 WINS";
+            document.getElementById('fightingmusic').pause();
+            document.getElementById('winmusic').play();
+            document.getElementById('lahat').style.display = "none";
+            document.getElementById('p2win').style.display = "block";
         } else if (life2 <= 0) {
             console.log("PLAYER 1 WINS");
-            document.body.innerHTML = "PLAYER 1 WINS";
+            document.getElementById('fightingmusic').pause();
+            document.getElementById('winmusic').play();
+            document.getElementById('lahat').style.display = "none";
+            document.getElementById('p1win').style.display = "block";
         }
         else {
             player2turn();
@@ -975,7 +981,7 @@ function player2turn() {
 
             setTimeout(() => {
                 startAnimation1();
-            }, 1000);
+            }, 500);
         currentlifeofplayer1 = life1;
     }
     
@@ -1087,10 +1093,16 @@ function player2turn() {
     if (life1 <= 0 || life2 <= 0) {
         if (life1 <= 0) {
             console.log("PLAYER 2 WINS");
-            document.body.innerHTML = "PLAYER 2 WINS";
+            document.getElementById('fightingmusic').pause();
+            document.getElementById('winmusic').play();
+            document.getElementById('lahat').style.display = "none";
+            document.getElementById('p2win').style.display = "block";
         } else if (life2 <= 0) {
             console.log("PLAYER 1 WINS");
-            document.body.innerHTML = "PLAYER 1 WINS";
+            document.getElementById('fightingmusic').pause();
+            document.getElementById('winmusic').play();
+            document.getElementById('lahat').style.display = "none";
+            document.getElementById('p1win').style.display = "block";
         }
         else {
             player1turn();
