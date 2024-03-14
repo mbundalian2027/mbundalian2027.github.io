@@ -13,7 +13,7 @@
 
     <!--CSS & JS-->
     <link href="stylesheets.css" rel="stylesheet">
-    <script defer src="scripts.js"></script>
+    <script defer src="scripts1.js"></script>
 
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,8 +42,17 @@
         <table>
             <tr>
                 <td class="sound">
-                    <ion-icon id="mute" name="volume-mute-outline" onclick="sound()"></ion-icon>
-                    <ion-icon id="unmute" name="musical-notes-outline" onclick="sound()"></ion-icon>
+                    <ion-icon id="mute" name="pause-circle-outline" onclick="sound()"></ion-icon>
+                    <ion-icon id="unmute"name="play-circle-outline" onclick="sound()"></ion-icon>
+                </td>
+                <td>
+                    <ion-icon name="remove-outline" onclick="weaker()" class="onlycontrols"></ion-icon>
+                </td>
+                <td>
+                    <ion-icon name="add-outline" onclick="louder()" class="onlycontrols"></ion-icon>
+                </td>
+                <td>
+                    |
                 </td>
                 <td class="reset">
                     <ion-icon name="refresh-outline" onclick="reload()"></ion-icon>
@@ -54,7 +63,7 @@
 
 
     <div id="choosemuna">
-        <button onclick="pvp()">PVP (1v1)</button>
+        <button onclick="pvp()">PVP (1V1)</button>
     </div>
 
     <div id="lahat">
@@ -172,34 +181,16 @@
         <div id="whitebar"></div>
         <div id="fight">FIGHT!!</div>
     
+
+        <!--GRAPHIC-->
         <table id="screen">
             <tr>
                 <td>
-                    <div class="visualscreen">
-                        PLAYER 1
-    
-                        <div class="users">
-                            <img src="pics/animations/fire2.png" alt="char" id="fire2">
-                            <img src="pics/animations/fire2.png" alt="char" id="water2">
-                            <img src="pics/animations/fire2.png" alt="char" id="earth2">
-                            <img src="pics/animations/fire2.png" alt="char" id="wind2">
-                        </div>
-                    </div>
-                
+                    <img src="pics/animations/fire1.png" alt="p1" id="player1hero" class="hero">
                 </td>
                 <td class="space"></td>
                 <td>
-                    <div class="visualscreen">
-                        PLAYER 2    
-    
-                        <div class="users">
-                            <img src="pics/animations/fire2.png" alt="char" id="fire1">
-                            <img src="pics/animations/fire2.png" alt="char" id="water1">
-                            <img src="pics/animations/fire2.png" alt="char" id="earth1">
-                            <img src="pics/animations/fire2.png" alt="char" id="wind1">
-                        </div>
-                    </div>
-                    
+                    <img src="pics/animations/fire2.png" alt="p2" id="player2hero" class="hero">
                 </td>
             </tr>
         </table>

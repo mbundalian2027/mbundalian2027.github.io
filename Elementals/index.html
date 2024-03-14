@@ -12,8 +12,7 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <!--CSS & JS-->
-    <script defer src="scripts.js"></script>
-
+    <script defer src="scripts1.js"></script>
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +22,6 @@
         .settings{
             background-color: white;
             border-radius: 10px;
-            font-weight: 1000;
             bottom:0;
             left: 0;
             position:absolute;
@@ -49,6 +47,10 @@
         #mute{
             display: none;
         }
+        .onlycontrols{
+            font-size:15pt;
+        }
+
 
         @keyframes pagefadein {
             from {
@@ -207,15 +209,24 @@
 <body class="pagefadein">
     <div id="index">
         <div class="settings">
-            <audio id="backgroundMusic" autoplay loop>
+            <audio id="backgroundMusic" class="background" autoplay loop>
                 <source src="pics/intro.mp3" type="audio/mpeg">
             </audio>
 
             <table>
                 <tr>
                     <td class="sound">
-                        <ion-icon id="mute" name="volume-mute-outline" onclick="sound()"></ion-icon>
-                        <ion-icon id="unmute" name="musical-notes-outline" onclick="sound()"></ion-icon>
+                        <ion-icon id="mute" name="pause-circle-outline" onclick="sound()"></ion-icon>
+                        <ion-icon id="unmute"name="play-circle-outline" onclick="sound()"></ion-icon>
+                    </td>
+                    <td>
+                        <ion-icon name="remove-outline" onclick="weaker()" class="onlycontrols"></ion-icon>
+                    </td>
+                    <td>
+                        <ion-icon name="add-outline" onclick="louder()" class="onlycontrols"></ion-icon>
+                    </td>
+                    <td>
+                        |
                     </td>
                     <td class="reset">
                         <ion-icon name="refresh-outline" onclick="reload()"></ion-icon>

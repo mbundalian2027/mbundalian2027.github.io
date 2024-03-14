@@ -173,7 +173,7 @@ body{
     font-family: "Angkor", sans-serif;
     font-size: 900%;
     position:absolute;
-    color:rgb(255, 48, 48);
+    color:rgb(98, 1, 1);
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -206,6 +206,7 @@ body{
     height: 325px;
     margin-right: auto;
     margin-left: auto;
+    z-index: 5;
 }
 
 .player button{
@@ -283,7 +284,6 @@ body{
 .settings{
     background-color: white;
     border-radius: 10px;
-    font-weight: 1000;
     bottom:0;
     left: 0;
     position:absolute;
@@ -314,6 +314,14 @@ body{
 #lahat{
     display: none;
 }
+.onlycontrols{
+    font-size:15pt;
+}
+.settings td{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 #choosemuna{
     top:50%;
@@ -344,7 +352,8 @@ body{
     left:50%;
     transform:translateX(-50%);
     position:absolute;
-    bottom:4%;
+    bottom:2%;
+    padding:0;
 }
 #screen td{
     border:2px solid;
@@ -352,7 +361,9 @@ body{
 .visualscreen{
     width: 400px;
 }
-
+.hero{
+    width: 300px;
+}
 .users img{
     display: none;
     z-index: 2;
@@ -361,3 +372,5 @@ body{
     left: 50%;
     transform: translateX(-50%);
 }
+
+
