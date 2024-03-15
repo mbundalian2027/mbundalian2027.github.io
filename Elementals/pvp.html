@@ -103,10 +103,6 @@
                     <div class="actual" id="a1">
                         PLAYER 1 (<b id="type1"></b>)<br>
     
-                        <div class="bar">
-                            <div class="health" id="health1"></div>
-                        </div>
-    
                         Life: <b id="p1life"> </b> <br>
                         Mana: <b id="p1mana"> </b>
                         <!--PLAYER 1 MOVES-->
@@ -142,10 +138,6 @@
                 <td class="player" id="p2">
                     <div class="actual" id="a2">
                         PLAYER 2 (<b id="type2"></b>)<br>
-                        
-                        <div class="bar">
-                            <div class="health" id="health2"></div>
-                        </div>
     
                         Life: <b id="p2life"> </b> <br>
                         Mana: <b id="p2mana"> </b>
@@ -189,11 +181,19 @@
         <table id="screen">
             <tr>
                 <td>
-                    <img src="pics/animations/fire1.png" alt="p1" id="player1hero" class="hero">
+                    <div class="bar">
+                        <div class="health" id="health1"></div>
+                    </div><br>
+
+                    <img src="pics/animations/dmg.png" alt="p1" id="player1hero" class="hero">
                 </td>
-                <td class="space"></td>
+                <td class="space2"></td>
                 <td>
-                    <img src="pics/animations/fire2.png" alt="p2" id="player2hero" class="hero">
+                    <div class="bar">
+                        <div class="health" id="health2"></div>
+                    </div><br>
+
+                    <img src="pics/animations/dmg.png" alt="p2" id="player2hero" class="hero">
                 </td>
             </tr>
         </table>

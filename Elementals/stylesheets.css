@@ -194,7 +194,7 @@ body{
 }
 
 .space{
-    width: 95%;
+    width: 90%;
 }
 .actual{
     background-color: rgb(255, 234, 207);
@@ -347,22 +347,26 @@ body{
 
 
 #screen{
-    width: 90%;
+    width: 70%;
     display:none;
     left:50%;
     transform:translateX(-50%);
     position:absolute;
-    bottom:2%;
+    bottom:.5%;
     padding:0;
+    height: auto;
 }
 #screen td{
-    border:2px solid;
+    height: 50%;
 }
 .visualscreen{
     width: 400px;
 }
 .hero{
-    width: 300px;
+    width: 150px;
+}
+.space2{
+    width: 90%;
 }
 .users img{
     display: none;
@@ -372,6 +376,8 @@ body{
     left: 50%;
     transform: translateX(-50%);
 }
+
+
 
 .winner{
     padding: 1%;
@@ -384,10 +390,10 @@ body{
     text-align: center;
     display: none;
     text-shadow:
-    -3px -3px 0 black,  
-     3px -3px 0 black,
-    -3px  3px 0 black,
-     3px  3px 0 black; 
+    -5px -5px 0 black,  
+     5px -5px 0 black,
+    -5px  5px 0 black,
+     5px  5px 0 black; 
 }
 #p1win{
     color:rgb(168, 0, 0);

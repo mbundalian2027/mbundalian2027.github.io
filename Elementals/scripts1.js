@@ -845,9 +845,6 @@ function player1turn() {
         currentlifeofplayer2 = life2;
     }
 
-    updateHealth1(life1);
-    updateHealth2(life2);
-
     document.getElementById('movework2').innerHTML = "";
     document.getElementById('movework1').style.color = "black";
     switch (p1choice) {
@@ -984,9 +981,6 @@ function player2turn() {
             }, 500);
         currentlifeofplayer1 = life1;
     }
-    
-    updateHealth1(life1);
-    updateHealth2(life2);
 
     document.getElementById('movework1').innerHTML = "";
     document.getElementById('movework2').style.color = "black";
@@ -1089,6 +1083,7 @@ function player2turn() {
     document.getElementById('p2mana').innerHTML = mana2;
 
     roundanalyzer();
+
 
     if (life1 <= 0 || life2 <= 0) {
         if (life1 <= 0) {
@@ -1217,25 +1212,25 @@ function pvp(){
 let currentFrameIndexPlayer1 = 0;
 let currentFrameIndexPlayer2 = 0;
 
-let fireanimation1 = ["pics/animations/1.png", "pics/animations/2.png", "pics/animations/3.png", "pics/animations/2.png"],
-    firedmg1 = "pics/animations/dmg.png";
-let wateranimation1 = [],
-    waterdmg1 = "a";
-let earthanimation1 = [],
-    earthdmg1 = "a";
-let windanimation1 = [],
-    winddmg1 = "a";
+let fireanimation1 = ["pics/animations/fireR.png"],
+    firedmg1 = "pics/animations/redfireR.png";
+let wateranimation1 = ["pics/animations/waterR.png"],
+    waterdmg1 = "pics/animations/redwaterR.png";
+let earthanimation1 = ["pics/animations/earthR.png"],
+    earthdmg1 = "pics/animations/redearthR.png";
+let windanimation1 = ["pics/animations/windR.png"],
+    winddmg1 = "pics/animations/redwindR.png";
 
 
 
-let fireanimation2 = ["pics/animations/1.png", "pics/animations/2.png", "pics/animations/3.png", "pics/animations/2.png"],
-    firedmg2 = "pics/animations/dmg.png";
-let wateranimation2 = [],
-    waterdmg2 = "a";
-let earthanimation2 = [],
-    earthdmg2 = "a";
-let windanimation2 = [],
-    winddmg2 = "a";
+let fireanimation2 = ["pics/animations/fireL.png"],
+    firedmg2 = "pics/animations/redfireL.png";
+let wateranimation2 = ["pics/animations/waterL.png"],
+    waterdmg2 = "pics/animations/redwaterL.png";
+let earthanimation2 = ["pics/animations/earthL.png"],
+    earthdmg2 = "pics/animations/redearthL.png";
+let windanimation2 = ["pics/animations/windL.png"],
+    winddmg2 = "pics/animations/redwindL.png";
 
 
 let animationFramesPlayer1 = [], 
