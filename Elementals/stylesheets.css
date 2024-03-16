@@ -170,8 +170,9 @@ body{
     }
 }
 #fight{
-    font-family: "Angkor", sans-serif;
-    font-size: 900%;
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-size: 1000%;
     position:absolute;
     color:rgb(155, 1, 1);
     top:50%;
@@ -390,10 +391,10 @@ body{
     text-align: center;
     display: none;
     text-shadow:
-    -5px -5px 0 black,  
-     5px -5px 0 black,
-    -5px  5px 0 black,
-     5px  5px 0 black; 
+    -3px -3px 0 rgb(255, 255, 255),  
+    3px -3px 0 rgb(255, 255, 255),
+    -3px  3px 0 rgb(255, 255, 255),
+    3px  3px 0 rgb(255, 255, 255); 
 }
 #p1win{
     color:rgb(168, 0, 0);

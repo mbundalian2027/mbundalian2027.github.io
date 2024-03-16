@@ -1,3 +1,4 @@
+document.body.classList.add('pagefadein');
 let lifefire = 100,
     lifewater = 120,
     lifeearth = 160,
@@ -15,10 +16,10 @@ let mana2 = 100;
 let movework1determine;
 let movework2determine;
 
-//PLAYER 1
-document.body.classList.add('pagefadein');
-let p1choice;
+/*--------------------------------------------------------------------------------------------*/
 
+//SELECTION OF HERO
+let p1choice;
 function fire1() {
     p1choice = "fire";
     document.querySelectorAll('button.selection1').forEach(elem => {
@@ -58,7 +59,6 @@ function wind1() {
     document.getElementById('selectwind1').style.backgroundColor = "rgb(204, 246, 242)";
     document.getElementById('submit1').style.backgroundColor = "";
 }
-
 function turnRedForOneSecond1() {
     document.getElementById('submit1').style.backgroundColor = "rgb(255, 239, 96)";
 
@@ -66,7 +66,6 @@ function turnRedForOneSecond1() {
         document.getElementById('submit1').style.backgroundColor = "";
     }, 300);
 }
-
 function submit1() {
     if (p1choice) {
         switch (p1choice) {
@@ -127,22 +126,8 @@ function submit1() {
     }
 
 }
-function move1(){
-    document.getElementById('pvp2').style.animation = "toPlayer2 .5s ease forwards";
-    document.getElementById('pvp1').style.animation = "exitPlayer1 1s ease forwards";
-    document.getElementById('left').style.display ="block";
-    document.getElementById('right').style.display ="none";
-}
-function move2(){
-    document.getElementById('pvp2').style.animation = "exitPlayer2 1s ease forwards";
-    document.getElementById('pvp1').style.animation = "toPlayer1 .5s ease forwards";
-    document.getElementById('right').style.display ="block";
-    document.getElementById('left').style.display ="none";
-}
-
-//PLAYER 2
+//-----------------------------
 let p2choice;
-
 function fire2() {
     p2choice = "fire";
     document.querySelectorAll('button.selection1').forEach(elem => {
@@ -189,7 +174,6 @@ function turnRedForOneSecond2() {
         document.getElementById('submit2').style.backgroundColor = "";
     }, 300);
 }
-
 function submit2() {
     if (life1 != 0){
         if (p2choice) {
@@ -249,7 +233,7 @@ function submit2() {
                     kokonut = 1;
                     setTimeout(() => {
                         document.getElementById('fightaudio').play();  
-                        document.getElementById('fightaudio').volume = 0.3;
+                        document.getElementById('fightaudio').volume = 1;
                     }, 500);
                     setTimeout(() => {
                         document.getElementById("whitebar").style.animation = "whitebar 1s ease forwards";
@@ -260,7 +244,7 @@ function submit2() {
                     setTimeout(function() {
                         document.getElementById("fight").style.display = "none";
                         document.getElementById('fightingmusic').play();
-                        document.getElementById('fightingmusic').volume = 0.1;
+                        document.getElementById('fightingmusic').volume = .5;
                         toknow = 0;
                     }, 3000);
 
@@ -289,7 +273,20 @@ function submit2() {
     }
 
 }
-//GAME
+//MOVE BUTTONS
+function move1(){
+    document.getElementById('pvp2').style.animation = "toPlayer2 .5s ease forwards";
+    document.getElementById('pvp1').style.animation = "exitPlayer1 1s ease forwards";
+    document.getElementById('left').style.display ="block";
+    document.getElementById('right').style.display ="none";
+}
+function move2(){
+    document.getElementById('pvp2').style.animation = "exitPlayer2 1s ease forwards";
+    document.getElementById('pvp1').style.animation = "toPlayer1 .5s ease forwards";
+    document.getElementById('right').style.display ="block";
+    document.getElementById('left').style.display ="none";
+}
+
 //DAMAGE PER MOVE
 let dmgf1 = 12,
     dmgf2 = 17,
@@ -321,9 +318,14 @@ let manaf2 = 25,
 
 let passive1 = document.getElementById('passive1');
 let passive2 = document.getElementById('passive2');
-//-----------------------------PLAYER 1----------------------------------
-//FIRE
 
+
+
+
+/*--------------------------------------------------------------------------------------------*/
+
+//-------------------PLAYER 1---------------------
+//FIRE
 function p1fire1() {
     life2 = life2 - (dmgf1 + (0.3 * (lifefire - life1)));
     movework1determine = "yes";
@@ -526,7 +528,7 @@ function p1wind3() {
     work1();
 }
 
-//-----------------------------PLAYER 2----------------------------------
+//-------------------PLAYER 2---------------------
 //FIRE
 function p2fire1() {
     life1 = life1 - (dmgf1 + (0.3 * (lifefire - life2)));
@@ -728,6 +730,9 @@ function p2wind3() {
     }
     work2();
 }
+/*--------------------------------------------------------------------------------------------*/
+
+
 
 
 //OPERATIONS
@@ -797,9 +802,13 @@ function disableButton2() {
 
 }
 
-//-------------------------------------------------------------------------------
 
+
+
+//TURN BASED
 let roundnumber = 0;
+var currentlifeofplayer1 = 0;
+var currentlifeofplayer2 = 0;
 function roundanalyzer() {
     if (movework2determine !== "nomana") {
         roundnumber++;
@@ -809,7 +818,6 @@ function roundanalyzer() {
         "--PLAYER 1-- \nLife: " + life1 + "\nMana: " + mana1 + "\n\n\n" +
         "--PLAYER 2-- \nLife: " + life2 + "\nMana: " + mana2 + "\n-----------------------\n\n");
 }
-
 function updateHealth1(currentHealth, baseHealth) {
     const healthPercentage = (currentHealth / baseHealth) * 100;
   
@@ -818,7 +826,6 @@ function updateHealth1(currentHealth, baseHealth) {
     const healthLevel = document.getElementById('health1');
     healthLevel.style.width = clampedHealthPercentage + '%';
 }
-
 function updateHealth2(currentHealth, baseHealth) {
     const healthPercentage = (currentHealth / baseHealth) * 100;
   
@@ -827,10 +834,6 @@ function updateHealth2(currentHealth, baseHealth) {
     const healthLevel = document.getElementById('health2');
     healthLevel.style.width = clampedHealthPercentage + '%';
 }
-
-var currentlifeofplayer1 = 0;
-var currentlifeofplayer2 = 0;
-
 function player1turn() {
     //PLAYER 1 TURN
 
@@ -967,7 +970,6 @@ function player1turn() {
     }
     
 }
-
 function player2turn() {
     //PLAYER 2 TURN
 
@@ -1105,51 +1107,18 @@ function player2turn() {
     }
 }
 
-//SOUND
-var toknow = 1;
-var backgroundMusic = document.getElementById("backgroundMusic");
-var kokonut = 0;
 
-function sound(){
 
-    if (toknow == 1){
-        document.getElementById("mute").style.display="none";
-        document.getElementById("unmute").style.display="block";
-        
-        if (kokonut == 1){
-            document.getElementById('fightingmusic').play();
-        } else{
-            backgroundMusic.play();
-        }
 
-        backgroundMusic.volume = 0.1;
-        toknow = 0;
-
-    } else if (toknow == 0){
-        document.getElementById("mute").style.display="block";
-        document.getElementById("unmute").style.display="none";
-        backgroundMusic.pause();
-
-        document.querySelectorAll('audio.background').forEach(elem => {
-            elem.pause();
-        });
-
-        toknow = 1;
-    }
-}
-function reload(){
-    window.location.reload();
-}
-
+//INDEX SETTINGS
 function rules(){
     document.getElementById('text1').style.display = "block";
     document.getElementById('index').style.display = "none";
     document.body.style.backgroundImage="url('pics/dungeon.png')";
     document.getElementById('rules').style.display = "block";
     document.body.style.overflowY="scroll";
-    document.getElementById('text1').style.animation = "scrolling 5s linear forwards";
+    document.getElementById('text1').style.animation = "scrolling 2s linear forwards";
 }
-
 function dev(){
     document.getElementById('text2').style.display = "block";
     document.getElementById('index').style.display = "none";
@@ -1157,7 +1126,7 @@ function dev(){
     document.body.style.backgroundPosition= "center";
     document.getElementById('aboutus').style.display = "block";
     document.body.style.overflowY="scroll";
-    document.getElementById('text2').style.animation = "scrolling 2s linear forwards";
+    document.getElementById('text2').style.animation = "scrolling 3s linear forwards";
 }
 function backhome(){
     document.getElementById('index').style.display = "block";
@@ -1178,8 +1147,56 @@ function clickanywhere(){
     }, 3000);
     
     backgroundMusic.play();
-    backgroundMusic.volume = 0.1;
+    backgroundMusic.volume = 0.3;
     toknow = 0;
+}
+function pvp(){
+    document.getElementById('lahat').style.display = "block";
+    document.getElementById('choosemuna').style.display = "none";
+    kokonut = 0;
+    
+    document.getElementById('backgroundMusic').play();
+    document.getElementById('backgroundMusic').volume = 0.3;
+    toknow = 0;
+}
+
+
+
+
+//SOUND
+var toknow = 1;
+var backgroundMusic = document.getElementById("backgroundMusic");
+var kokonut = 0;
+
+function sound(){
+
+    if (toknow == 1){
+        document.getElementById("mute").style.display="none";
+        document.getElementById("unmute").style.display="block";
+        
+        if (kokonut == 1){
+            document.getElementById('fightingmusic').play();
+        } else{
+            backgroundMusic.play();
+        }
+
+        backgroundMusic.volume = 0.3;
+        toknow = 0;
+
+    } else if (toknow == 0){
+        document.getElementById("mute").style.display="block";
+        document.getElementById("unmute").style.display="none";
+        backgroundMusic.pause();
+
+        document.querySelectorAll('audio.background').forEach(elem => {
+            elem.pause();
+        });
+
+        toknow = 1;
+    }
+}
+function reload(){
+    window.location.reload();
 }
 function louder() {
     document.querySelectorAll('audio.background').forEach(elem => {
@@ -1196,15 +1213,6 @@ function weaker() {
     });
 }
 
-function pvp(){
-    document.getElementById('lahat').style.display = "block";
-    document.getElementById('choosemuna').style.display = "none";
-    kokonut = 0;
-    
-    document.getElementById('backgroundMusic').play();
-    document.getElementById('backgroundMusic').volume = 0.1;
-    toknow = 0;
-}
 
 
 
@@ -1245,7 +1253,6 @@ function p1animation() {
     animationElementPlayer1.src = animationFramesPlayer1[currentFrameIndexPlayer1];
     currentFrameIndexPlayer1 = (currentFrameIndexPlayer1 + 1) % animationFramesPlayer1.length;
 }
-
 function p2animation() {
     animationElementPlayer2.src = animationFramesPlayer2[currentFrameIndexPlayer2];
     currentFrameIndexPlayer2 = (currentFrameIndexPlayer2 + 1) % animationFramesPlayer2.length;
@@ -1257,15 +1264,12 @@ let animationIntervalPlayer2;
 function startAnimation1() {
     animationIntervalPlayer1 = setInterval(p1animation, 200);
 }
-
 function startAnimation2() {
     animationIntervalPlayer2 = setInterval(p2animation, 200);
 }
-
 function pauseAnimation1() {
     clearInterval(animationIntervalPlayer1);
 }
-
 function pauseAnimation2() {
     clearInterval(animationIntervalPlayer2);
 }
