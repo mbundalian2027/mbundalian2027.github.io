@@ -835,7 +835,19 @@ function player1turn() {
     //PLAYER 1 TURN
 
     //ANIMATON
-    if (life2 != currentlifeofplayer2){
+    if (life1 < currentlifeofplayer1){
+        pauseAnimation1();
+        document.getElementById('ouchie').play();
+        document.getElementById('ouchie').volume = .3;
+        animationElementPlayer1.src = player1dmgpic;
+            setTimeout(() => {
+                startAnimation1();
+            }, 400);
+        currentlifeofplayer1 = life1;
+    } else{
+        currentlifeofplayer1 = life1;
+    }
+    if (life2 < currentlifeofplayer2){
         pauseAnimation2();
         document.getElementById('ouchie').play();
         document.getElementById('ouchie').volume = .3;
@@ -845,8 +857,11 @@ function player1turn() {
             startAnimation2();
         }, 400);
         currentlifeofplayer2 = life2;
+    }else{
+        currentlifeofplayer2 = life2;
     }
 
+    //TURN MISMO
     document.getElementById('movework2').innerHTML = "";
     document.getElementById('movework1').style.color = "black";
     switch (p1choice) {
@@ -973,7 +988,7 @@ function player2turn() {
     //PLAYER 2 TURN
 
     //ANIMATION
-    if (life1 != currentlifeofplayer1){
+    if (life1 < currentlifeofplayer1){
         pauseAnimation1();
         document.getElementById('ouchie').play();
         document.getElementById('ouchie').volume = .3;
@@ -982,8 +997,25 @@ function player2turn() {
                 startAnimation1();
             }, 400);
         currentlifeofplayer1 = life1;
+    } else{
+        currentlifeofplayer1 = life1;
     }
 
+    if (life2 < currentlifeofplayer2){
+        pauseAnimation2();
+        document.getElementById('ouchie').play();
+        document.getElementById('ouchie').volume = .3;
+        animationElementPlayer2.src = player2dmgpic;
+
+        setTimeout(() => {
+            startAnimation2();
+        }, 400);
+        currentlifeofplayer2 = life2;
+    }else{
+        currentlifeofplayer2 = life2;
+    }
+
+    //TURN MISMO
     document.getElementById('movework1').innerHTML = "";
     document.getElementById('movework2').style.color = "black";
     switch (p1choice) {
