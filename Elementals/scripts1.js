@@ -1258,6 +1258,8 @@ function p2animation() {
     currentFrameIndexPlayer2 = (currentFrameIndexPlayer2 + 1) % animationFramesPlayer2.length;
 }
 
+
+
 let animationIntervalPlayer1;
 let animationIntervalPlayer2;
 
