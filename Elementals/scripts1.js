@@ -344,6 +344,7 @@ function p1fire2() {
             mana1 -= manaf2;
             movework1determine = "yes";
         }
+        disableButton1();
         player1turn();
     }
     work1();
