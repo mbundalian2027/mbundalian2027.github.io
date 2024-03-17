@@ -232,8 +232,7 @@ function submit2() {
                     document.getElementById('backgroundMusic').pause();
                     kokonut = 1;
                     setTimeout(() => {
-                        document.getElementById('fightaudio').play();  
-                        document.getElementById('fightaudio').volume = 1;
+                        document.getElementById('fightaudio').play();
                     }, 500);
                     setTimeout(() => {
                         document.getElementById("whitebar").style.animation = "whitebar 1s ease forwards";
@@ -244,7 +243,6 @@ function submit2() {
                     setTimeout(function() {
                         document.getElementById("fight").style.display = "none";
                         document.getElementById('fightingmusic').play();
-                        document.getElementById('fightingmusic').volume = .5;
                         toknow = 0;
                     }, 3000);
 
@@ -253,10 +251,9 @@ function submit2() {
                     }, 6000);
                     startAnimation1();
                     startAnimation2();  
-                    player1turn();
-
                     currentlifeofplayer1 = life1;
                     currentlifeofplayer2 = life2;
+                    player1turn();
                     
                 }, 10);
             } else{
@@ -765,7 +762,7 @@ function disableButton1() {
         document.querySelectorAll('button.indivmoves2').forEach(elem => {
             elem.disabled = false;
         });
-    }, 500);
+    }, 700);
 
 }
 
@@ -798,7 +795,7 @@ function disableButton2() {
         document.querySelectorAll('button.indivmoves1').forEach(elem => {
             elem.disabled = false;
         });
-    }, 500);
+    }, 700);
 
 }
 
@@ -840,11 +837,13 @@ function player1turn() {
     //ANIMATON
     if (life2 != currentlifeofplayer2){
         pauseAnimation2();
+        document.getElementById('ouchie').play();
+        document.getElementById('ouchie').volume = .3;
         animationElementPlayer2.src = player2dmgpic;
 
         setTimeout(() => {
             startAnimation2();
-        }, 500);
+        }, 400);
         currentlifeofplayer2 = life2;
     }
 
@@ -976,11 +975,12 @@ function player2turn() {
     //ANIMATION
     if (life1 != currentlifeofplayer1){
         pauseAnimation1();
+        document.getElementById('ouchie').play();
+        document.getElementById('ouchie').volume = .3;
         animationElementPlayer1.src = player1dmgpic;
-
             setTimeout(() => {
                 startAnimation1();
-            }, 500);
+            }, 400);
         currentlifeofplayer1 = life1;
     }
 
@@ -1147,7 +1147,6 @@ function clickanywhere(){
     }, 3000);
     
     backgroundMusic.play();
-    backgroundMusic.volume = 0.3;
     toknow = 0;
 }
 function pvp(){
@@ -1156,7 +1155,6 @@ function pvp(){
     kokonut = 0;
     
     document.getElementById('backgroundMusic').play();
-    document.getElementById('backgroundMusic').volume = 0.3;
     toknow = 0;
 }
 
@@ -1180,7 +1178,6 @@ function sound(){
             backgroundMusic.play();
         }
 
-        backgroundMusic.volume = 0.3;
         toknow = 0;
 
     } else if (toknow == 0){
@@ -1191,7 +1188,6 @@ function sound(){
         document.querySelectorAll('audio.background').forEach(elem => {
             elem.pause();
         });
-
         toknow = 1;
     }
 }
