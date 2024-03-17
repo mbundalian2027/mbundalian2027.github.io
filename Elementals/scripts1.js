@@ -328,8 +328,8 @@ function p1fire1() {
     movework1determine = "yes";
 
     addmana1();
-    player1turn();
-    disableButton1();
+        disableButton1();
+        player1turn();
     work1();
 }
 function p1fire2() {
@@ -345,7 +345,6 @@ function p1fire2() {
             movework1determine = "yes";
         }
         player1turn();
-        disableButton1();
     }
     work1();
 }
@@ -361,8 +360,8 @@ function p1fire3() {
             mana1 -= manaf3;
             movework1determine = "yes";
         }
-        player1turn();
         disableButton1();
+        player1turn();
     }
     work1();
 }
@@ -374,8 +373,8 @@ function p1water1() {
 
     mana1 += 10;
     addmana1();
-    player1turn();
-    disableButton1();
+        disableButton1();
+        player1turn();
     work1();
 }
 function p1water2() {
@@ -393,8 +392,8 @@ function p1water2() {
             mana1 -= manaw2;
             movework1determine = "yes";
         }
-        player1turn();
         disableButton1();
+        player1turn();
     }
     work1();
 
@@ -411,8 +410,8 @@ function p1water3() {
             mana1 -= manaw3;
             movework1determine = "yes";
         }
-        player1turn();
         disableButton1();
+        player1turn();
     }
     work1();
 
@@ -425,8 +424,8 @@ function p1earth1() {
     movework1determine = "yes";
 
     addmana1();
-    player1turn();
-    disableButton1();
+        disableButton1();
+        player1turn();
     work1();
 
 
@@ -439,8 +438,8 @@ function p1earth2() {
             life1 += heale2;
             movework1determine = "yes";
         }
-        player1turn();
         disableButton1();
+        player1turn();
     } else{
         if (mana1 < manae2) {
             console.log("INSUFFICIENT MANA");
@@ -471,8 +470,8 @@ function p1earth3() {
             mana1 -= manae3;
             movework1determine = "yes";
         }
-        player1turn();
         disableButton1();
+        player1turn();
     }
     work1();
 }
@@ -484,8 +483,8 @@ function p1wind1() {
     movework1determine = "yes";
 
     addmana1();
-    player1turn();
-    disableButton1();
+        disableButton1();
+        player1turn();
     work1();
 }
 function p1wind2() {
@@ -500,8 +499,8 @@ function p1wind2() {
             mana1 -= manawi2;
             movework1determine = "yes";
         }
-        player1turn();
         disableButton1();
+        player1turn();
     }
     work1();
 }
@@ -519,8 +518,8 @@ function p1wind3() {
             movework1determine = "yes";
         }
 
-        player1turn();
         disableButton1();
+        player1turn();
     }
     work1();
 }
@@ -532,8 +531,8 @@ function p2fire1() {
     movework2determine = "yes";
 
     addmana2();
-    player2turn();
-    disableButton2();
+        disableButton2();
+        player2turn();
     work2();
 }
 function p2fire2() {
@@ -548,8 +547,8 @@ function p2fire2() {
             mana2 -= manaf2;
             movework2determine = "yes";
         }
-        player2turn();
         disableButton2();
+        player2turn();
     }
     work2();
 }
@@ -565,8 +564,8 @@ function p2fire3() {
             mana2 -= manaf3;
             movework2determine = "yes";
         }
-        player2turn();
         disableButton2();
+        player2turn();
     }
     work2();
 }
@@ -578,8 +577,8 @@ function p2water1() {
      
     mana2 += 10;
     addmana2();
-    player2turn();
-    disableButton2();
+        disableButton2();
+        player2turn();
     work2();
 }
 function p2water2() {
@@ -597,8 +596,8 @@ function p2water2() {
             mana2 -= manaw2;
             movework2determine = "yes";
         }
-        player2turn();
         disableButton2();
+        player2turn();
     }
     work2();
 }
@@ -614,8 +613,8 @@ function p2water3() {
             mana2 -= manaw3;
             movework2determine = "yes";
         }
-        player2turn();
         disableButton2();
+        player2turn();
     }
     work2();
 }
@@ -627,8 +626,8 @@ function p2earth1() {
     movework2determine = "yes";
 
     addmana2();
-    player2turn();
-    disableButton2();
+        disableButton2();
+        player2turn();
     work2();
 }
 function p2earth2() {
@@ -640,8 +639,8 @@ function p2earth2() {
             life2 += heale2;
             movework2determine = "yes";
         }
-        player2turn();
         disableButton2();
+        player2turn();
 
     } else{
         if (mana2 < manae2) {
@@ -674,8 +673,8 @@ function p2earth3() {
             mana2 -= manae3;
             movework2determine = "yes";
         }
-        player2turn();
         disableButton2();
+        player2turn();
     }
     work2();
 }
@@ -687,8 +686,8 @@ function p2wind1() {
     movework2determine = "yes";
     
     addmana2();
-    player2turn();
-    disableButton2();
+        disableButton2();
+        player2turn();
     work2();
 }
 function p2wind2() {
@@ -703,8 +702,8 @@ function p2wind2() {
             mana2 -= manawi2;
             movework2determine = "yes";
         }
-        player2turn();
         disableButton2();
+        player2turn();
     }
     work2();
 }
@@ -722,8 +721,8 @@ function p2wind3() {
                 movework2determine = "yes";
         }
     
-        player2turn();
         disableButton2();
+        player2turn();
     }
     work2();
 }
@@ -763,7 +762,7 @@ function disableButton1() {
             elem.disabled = false;
         });
     }, 700);
-
+    currentlifeofplayer1 = life1;
 }
 
 function addmana2() {
@@ -796,7 +795,7 @@ function disableButton2() {
             elem.disabled = false;
         });
     }, 700);
-
+    currentlifeofplayer2 = life2;
 }
 
 
@@ -835,33 +834,19 @@ function player1turn() {
     //PLAYER 1 TURN
 
     //ANIMATON
-    if (life1 < currentlifeofplayer1){
-        pauseAnimation1();
-        document.getElementById('ouchie').play();
-        document.getElementById('ouchie').volume = .3;
-        animationElementPlayer1.src = player1dmgpic;
-            setTimeout(() => {
-                startAnimation1();
-            }, 400);
-        currentlifeofplayer1 = life1;
-    } else{
-        currentlifeofplayer1 = life1;
-    }
     if (life2 < currentlifeofplayer2){
         pauseAnimation2();
         document.getElementById('ouchie').play();
         document.getElementById('ouchie').volume = .3;
         animationElementPlayer2.src = player2dmgpic;
-
         setTimeout(() => {
             startAnimation2();
         }, 400);
         currentlifeofplayer2 = life2;
-    }else{
+    } else{
         currentlifeofplayer2 = life2;
     }
 
-    //TURN MISMO
     document.getElementById('movework2').innerHTML = "";
     document.getElementById('movework1').style.color = "black";
     switch (p1choice) {
@@ -1001,21 +986,6 @@ function player2turn() {
         currentlifeofplayer1 = life1;
     }
 
-    if (life2 < currentlifeofplayer2){
-        pauseAnimation2();
-        document.getElementById('ouchie').play();
-        document.getElementById('ouchie').volume = .3;
-        animationElementPlayer2.src = player2dmgpic;
-
-        setTimeout(() => {
-            startAnimation2();
-        }, 400);
-        currentlifeofplayer2 = life2;
-    }else{
-        currentlifeofplayer2 = life2;
-    }
-
-    //TURN MISMO
     document.getElementById('movework1').innerHTML = "";
     document.getElementById('movework2').style.color = "black";
     switch (p1choice) {
