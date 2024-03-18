@@ -480,7 +480,7 @@ function p1earth3() {
 //WIND
 function p1wind1() {
     life2 -= dmgwi1;
-    life1 += (0.35*dmgwi1);
+    life1 += (0.4*dmgwi1);
     movework1determine = "yes";
 
     addmana1();
@@ -514,7 +514,7 @@ function p1wind3() {
 
         if (randomnumber <= 94) {
             life2 -= dmgwi3;
-            life1 += (0.35*dmgwi3);
+            life1 += (0.4*dmgwi3);
             mana1 -= manawi3;
             movework1determine = "yes";
         }
@@ -683,7 +683,7 @@ function p2earth3() {
 //WIND
 function p2wind1() {
     life1 -= dmgwi1;
-    life2 += (0.35*dmgwi1);
+    life2 += (0.4*dmgwi1);
     movework2determine = "yes";
     
     addmana2();
@@ -717,7 +717,7 @@ function p2wind3() {
 
         if (randomnumber <= 94) {
                 life1 -= dmgwi3;
-                life2 += (0.35*dmgwi3);
+                life2 += (0.4*dmgwi3);
                 mana2 -= manawi3;
                 movework2determine = "yes";
         }
@@ -886,7 +886,7 @@ function player1turn() {
         case "wind":
             updateHealth1(life1, lifewind);
             document.getElementById('windmoves1').style.display = "block";
-                passive1.innerHTML = "Lifesteal 35%";
+                passive1.innerHTML = "Lifesteal 40%";
                     if (life1 > lifewind){
                         life1 = lifewind;
                     }
@@ -930,7 +930,7 @@ function player1turn() {
         case "wind":
             updateHealth2(life2, lifewind);
             document.getElementById('windmoves2').style.display = "block";
-            passive2.innerHTML = "Lifesteal 35%";
+            passive2.innerHTML = "Lifesteal 40%";
                     if (life2 > lifewind){
                         life2 = lifewind;
                     }
@@ -1025,7 +1025,7 @@ function player2turn() {
         case "wind":
             updateHealth1(life1, lifewind);
             document.getElementById('windmoves1').style.display = "block";
-                passive1.innerHTML = "Lifesteal 35%";
+                passive1.innerHTML = "Lifesteal 40%";
                     if (life1 > lifewind){
                         life1 = lifewind;
                     }
@@ -1069,7 +1069,7 @@ function player2turn() {
         case "wind":
             updateHealth2(life2, lifewind);
             document.getElementById('windmoves2').style.display = "block";
-            passive2.innerHTML = "Lifesteal 35%";
+            passive2.innerHTML = "Lifesteal 40%";
                     if (life2 > lifewind){
                         life2 = lifewind;
                     }
