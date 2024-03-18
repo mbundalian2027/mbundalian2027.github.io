@@ -310,8 +310,8 @@ let manaf2 = 25,
     manae2 = 40,
     manae3 = 45,
 
-    manawi2 = 25,
-    manawi3 = 30
+    manawi2 = 30,
+    manawi3 = 35
 
 let passive1 = document.getElementById('passive1');
 let passive2 = document.getElementById('passive2');
