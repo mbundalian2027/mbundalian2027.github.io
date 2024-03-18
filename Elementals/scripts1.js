@@ -842,7 +842,7 @@ function player1turn() {
         animationElementPlayer2.src = player2dmgpic;
         setTimeout(() => {
             startAnimation2();
-        }, 400);
+        }, 200);
         currentlifeofplayer2 = life2;
     } else{
         currentlifeofplayer2 = life2;
@@ -981,7 +981,7 @@ function player2turn() {
         animationElementPlayer1.src = player1dmgpic;
             setTimeout(() => {
                 startAnimation1();
-            }, 400);
+            }, 200);
         currentlifeofplayer1 = life1;
     } else{
         currentlifeofplayer1 = life1;
@@ -1219,24 +1219,24 @@ function weaker() {
 let currentFrameIndexPlayer1 = 0;
 let currentFrameIndexPlayer2 = 0;
 
-let fireanimation1 = ["pics/animations/fireR.png"],
+let fireanimation1 = ["pics/animations/fireR1.png", "pics/animations/fireR2.png"],
     firedmg1 = "pics/animations/redfireR.png";
-let wateranimation1 = ["pics/animations/waterR.png"],
+let wateranimation1 = ["pics/animations/waterR1.png", "pics/animations/waterR2.png"],
     waterdmg1 = "pics/animations/redwaterR.png";
-let earthanimation1 = ["pics/animations/earthR.png"],
+let earthanimation1 = ["pics/animations/earthR1.png"],
     earthdmg1 = "pics/animations/redearthR.png";
-let windanimation1 = ["pics/animations/windR.png"],
+let windanimation1 = ["pics/animations/windR1.png", "pics/animations/windR2.png"],
     winddmg1 = "pics/animations/redwindR.png";
 
 
 
-let fireanimation2 = ["pics/animations/fireL.png"],
+let fireanimation2 = ["pics/animations/fireL1.png", "pics/animations/fireL2.png"],
     firedmg2 = "pics/animations/redfireL.png";
-let wateranimation2 = ["pics/animations/waterL.png"],
+let wateranimation2 = ["pics/animations/waterL1.png", "pics/animations/waterL2.png"],
     waterdmg2 = "pics/animations/redwaterL.png";
-let earthanimation2 = ["pics/animations/earthL.png"],
+let earthanimation2 = ["pics/animations/earthL1.png"],
     earthdmg2 = "pics/animations/redearthL.png";
-let windanimation2 = ["pics/animations/windL.png"],
+let windanimation2 = ["pics/animations/windL1.png", "pics/animations/windL2.png"],
     winddmg2 = "pics/animations/redwindL.png";
 
 
@@ -1263,10 +1263,10 @@ let animationIntervalPlayer1;
 let animationIntervalPlayer2;
 
 function startAnimation1() {
-    animationIntervalPlayer1 = setInterval(p1animation, 200);
+    animationIntervalPlayer1 = setInterval(p1animation, 300);
 }
 function startAnimation2() {
-    animationIntervalPlayer2 = setInterval(p2animation, 200);
+    animationIntervalPlayer2 = setInterval(p2animation, 300);
 }
 function pauseAnimation1() {
     clearInterval(animationIntervalPlayer1);

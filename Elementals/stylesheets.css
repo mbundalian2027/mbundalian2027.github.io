@@ -353,7 +353,7 @@ body{
     left:50%;
     transform:translateX(-50%);
     position:absolute;
-    bottom:.5%;
+    bottom:4%;
     padding:0;
     height: auto;
 }
