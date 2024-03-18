@@ -324,7 +324,7 @@ let passive2 = document.getElementById('passive2');
 //-------------------PLAYER 1---------------------
 //FIRE
 function p1fire1() {
-    life2 = life2 - (dmgf1 + (0.3 * (lifefire - life1)));
+    life2 = life2 - (dmgf1 + (0.25 * (lifefire - life1)));
     movework1determine = "yes";
 
     addmana1();
@@ -340,7 +340,7 @@ function p1fire2() {
         const randomnumber = Math.floor(Math.random() * 100);
 
         if (randomnumber <= 79) {
-            life2 = life2 - (dmgf2 + (0.3 * (lifefire - life1)));
+            life2 = life2 - (dmgf2 + (0.25 * (lifefire - life1)));
             mana1 -= manaf2;
             movework1determine = "yes";
         }
@@ -357,7 +357,7 @@ function p1fire3() {
         const randomnumber = Math.floor(Math.random() * 100);
 
         if (randomnumber <= 69) {
-            life2 = life2 - (dmgf3 + (0.3 * (lifefire - life1)));
+            life2 = life2 - (dmgf3 + (0.25 * (lifefire - life1)));
             mana1 -= manaf3;
             movework1determine = "yes";
         }
@@ -528,7 +528,7 @@ function p1wind3() {
 //-------------------PLAYER 2---------------------
 //FIRE
 function p2fire1() {
-    life1 = life1 - (dmgf1 + (0.3 * (lifefire - life2)));
+    life1 = life1 - (dmgf1 + (0.25 * (lifefire - life2)));
     movework2determine = "yes";
 
     addmana2();
@@ -544,7 +544,7 @@ function p2fire2() {
         const randomnumber = Math.floor(Math.random() * 100);
 
         if (randomnumber <= 79) {
-            life1 = life1 - (dmgf2 + (0.3 * (lifefire - life2)));
+            life1 = life1 - (dmgf2 + (0.25 * (lifefire - life2)));
             mana2 -= manaf2;
             movework2determine = "yes";
         }
@@ -561,7 +561,7 @@ function p2fire3() {
         const randomnumber = Math.floor(Math.random() * 100);
 
         if (randomnumber <= 69) {
-            life1 = life1 - (dmgf3 + (0.3 * (lifefire - life2)));
+            life1 = life1 - (dmgf3 + (0.25 * (lifefire - life2)));
             mana2 -= manaf3;
             movework2determine = "yes";
         }
@@ -854,7 +854,7 @@ function player1turn() {
         case "fire":
             updateHealth1(life1, lifefire);
             document.getElementById('firemoves1').style.display = "block";
-            passive1.innerHTML = "Additional DMG: " + (0.3 * (lifefire - life1)).toFixed(0) + " DMG";
+            passive1.innerHTML = "Additional DMG: " + (0.25 * (lifefire - life1)).toFixed(0) + " DMG";
                     if (life1 > lifefire){
                         life1 = lifefire;
                     }
@@ -898,7 +898,7 @@ function player1turn() {
         case "fire":
             updateHealth2(life2, lifefire);
             document.getElementById('firemoves2').style.display = "block";
-            passive2.innerHTML = "Additional DMG: " + (0.3 * (lifefire - life2)).toFixed(0) + " DMG";
+            passive2.innerHTML = "Additional DMG: " + (0.25 * (lifefire - life2)).toFixed(0) + " DMG";
                     if (life2 > lifefire){
                         life2 = lifefire;
                     }
@@ -993,7 +993,7 @@ function player2turn() {
         case "fire":
             updateHealth1(life1, lifefire);
             document.getElementById('firemoves1').style.display = "block";
-            passive1.innerHTML = "Additional DMG: " + (0.3 * (lifefire - life1)).toFixed(0) + " DMG";
+            passive1.innerHTML = "Additional DMG: " + (0.25 * (lifefire - life1)).toFixed(0) + " DMG";
                     if (life1 > lifefire){
                         life1 = lifefire;
                     }
@@ -1037,7 +1037,7 @@ function player2turn() {
         case "fire":
             updateHealth2(life2, lifefire);
             document.getElementById('firemoves2').style.display = "block";
-            passive2.innerHTML = "Additional DMG: " + (0.3 * (lifefire - life2)).toFixed(0) + " DMG";
+            passive2.innerHTML = "Additional DMG: " + (0.25 * (lifefire - life2)).toFixed(0) + " DMG";
                     if (life2 > lifefire){
                         life2 = lifefire;
                     }
