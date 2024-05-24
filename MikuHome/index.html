@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MikuHome</title>
+    <link rel="icon" href="BESTLOGO.jpg" type="image/icon">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header class="row justify-content-between">
+        <div class="col-lg-4 col-md-12">
+            <img src="mikuhome.png" id="miku" alt="miku">
+        </div>
+        
+        <nav class="row col-lg-4 col-md-12 ml-3 mr-2">
+            <a href="aboutpage.html" id="aboutusthing">About Us</a>
+            <a href="#cart" class="cartbut">Cart</a>
+            <div class="search-container" id="searchbar">
+                <input type="text" class="search-box" id="searchInput" placeholder="Search...">
+                <button class="search-button" onclick="performSearch()">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="row"> <!--This contains the product and the cart tab where items popup-->
+
+        <!--PORDUCTS-->
+        <section id="products" class="col-lg-9 col-md-8 col-sm-12">
+            <!-- Living Room Furniture -->
+            <h3 class="headings fade-in">Living Room Furniture</h3>
+            <div class="row d-flex justify-content-center fade-in">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Living Room Furniture" data-name="Sofa Set">
+                        <img src="sofaset.png" alt="Sofa Set">
+                        <h3>Sofa Set</h3>
+                        <p>₱14520</p>
+                        <button onclick="addToCart('Sofa Set', 14520)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Living Room Furniture" data-name="Smart TV">
+                        <img src="smarttv.png" alt="Smart TV">
+                        <h3>Smart TV</h3>
+                        <p>₱19019</p>
+                        <button onclick="addToCart('Smart TV', 19019)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Living Room Furniture" data-name="Coffee Table">
+                        <img src="coffeetable.png" alt="Coffee Table">
+                        <h3>Coffee Table</h3>
+                        <p>₱7308</p>
+                        <button onclick="addToCart('Coffee Table', 7308)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Living Room Furniture" data-name="Throw Pillow">
+                        <img src="throwpillow.png" alt="Throw Pillow">
+                        <h3>Throw Pillow</h3>
+                        <p>₱570</p>
+                        <button onclick="addToCart('Throw Pillow', 570)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Living Room Furniture" data-name="Fake Orchids">
+                        <img src="fakeplant.jpg" alt="Fake Orchids">
+                        <h3>Fake Orchids</h3>
+                        <p>₱862</p>
+                        <button onclick="addToCart('Fake Orchids', 862)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Living Room Furniture" data-name="Floor Lamp">
+                        <img src="floorlamp.jpg" alt="Floor Lamp">
+                        <h3>Floor Lamp</h3>
+                        <p>₱2990</p>
+                        <button onclick="addToCart('Floor Lamp', 2990)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Living Room Furniture" data-name="Wall Clock">
+                        <img src="wallclock.png" alt="Wall Clock">
+                        <h3>Wall Clock</h3>
+                        <p>₱5497</p>
+                        <button onclick="addToCart('Wall Clock', 5497)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Living Room Furniture" data-name="Teal Rug">
+                        <img src="rug.jpeg" alt="Teal Rug">
+                        <h3>Teal Rug</h3>
+                        <p>₱15394</p>
+                        <button onclick="addToCart('Teal Rug', 15394)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Kitchen Necessities -->
+            <h3 class="headings fade-in-right">Kitchen Necessities</h3>
+            <div class="row d-flex justify-content-center fade-in-right">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Kitchen Necessities" data-name="Induction Stove">
+                        <img src="inductionstove.jpeg" alt="Induction Stove">
+                        <h3>Induction Stove</h3>
+                        <p>₱143280</p>
+                        <button onclick="addToCart('Induction Stove', 143280)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Kitchen Necessities" data-name="Stainless Steel Knife Set">
+                        <img src="knifeset.jpeg" alt="Stainless Steel Knife Set">
+                        <h3>Stainless Steel Knife Set</h3>
+                        <p>₱5430</p>
+                        <button onclick="addToCart('Stainless Steel Knife Set', 5430)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Kitchen Necessities" data-name="Stand Mixer">
+                        <img src="standmixer.jpeg" alt="Stand Mixer">
+                        <h3>Stand Mixer</h3>
+                        <p>₱5486</p>
+                        <button onclick="addToCart('Stand Mixer', 5486)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Kitchen Necessities" data-name="Blender">
+                        <img src="blender.jpeg" alt="Blender">
+                        <h3>Blender</h3>
+                        <p>₱1749</p>
+                        <button onclick="addToCart('Blender', 1749)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Kitchen Necessities" data-name="Refrigerator">
+                        <img src="refrigerator.png" alt="Refrigerator">
+                        <h3>Refrigerator</h3>
+                        <p>₱121560</p>
+                        <button onclick="addToCart('Refrigerator', 121560)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Kitchen Necessities" data-name="Rice Cooker">
+                        <img src="ricecooker.png" alt="Rice Cooker">
+                        <h3>Rice Cooker</h3>
+                        <p>₱4051</p>
+                        <button onclick="addToCart('Rice Cooker', 4051)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Kitchen Necessities" data-name="Table Set">
+                        <img src="tableset.png" alt="Table Set">
+                        <h3>Table Set</h3>
+                        <p>₱6740</p>
+                        <button onclick="addToCart('Table Set', 6740)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Kitchen Necessities" data-name="Microwave">
+                        <img src="microwave.png" alt="Microwave">
+                        <h3>Microwave</h3>
+                        <p>₱28531</p>
+                        <button onclick="addToCart('Microwave', 28531)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Bedroom Furniture -->
+            <h3 class="headings fade-in">Bedroom Furniture</h3>
+            <div class="row d-flex justify-content-center fade-in">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Bedroom Furniture" data-name="Air Conditioner">
+                        <img src="aircon.png" alt="Air Conditioner">
+                        <h3>Air Conditioner</h3>
+                        <p>₱59990</p>
+                        <button onclick="addToCart('Air Conditioner', 59990)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Bedroom Furniture" data-name="Bedside Table">
+                        <img src="bedsidetable.png" alt="Bedside Table">
+                        <h3>Bedside Table</h3>
+                        <p>₱4500</p>
+                        <button onclick="addToCart('Bedside Table', 4500)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Bedroom Furniture" data-name="Study Desk">
+                        <img src="studytable.png" alt="Study Desk">
+                        <h3>Study Desk</h3>
+                        <p>₱8500</p>
+                        <button onclick="addToCart('Study Desk', 8500)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Bedroom Furniture" data-name="Shelves">
+                        <img src="shelves.png" alt="Shelves">
+                        <h3>Shelves</h3>
+                        <p>₱2400</p>
+                        <button onclick="addToCart('Shelves', 2400)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Bedroom Furniture" data-name="Dresser">
+                        <img src="dresser.png" alt="Dresser">
+                        <h3>Dresser</h3>
+                        <p>₱3425</p>
+                        <button onclick="addToCart('Dresser', 3425)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Bedroom Furniture" data-name="Bed Frame">
+                        <img src="bedframe.png" alt="Bed Frame">
+                        <h3>Bed Frame</h3>
+                        <p>₱11000</p>
+                        <button onclick="addToCart('Bed Frame', 11000)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Bedroom Furniture" data-name="Bedroom Rug">
+                        <img src="carpet.png" alt="Bedroom Carpet">
+                        <h3>Bedroom Carpet</h3>
+                        <p>₱1950</p>
+                        <button onclick="addToCart('Bedroom Rug', 1950)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category="Bedroom Furniture" data-name="Curtains">
+                        <img src="curtains.png" alt="Curtains">
+                        <h3>Curtains</h3>
+                        <p>₱2100</p>
+                        <button onclick="addToCart('Curtains', 2100)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Bathroom Essentials -->
+            <h3 class="headings fade-in-right"> Bathroom Essentials</h3>
+            <div class="row d-flex justify-content-center fade-in-right">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category=" Bathroom Essentials" data-name="Plunger">
+                        <img src="plunger.png" alt="Plunger">
+                        <h3>Plunger</h3>
+                        <p>₱250</p>
+                        <button onclick="addToCart('Plunger', 250)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category=" Bathroom Essentials" data-name="Bathroom Toilet Scrub">
+                        <img src="bathroomscrub.png" alt="Bathroom Toilet Scrub">
+                        <h3>Bathroom Toilet Scrub</h3>
+                        <p>₱150</p>
+                        <button onclick="addToCart('Bathroom Toilet Scrub', 150)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category=" Bathroom Essentials" data-name="Bathroom Toilet Roll Holder">
+                        <img src="toiletrollholder.png" alt="Bathroom Toilet Roll Holder">
+                        <h3>Bathroom Toilet Roll Holder</h3>
+                        <p>₱500</p>
+                        <button onclick="addToCart('Bathroom Toilet Roll Holder', 500)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category=" Bathroom Essentials" data-name="Bathroom Mirror Cabinet">
+                        <img src="bathroommirror.png" alt="Bathroom Mirror Cabinet">
+                        <h3>Bathroom Mirror Cabinet</h3>
+                        <p>₱1075</p>
+                        <button onclick="addToCart('Bathroom Mirror Cabinet', 1075)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category=" Bathroom Essentials" data-name="Air Freshener">
+                        <img src="airfreshener.png" alt="Air Freshener">
+                        <h3>Air Freshener</h3>
+                        <p>₱200</p>
+                        <button onclick="addToCart('Air Freshener', 200)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category=" Bathroom Essentials" data-name="Trash Can">
+                        <img src="trashcan.png" alt="Trash Can">
+                        <h3>Trash Can</h3>
+                        <p>₱725</p>
+                        <button onclick="addToCart('Trash Can', 725)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category=" Bathroom Essentials" data-name="Soap Holders">
+                        <img src="soapholders.png" alt="Soap Holders">
+                        <h3>Soap Holders</h3>
+                        <p>₱232</p>
+                        <button onclick="addToCart('Soap Holders', 232)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="product" data-category=" Bathroom Essentials" data-name="Towel Rack">
+                        <img src="towelholder.png" alt="Towel Rack">
+                        <h3>Towel Rack</h3>
+                        <p>₱950</p>
+                        <button onclick="addToCart('Towel Rack', 950)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br>
+        </section>
+        
+        <!--CART-->
+        <aside id="cart" class="col-lg-3 col-md-4 col-sm-12 slide-up">
+            <div class="forfun">
+                <h2>Your Cart</h2>
+                
+                <div id="bought-items"></div>
+                <small>Click items to remove</small>
+                <hr>
+                <div id="total-price">
+                    <strong>Total Price: $0</strong>
+                </div>
+                <div id="customer-details" class="mt-3">
+                    <h4>Customer Details</h4>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="cust_name" placeholder="Name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="cust_addr" placeholder="Address">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="cust_email" placeholder="Email">
+                    </div>
+                    <button class="btn btn-primary" id="checkout-btn" onclick="checkout()">Checkout</button>
+
+                    
+                    <button class="btn btn-secondary backtotop" onclick="gototop()">Back to top</button>
+                </div>
+            </div>
+        </aside>
+    </main>
+    <br><br><br><br>
+    <footer>
+        <p>&copy; 2024 MikuHome</p>
+    </footer>
+
+
+    <!--You guys dont really need to touch the script-->
+    <script>
+        let cart = [];
+
+        //adds the clicked item to the cart array
+        function addToCart(name, price) {
+            const item = { name, price };
+            cart.push(item);
+            updateBoughtItems();
+        }
+        
+        //search bar that took so long
+        function performSearch() {
+            var products = document.querySelectorAll('.product');
+            products.forEach(function(product) {
+                product.style.visibility = 'hidden';
+            });
+
+            var headings = document.querySelectorAll('.headings');
+            headings.forEach(function(heading) {
+                heading.style.visibility = 'hidden';
+            });
+
+            var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            products.forEach(function(product) {
+                var productName = product.getAttribute('data-name').toLowerCase();
+                var productCategory = product.getAttribute('data-category').toLowerCase();
+                        
+                if (productName.includes(searchTerm) || productCategory.includes(searchTerm)) {
+                    product.style.visibility = 'visible';
+                    var headingId = product.getAttribute('data-category-id');
+                    var heading = document.getElementById(headingId);
+                    if (heading) {
+                        heading.style.visibility = 'visible';
+                    }
+                }
+            });
+        }
+
+        //animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.fade-in, .slide-up, .fade-in-right');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+
+            elements.forEach(element => observer.observe(element));
+        });
+
+        //updates the items na ilalagay sa may cart na div
+        function updateBoughtItems() {
+            const boughtItemsDiv = document.getElementById("bought-items");
+            const totalPriceDisplay = document.getElementById("total-price");
+            const displayTotalPrice = document.getElementById("display-total-price");
+            boughtItemsDiv.innerHTML = "";
+
+            if (cart.length !== 0) {
+                cart.forEach((item, index) => {
+                    const cartItem = document.createElement("div");
+                    cartItem.textContent = `${item.name} - $${item.price}`;
+                    cartItem.classList.add("stufflol");
+                    cartItem.style.cursor = "pointer";
+                    cartItem.addEventListener("click", () => removeCartItem(index));
+                    boughtItemsDiv.appendChild(cartItem);
+                });
+
+                const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+                totalPriceDisplay.innerHTML = `<strong>Total Price: $${totalPrice}`;
+                displayTotalPrice.innerHTML = `<strong>Total Price: $${totalPrice}`;
+            } else {
+                totalPriceDisplay.innerHTML = `<strong>Total Price: $0`;
+                displayTotalPrice.innerHTML = `<strong>Total Price: $0`;
+            }
+        }
+
+        //pangremove lang to ng items
+        function removeCartItem(index) {
+            cart.splice(index, 1);
+            updateBoughtItems();
+        }
+
+        //this displays the items after ng updateBoughtItems
+        function showCart() {
+            updateBoughtItems();
+            document.getElementById("cart").style.display = "flex";
+        }
+
+        //this is for submitting (encodeURLComponent is basically transforms ur stuff into a URL version)
+        function checkout() {
+            const custName = document.getElementById("cust_name").value;
+            const custAddr = document.getElementById("cust_addr").value;
+            const custEmail = document.getElementById("cust_email").value;
+
+            if (!custName || !custAddr || !custEmail) {
+                alert("Please enter customer name, address, and email.");
+                return;
+            }
+
+            const custOrder = cart.map(item => ({ prod_name: item.name, prod_price: item.price }));
+            const custOrderJSON = JSON.stringify(custOrder);
+            const checkoutURL = `http://sirjm.infinityfreeapp.com/checkout.php?cust_name=${encodeURIComponent(custName)}&cust_addr=${encodeURIComponent(custAddr)}&cust_email=${encodeURIComponent(custEmail)}&cust_order=${encodeURIComponent(custOrderJSON)}`;
+            window.location.href = checkoutURL;
+        }
+
+        function gototop() {
+            window.location.href = '#products' ;
+        }
+    </script>
+    
+</body>
+</html>

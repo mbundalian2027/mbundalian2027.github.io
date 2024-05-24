@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MikuHome | About Us</title>
+    <link rel="icon" href="BESTLOGO.jpg" type="image/icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <style>
+        * {
+            font-family: "Varela Round", sans-serif;
+        }
+        header{
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #3fbfae;
+            text-shadow: 2px 2px 4px teal;
+            padding: 5px 10px;
+            position: relative;
+        /*    background-image: url(header.jpg); */
+            background-size: cover;
+            height: 33vh;
+        }
+        body{
+        /*    background-image:url(background.jpg) ; */
+            background-size:50% ;
+            background-position: center;
+            background-size: cover;
+            background-color: aliceblue;
+            background-image: url(backg.png);
+            background-repeat: no-repeat;
+        }
+        .main-title{
+            font-size: 50px;
+            line-height: 2;
+            position: relative;
+            top: 10px; 
+        }
+        .sub-title{
+            font-size: 50px;
+            line-height: 2;
+            position: relative;
+            top: 85px; 
+        }
+            .logo{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                right: 20px;
+                top: 10px;
+                height: 30vh;
+            }
+            .link{
+                position: absolute;
+                top: 40%;
+                left: 5%;
+                font-size: 20px;
+                font-weight: lighter;
+                color: rgb(246, 249, 249);
+                text-decoration:none;
+                transition: transform .2s ease;
+            }
+            .link:hover{
+                transform:scale(1.05);
+            }
+            .image-container{
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                gap: 100px;
+                padding: 20px;
+                flex-wrap: wrap;
+            }
+            .image-container > div{
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .image-container img{
+                width: 280px;
+                height: 280px;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center;
+                margin-top: 20px;
+            }
+            .image-label{
+                font-size: 35px;
+                color: rgb(249, 254, 254);
+                font-weight: bold;
+                margin-top: 5px;
+                margin-bottom: 0;
+                text-align: center;
+                font-weight: bolder;
+                text-shadow: 2px 2px 4px teal;
+            }
+            .image-sub-label{
+                font-size: 20px;
+                font-weight: bold;
+                color: rgb(249, 254, 254);
+                text-shadow: 2px 2px 4px teal;
+                text-align: center;
+                margin-bottom: 0;
+                border-radius: 10px;
+            }
+            .website-description {
+            width:95%;
+            font-size: 20px;
+            font-weight: 600;
+            color: rgb(249, 254, 254);
+            background-color: rgb(51, 157, 152);
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 0;
+            padding: 20px;
+            border-radius: 30px;
+            }       
+            .person {
+                background-color: #a5d8c8;
+                padding: 30px;
+                height: 75vh;
+                border-radius: 30px;
+            }      
+            .person:hover{
+                animation:enlarge .5s ease-out forwards;
+            }
+            @keyframes enlarge {
+                to{
+                    transform: scale(1.05);
+                }
+            }
+            
+            .all{
+                background-color: rgba(245, 245, 245, 0.185);
+                width: 90vw;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            /*animations*/
+            .fade-in {
+                opacity: 0;
+                transform: translateX(-60px);
+                transition: opacity 1.5s ease-in-out, transform 2s ease-in-out;
+            }
+
+            .slide-up {
+                opacity: 0;
+                transform: translateY(60px);
+                transition: opacity 1.5s ease-in-out, transform 2s ease-in-out;
+            }
+            .fade-in-right{
+                opacity: 0;
+                transform: translateX(60px);
+                transition: opacity 1.5s ease-in-out, transform 2s ease-in-out;
+            }
+            .visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <img src="mikuabout.png" alt="Logo" class="logo">
+        <a href ="index.html" class="link">Back to Website</a>
+    </header>
+    <div class="all">
+            
+        <main> 
+            <div class="image-container">
+            <div class="person col-sm-3 mt-3 fade-in">
+                <img src="miggy.jpg" alt="Image 1">
+                <p class="image-label mt-3"> Miggy Bundalian </p>
+                <p class="image-sub-label mt-3">Code for the Website</p>
+            </div>
+            <div class="person col-sm-3 mt-3 mb-3 slide-up">
+                <img src="zoe.jpg" alt="Image 2">
+                <p class="image-label mt-3"> Zoe Quiambao </p>
+                <p class="image-sub-label mt-3">Design/CSS and Images</p>
+            </div>
+            <div class="person col-sm-3 mt-3 mb-3 fade-in-right">
+                <img src="krisha.jpg" alt="Image 3">
+                <p class="image-label mt-3"> Krisha Tinio </p>
+                <p class="image-sub-label mt-3">Images and About Us Page</p>
+            </div>
+            <p class="website-description"> Our home essentials store aims to provide everything you need to turn your house into a comfortable and functional home. From kitchenware to bedroom rugs/carpets, we offer a wide range of high-quality products designed to enhance every room in your house. Our goal is to simplify the process of home improvement by offering curated collections of essential items at affordable prices. Whether you're looking to refresh your living space or add a touch of style to your home decor, we strive to be your one-stop destination for all things home-related. With a focus on convenience, quality, and affordability, we're committed to helping you create a space that reflects your unique style and meets your everyday needs.</p>
+            </div>
+        </main> 
+    </div>
+
+    <script>
+    //animations
+    document.addEventListener('DOMContentLoaded', () => {
+        const elements = document.querySelectorAll('.fade-in, .slide-up, .fade-in-right');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        elements.forEach(element => observer.observe(element));
+    });
+    </script>
+</body>
+</html>
