@@ -128,7 +128,7 @@ function createEnemy(x, z) {
 function spawnEnemies() {
     setInterval(() => {
         // Spawn enemies only within a certain distance from the player
-        const spawnDistance = 30; // Adjust distance as needed
+        const spawnDistance = 50; // Adjust distance as needed
         const randomX = player.position.x + (Math.random() * spawnDistance * 2) - spawnDistance;
         const randomZ = player.position.z + (Math.random() * spawnDistance * 2) - spawnDistance;
         createEnemy(randomX, randomZ);
